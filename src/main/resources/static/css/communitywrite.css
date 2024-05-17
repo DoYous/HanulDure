@@ -1,0 +1,37 @@
+header div {
+    display: flex;
+    align-items: center;
+    margin: auto 20px;
+}
+
+#hanuldureimg {
+    justify-content: left;
+}
+
+#hanulduretext {
+    margin-left: 20px;
+    justify-content: left;
+}
+
+#mainbt {
+    margin-left: auto;
+
+    color: white;
+
+    flex-direction: row;
+    justify-content: center;
+    padding: 13.0469px 25.0902px;
+    gap: 10.04px;
+
+    width: 84px;
+    height: 39px;
+
+    background: #008000;
+    border-radius: 30px;
+    border: none;
+}
+
+#mainbt:hover {
+    background: #006400;
+}
+
