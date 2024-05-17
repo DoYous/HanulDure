@@ -1,7 +1,7 @@
 ---
 name: "✨PR issue template"
 about: PR시 활용
-title: "[Feature/ahtml] -> [Feature/bhtml] PR"
+title: "[Hanuldure/name] -> [Hanuldure/name] PR"
 labels: "✨PR"
 assignees: hyojunahn111
 
