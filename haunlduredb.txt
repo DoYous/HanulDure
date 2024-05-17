@@ -1,0 +1,85 @@
+CREATE TABLE  user  (
+	 user_seq 	int	NOT NULL	,
+	 user_id 	varchar(20)	NOT NULL,
+	 user_password 	int	NOT NULL,
+	 user_email 	varchar(30)	NOT NULL,
+	 user_name 	varchar(10)	NOT NULL,
+	 user_birth 	date	NOT NULL,
+	 user_phone 	varchar(20)	NOT NULL,
+	 user_reason 	varchar(255)	NULL,
+	 user_region 	varchar(255)	NOT NULL,
+	 user_gender 	char(1)	NOT NULL,
+	 user_intro 	varchar(255)	NULL,
+	 user_point 	int	NULL,
+	 user_type 	tinyint	NOT NULL	
+);
+
+CREATE TABLE  exp  (
+	 exp_seq 	int	NOT NULL	,
+	 user_seq 	int	NOT NULL	,
+	 exp_title 	varchar(255)	NOT NULL,
+	 exp_content 	varchar(10000)	NOT NULL,
+	 exp_start 	datetime	NOT NULL,
+	 exp_end 	datetime	NOT NULL	,
+	 exp_get_start 	datetime	NOT NULL,
+	 exp_get_end 	datetime	NOT NULL,
+	 exp_min 	int	NOT NULL,
+	 exp_max 	int	NOT NULL,
+	 exp_addr 	varchar(255)	NOT NULL,
+	 exp_addr_detail 	varchar(255)	NULL,
+	 exp_img 	varchar(255)	NULL,
+	 exp_price 	int	NOT NULL,
+	 exp_request_datetime 	datetime	NOT NULL,
+	 exp_status 	tinyint	NOT NULL	 
+);
+
+CREATE TABLE  exp_review  (
+	 rev_seq 	int	NOT NULL	,
+	 user_seq 	int	NOT NULL	,
+	 exp_seq 	int	NOT NULL	,
+	 rev_content 	varchar(255)	NOT NULL,
+	 rev_write_date 	datetime	NOT NULL
+);
+
+CREATE TABLE  board  (
+	 board_seq 	int	NOT NULL	,
+	 user_seq 	int	NOT NULL	,
+	 board_title 	varchar(255)	NOT NULL,
+	 board_content 	varchar(10000)	NOT NULL,
+	 board_write_date 	datetime	NOT NULL,
+	 board_type 	char(1)	NOT NULL	
+);
+
+CREATE TABLE  exp_apply  (
+	 user_seq 	int	NOT NULL	,
+	 exp_seq 	int	NOT NULL	,
+	 apply_user_num 	int	NOT NULL	DEFAULT 1,
+	 user_phone 	varchar(20)	NOT NULL,
+	 apply_comment 	varchar(255)	NOT NULL
+);
+
+CREATE TABLE  manager  (
+	 manager_seq 	int	NOT NULL	,
+	 manager_id 	varchar(20)	NOT NULL,
+	 manager_password 	varchar(20)	NOT NULL
+);
+
+ALTER TABLE  user  ADD CONSTRAINT  PK_USER  PRIMARY KEY (
+	 user_seq 
+);
+
+ALTER TABLE  exp  ADD CONSTRAINT  PK_EXP  PRIMARY KEY (
+	 exp_seq 
+);
+
+ALTER TABLE  exp_review  ADD CONSTRAINT  PK_EXP_REVIEW  PRIMARY KEY (
+	 rev_seq 
+);
+
+ALTER TABLE  board  ADD CONSTRAINT  PK_BOARD  PRIMARY KEY (
+	 board_seq 
+);
+
+ALTER TABLE  manager  ADD CONSTRAINT  PK_MANAGER  PRIMARY KEY (
+	 manager_seq 
+);
