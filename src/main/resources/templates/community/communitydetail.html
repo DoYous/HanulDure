@@ -3,8 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>communitydetail</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/communitydetail.css}"/>
 </head>
 <body>
+    <header>
+        <div>
+            <img id="hanuldureimg" src="/image/img.png">
+            <h1 id="hanulduretext">한울두레</h1>
+            <button id="mainbt">Main</button>
+        </div>
+    </header>
+    <hr>
+
+    <section id="cmdetail">
+        <h2>농뮤니티</h2>
+        <hr>
+        <div id="cmdtitlediv">
+            <h1 id="cmdtitle">농뮤니티 제목</h1>
+        </div>
+        <hr>
+        <section id="cmtype">
+            <article id="writername"><p>작성자 닉네임</p></article>
+            <article id="adddate"><p th:text="'등록일 : ' + ${today}"></p></article>
+            <article id="freewritebt"><button class="buttonNormal">자유글</button></article>
+            <article id="recruitmentbt"><button class="buttonNormal">모집글</button></article>
+        </section>
+        <div id="writeinfodiv">
+            <div id="writeinfodiv2">
+                <p>테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</p>
+            </div>
+        </div>
+        <div id="detailbt">
+            <button id="modifybt">수정</button>
+            <button id="remotebt">삭제</button>
+        </div>
+    </section>
+    <section id="cmdetail2">
+        <h1>댓글</h1>
+        <hr>
+        <!-- 대충 댓글 구조 -->
+        <section id="cmdcomment">
+            <div class="content-group">
+                <article><img src="" alt="작성자 프로필"></article>
+                <article id="writename"><p>작성자 닉네임</p></article>
+            </div>
+            <article><p>글 내용 글 내용</p></article>
+            <div class="button-group">
+                <article><button id="commentmodifybt">수정</button></article>
+                <article><button id="commentdeletebt">삭제</button></article>
+            </div>
+
+        </section>
+        <div id="commitboxdiv">
+            <input id="commitbox" type="text" placeholder="댓글을 작성하세요.">
+            <button id="commitbt">작성</button>
+        </div>
+        <button id="gowordlist">글 목록</button>
+    </section>
+
     <h2>CommunityDetail 페이지 테스트입니다.</h2>
 </body>
 </html>
