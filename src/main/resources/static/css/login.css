@@ -1,0 +1,49 @@
+.content{
+    background-image :url("../image/loginbackground.png");
+    background-size: contain;
+    height: 100vmin;
+
+}
+
+#content{
+    display:inline-block;
+    width:40% ;
+    height: 75%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: 30%;
+    margin-top: 5%;
+    padding:2%;
+}
+
+#textgroup{
+    text-align: center;
+}
+
+#text1{
+
+    font-size: 200%;
+}
+
+#text2{
+    text-align: center;
+    color: #779341;
+    font-size: 200%;
+}
+
+#text3{
+    text-align: center;
+    color:green;
+    font-size:250%;
+}
+
+#text4{
+
+}
+
+#text5{
+
+}
+
+#button{
+
+}
