@@ -35,3 +35,89 @@ header div {
     background: #006400;
 }
 
+#cmwrite {
+    margin: 7%;
+}
+
+/*뇽뮤니티 제목 입력*/
+#cmtitlediv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cmtitle {
+    width: 25%;
+    text-align: left;
+}
+/**/
+
+
+/*작성자 닉네임, 등록일, 자유글, 모집글 css*/
+#cmtype {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#writername {
+
+}
+
+#adddate {
+    margin-left: 3%;
+}
+
+#freewritebt {
+    margin-left: 3%;
+}
+
+#recruitmentbt {
+    margin-left: 5px;
+}
+
+/**/
+
+/*글 적는 곳*/
+#writeinfodiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#writeinfo {
+    width: 100%;
+    height: 500px;
+    background: #F0FFF2;
+}
+/**/
+
+
+/*취소, 작성 버튼*/
+#cmbt {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 1% 5%;
+}
+
+#cmcanclebt {
+
+}
+
+#cmaddbt {
+    margin-left: 10px;
+
+    background: #A0DCA9;
+    stroke: none;
+
+}
+
+/*토글시 버튼색 조정*/
+.buttonNormal {
+    background: #ffffff;
+}
+
+.buttonActive {
+    background: #A0DCA9;
+}
