@@ -1,14 +1,22 @@
-function toggleButton(activeId, inactiveId) {
+function toggleButton(activeId, inactiveId, event) {
+    // 기본 동작 방지
+    event.preventDefault();
+
     var activeButton = document.getElementById(activeId);
     var inactiveButton = document.getElementById(inactiveId);
 
-    if (activeButton.classList.contains('buttonActive')) {
-        activeButton.classList.remove('buttonActive');
-        activeButton.classList.add('buttonNormal');
-    } else {
-        activeButton.classList.remove('buttonNormal');
-        activeButton.classList.add('buttonActive');
-        inactiveButton.classList.remove('buttonActive');
-        inactiveButton.classList.add('buttonNormal');
-    }
+    activeButton.classList.add('buttonActive');
+    activeButton.classList.remove('buttonNormal');
+    inactiveButton.classList.remove('buttonActive');
+    inactiveButton.classList.add('buttonNormal');
+
+    // 숨겨진 입력 필드의 값 설정
+    var boardTypeValue = activeId === 'freewrite' ? 'F' : 'R';
+    document.getElementById('boardType').value = boardTypeValue;
+    console.log("BoardType:", boardType)
+}
+
+function cancelAndRedirect() {
+    // 사용자를 지정된 페이지로 리다이렉트
+    window.location.href = 'http://localhost:8080/hanuldure/experiencepage';
 }
