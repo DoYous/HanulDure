@@ -18,7 +18,7 @@ public class MainController {
 
     @GetMapping("login")
     public ModelAndView login(ModelAndView model){
-        model.setViewName("/main/login");
+        model.setViewName("firstpage");
         return model;
     }
 
