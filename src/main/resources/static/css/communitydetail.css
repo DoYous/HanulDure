@@ -1,0 +1,156 @@
+header div {
+    display: flex;
+    align-items: center;
+    margin: auto 20px;
+}
+
+#hanuldureimg {
+    justify-content: left;
+}
+
+#hanulduretext {
+    margin-left: 20px;
+    justify-content: left;
+}
+
+#mainbt {
+    margin-left: auto;
+
+    color: white;
+
+    flex-direction: row;
+    justify-content: center;
+    padding: 13.0469px 25.0902px;
+    gap: 10.04px;
+
+    width: 84px;
+    height: 39px;
+
+    background: #008000;
+    border-radius: 30px;
+    border: none;
+}
+
+#mainbt:hover {
+    background: #006400;
+}
+
+#cmdetail {
+    margin: 7%;
+}
+
+#cmdtitlediv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cmdtitle {
+    text-align: center;
+}
+
+#cmtype {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#writername {
+
+}
+
+#adddate {
+    margin-left: 3%;
+}
+
+#freewritebt {
+    margin-left: 3%;
+}
+
+#recruitmentbt {
+    margin-left: 5px;
+}
+
+#writeinfodiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#writeinfodiv2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 500px;
+    background: #F0FFF2;
+}
+
+#detailbt {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 1% 5%;
+}
+
+#modifybt {
+
+}
+
+#remotebt {
+    margin-left: 10px;
+}
+
+
+/* 댓글 */
+
+#cmdetail2 {
+    margin: 7%;
+}
+
+#cmdcomment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.content-group, .button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-group {
+    align-items: flex-end;
+}
+
+#writename {
+    margin-left: 20px;
+}
+
+#commentmodifybt {
+
+}
+
+#commentdeletebt {
+    margin-left: 10px;
+}
+
+#commitboxdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#commitbox {
+    width: 90%;
+}
+
+#commitbt {
+    margin-left: 10px;
+}
+
+#gowordlist {
+    margin: 3% auto;
+}
