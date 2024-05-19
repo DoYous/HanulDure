@@ -7,12 +7,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("hanuldure")
-public class MainController {
-
-    @GetMapping("main")
-    public ModelAndView main(ModelAndView model) {
-
-        model.setViewName("/main/main");
+public class FirstPageAndLoginPageController {
+    @GetMapping("firstpage")
+    public ModelAndView firstpage(ModelAndView model){
+        model.setViewName("/main/firstpage");
         return model;
     }
+
+    @GetMapping("login")
+    public ModelAndView login(ModelAndView model){
+        model.setViewName("/main/login");
+        return model;
+    }
+
 }
