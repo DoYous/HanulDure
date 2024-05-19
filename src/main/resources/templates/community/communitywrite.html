@@ -16,27 +16,32 @@
     </header>
     <hr>
 
-    <section id="cmwrite">
-        <h2>농뮤니티 글 등록</h2>
-        <hr>
-        <div id="cmtitlediv">
-            <input id="cmtitle" type="text" placeholder=" 농뮤니티 제목을 입력하세요. ">
-        </div>
-        <hr>
-        <section id="cmtype">
-            <article id="writername"><p>작성자 닉네임</p></article>
-            <article id="adddate"><p th:text="'등록일 : ' + ${today}"></p></article>
-            <article id="freewritebt"><button id="freewrite" class="buttonNormal" onclick="toggleButton('freewrite', 'recruitment')">자유글</button></article>
-            <article id="recruitmentbt"><button id="recruitment" class="buttonNormal" onclick="toggleButton('recruitment', 'freewrite')">모집글</button></article>
+    <form action="/hanuldure/add" method="post">
+        <section id="cmwrite">
+            <h2>농뮤니티 글 등록</h2>
+            <hr>
+            <div id="cmtitlediv">
+                <input id="cmtitle" name="board_title" type="text" placeholder=" 농뮤니티 제목을 입력하세요. ">
+            </div>
+            <hr>
+            <section id="cmtype">
+                <article id="writername"><p>작성자 닉네임</p></article>
+                <article id="adddate"><p th:name="board_write_date" th:text="'등록일 : ' + ${today}"></p></article>
+                <article id="freewritebt"><button id="freewrite" class="buttonNormal" onclick="toggleButton('freewrite', 'recruitment', event)">자유글</button></article>
+                <article id="recruitmentbt"><button id="recruitment" class="buttonNormal" onclick="toggleButton('recruitment', 'freewrite', event)">모집글</button></article>
+                <!-- F또는 R을 저장하기 위한 숨겨진 인풋-->
+                <input type="hidden" id="boardType" name="board_type" value="">
+
+            </section>
+            <div id="writeinfodiv">
+                <textarea id="writeinfo" name="board_content" placeholder="적을 내용을 입력해주세요."></textarea>
+            </div>
+            <section id="cmbt">
+                <button id="cmcanclebt" type="button" onclick="cancelAndRedirect()">취소</button>
+                <article><button id="cmaddbt" type="submit">작성</button></article>
+            </section>
         </section>
-        <div id="writeinfodiv">
-            <textarea id="writeinfo" placeholder="적을 내용을 입력해주세요."></textarea>
-        </div>
-        <section id="cmbt">
-            <article><button id="cmcanclebt">취소</button></article>
-            <article><button id="cmaddbt" type="submit">작성</button></article>
-        </section>
-    </section>
+    </form>
 
 
 
