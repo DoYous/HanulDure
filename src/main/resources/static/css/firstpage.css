@@ -1,0 +1,108 @@
+#centerText{
+    text-align: center;
+}
+
+.mainheader{
+    padding:2%;
+    background-image: url("../image/mainbackground.png");
+    background-size: cover;
+    color:white;
+    height: 80vmin;
+}
+
+#logo{
+    display: inline;
+    font-size: 220%;
+}
+
+#loginbutton{
+    float:right;
+    font-size:150%;
+    background-color: green;
+    color:white;
+}
+
+.mainheader>#centerText1{
+    text-align: center;
+    font-size: 300%;
+    margin-top:10%;
+    margin-bottom: 5%;
+
+}
+
+.mainheader>#centerText2{
+    text-align: center;
+    font-size: 160%;
+    margin-top:5%;
+    margin-bottom: 5%;
+}
+
+.mainranking{
+    padding-right:2%;
+    padding-left:2%;
+}
+
+#label1{
+    font-size:130%;
+    color: green;
+}
+
+#label2{
+    font-size:120%;
+    color:orange;
+}
+
+#mainbutton{
+    float:right;
+    font-size:150%;
+    background-color: green;
+    color:white;
+}
+
+#ranking{
+    text-align: center;
+}
+
+#rankingbox{
+    display: inline-block;
+    background-color: white;
+    border: 1px solid black;
+    height: 400px;
+    width: 350px;
+    margin-left: 5%;
+}
+
+#name{
+    font-size:115%;
+
+}
+
+#rankingimg{
+    width: 50%;
+    height: 50%;
+}
+
+#locate{
+    font-size:90%;
+    color:brown;
+    margin-bottom: 5px;
+}
+
+#price{
+    font-size:115%;
+    color:green;
+    margin-bottom: 5px;
+}
+
+#count{
+    font-size:80%;
+}
+
+#detailbutton{
+    margin-top: 20px;
+    font-size:150%;
+    background-color: green;
+    color:white;
+    padding-left: 20%;
+    padding-right: 20%;
+}
