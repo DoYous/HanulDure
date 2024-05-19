@@ -16,4 +16,10 @@ public class MainController {
         return model;
     }
 
+    @GetMapping("login")
+    public ModelAndView login(ModelAndView model){
+        model.setViewName("/main/login");
+        return model;
+    }
+
 }
