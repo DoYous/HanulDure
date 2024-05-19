@@ -38,4 +38,15 @@ public class CommunityController {
         model.setViewName("/community/communitydetail");
         return model;
     }
+
+    //메인버튼 클릭 시
+    @GetMapping("community/mainbt")
+    public String gomain() {
+        return "redirect:/hanuldure/mainpage";
+    }
+
+    @GetMapping("community/gowordlist")
+    public String gowordlist() {
+        return "redirect:/hanuldure/experiencepage";
+    }
 }
