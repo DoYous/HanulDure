@@ -26,8 +26,8 @@
         <section id="cmtype">
             <article id="writername"><p>작성자 닉네임</p></article>
             <article id="adddate"><p th:text="'등록일 : ' + ${today}"></p></article>
-            <article id="freewritebt"><button class="buttonNormal" onclick="toggleButton(this)">자유글</button></article>
-            <article id="recruitmentbt"><button class="buttonNormal" onclick="toggleButton(this)">모집글</button></article>
+            <article id="freewritebt"><button id="freewrite" class="buttonNormal" onclick="toggleButton('freewrite', 'recruitment')">자유글</button></article>
+            <article id="recruitmentbt"><button id="recruitment" class="buttonNormal" onclick="toggleButton('recruitment', 'freewrite')">모집글</button></article>
         </section>
         <div id="writeinfodiv">
             <textarea id="writeinfo" placeholder="적을 내용을 입력해주세요."></textarea>
