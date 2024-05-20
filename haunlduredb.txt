@@ -1,7 +1,7 @@
 CREATE TABLE  user  (
 	 user_seq 	int	NOT NULL	,
 	 user_id 	varchar(20)	NOT NULL,
-	 user_password 	int	NOT NULL,
+	 user_password 	varchar(20)	NOT NULL,
 	 user_email 	varchar(30)	NOT NULL,
 	 user_name 	varchar(10)	NOT NULL,
 	 user_birth 	date	NOT NULL,
@@ -83,3 +83,9 @@ ALTER TABLE  board  ADD CONSTRAINT  PK_BOARD  PRIMARY KEY (
 ALTER TABLE  manager  ADD CONSTRAINT  PK_MANAGER  PRIMARY KEY (
 	 manager_seq 
 );
+
+ALTER TABLE user MODIFY COLUMN user_seq int NOT NULL AUTO_INCREMENT;
+ALTER TABLE exp MODIFY COLUMN exp_seq int NOT NULL AUTO_INCREMENT;
+ALTER TABLE exp_review MODIFY COLUMN rev_seq int NOT NULL AUTO_INCREMENT;
+ALTER TABLE board MODIFY COLUMN board_seq int NOT NULL AUTO_INCREMENT;
+ALTER TABLE manager MODIFY COLUMN manager_seq int NOT NULL AUTO_INCREMENT;
