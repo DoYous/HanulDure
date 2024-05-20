@@ -1,9 +1,9 @@
 ---
 name: "⚡Feature issue template"
 about: 기능 추가/삭제/수정
-title: "[Hanuldure/Name] Title"
-labels: "✨PR"
-assignees: hyojunahn111
+title: "[feature/Name] Title"
+labels: "⚡Feature"
+assignees: ''
 
 ---
 
