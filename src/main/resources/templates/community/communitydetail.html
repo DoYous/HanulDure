@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <title>communitydetail</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/communitydetail.css}"/>
+    <script type="text/javascript" th:src="@{/js/communitydetailbtonoff.js}"></script>
+    <!--  폰트  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <!-- body 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Jua&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <div>
             <img id="hanuldureimg" src="/image/img.png">
-            <h1 id="hanulduretext">한울두레</h1>
+            <h1 id="hanulduretext" class="gugi-regular">한울두레</h1>
             <button id="mainbt" onclick="location.href='/hanuldure/community/mainbt'">Main</button>
 
         </div>
@@ -18,27 +28,36 @@
 
     <section id="cmdetail">
         <h2>농뮤니티</h2>
-        <hr>
+        <hr class="titlehr">
         <div id="cmdtitlediv">
-            <h1 id="cmdtitle">농뮤니티 제목</h1>
+            <p id="cmdtitle" th:text="${community.board_title}">농뮤니티 제목</p>
         </div>
         <hr>
         <section id="cmtype">
             <article id="writername"><p>작성자 닉네임</p></article>
-            <article id="adddate"><p th:text="'등록일 : ' + ${today}"></p></article>
-            <article id="freewritebt"><button class="buttonNormal">자유글</button></article>
-            <article id="recruitmentbt"><button class="buttonNormal">모집글</button></article>
+            <article id="adddate"><p th:text="${community.board_write_date}">작성일</p></article>
+            <article id="freewritebt"><button id="freeButton" class="buttonNormal">자유글</button></article>
+            <article id="recruitmentbt"><button id="recruitButton" class="buttonNormal">모집글</button></article>
+            <input type="hidden" id="boardType" name="board_type" th:value="${community.board_type}">
         </section>
         <div id="writeinfodiv">
             <div id="writeinfodiv2">
-                <p>테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</p>
+                <p th:text="${community.board_content}"></p>
             </div>
         </div>
         <div id="detailbt">
+<!--            <button id="modifybt" th:attr="data-boardseq=${community.board_seq}" onclick="modifyComment(this)">수정</button>-->
             <button id="modifybt">수정</button>
             <button id="remotebt">삭제</button>
         </div>
     </section>
+
+
+    <!-- 밑으로 댓글 기능 -->
+
+
+
+
     <section id="cmdetail2">
         <h1>댓글</h1>
         <hr>
