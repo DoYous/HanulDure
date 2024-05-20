@@ -1,3 +1,8 @@
+body{
+    margin:0;
+    font-family: "Jua", sans-serif;
+}
+
 #centerText{
     text-align: center;
 }
@@ -57,13 +62,14 @@
     font-size:150%;
     background-color: green;
     color:white;
+    font-family: "Jua", sans-serif;
 }
 
 #ranking{
     text-align: center;
 }
 
-#rankingbox{
+#rankingbox1,#rankingbox2,#rankingbox3{
     display: inline-block;
     background-color: white;
     border: 1px solid black;
@@ -72,29 +78,29 @@
     margin-left: 5%;
 }
 
-#name{
+#name1,#name2,#name3{
     font-size:115%;
 
 }
 
-#rankingimg{
+#rankingimg1,#rankingimg2,#rankingimg3{
     width: 50%;
     height: 50%;
 }
 
-#locate{
+#locate1,#locate2,#locate3{
     font-size:90%;
     color:brown;
     margin-bottom: 5px;
 }
 
-#price{
+#price1,#price2,#price3{
     font-size:115%;
     color:green;
     margin-bottom: 5px;
 }
 
-#count{
+#count1,#count11,#count2,#count22,#count3,#count33{
     font-size:80%;
 }
 
@@ -105,4 +111,5 @@
     color:white;
     padding-left: 20%;
     padding-right: 20%;
+    font-family: "Jua", sans-serif;
 }

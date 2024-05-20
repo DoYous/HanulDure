@@ -13,11 +13,11 @@ body{
 #content{
     display:inline-block;
     width:40% ;
-    height: 75%;
+    height: 85%;
     background-color: rgba(255, 255, 255, 0.5);
     margin-left: 30%;
     margin-top: 5%;
-    padding:2%;
+    padding:1px;
 }
 
 #textgroup1{
@@ -39,31 +39,28 @@ body{
     text-align: center;
     color:green;
     font-size:250%;
-    margin-bottom: 10%;
+    margin-bottom: 1px;
 }
 
-#idtext,#pwdtext{
+#idtext,#pwtext,#nametext,#emailtext,#birthtext,#phonetext, #select{
     margin-left: 10%;
-    margin-top:2%;
-    margin-bottom: 2%;
+    margin-top:0;
+    margin-bottom: 0;
 }
 
-#idTextBox{
+
+#idTextBox, #pwTextBox, #emailTextBox,#nameTextBox,#birthTextBox,#phoneTextBox{
     width:80%;
-    height:50px;
-    margin-bottom:5%;
+    height:30px;
 }
 
-#pwdTextBox{
-    width:80%;
-    height:50px;
-}
+
 
 #textgroup2{
     text-align: center;
 }
 
-#searchid,#searchpwd,#createmember{
+#searchid,#searchpwd,#createmember, #labeltext1{
     margin-top:3%;
     margin-left: 8%;
     margin-right: 8%;
@@ -74,18 +71,22 @@ body{
     color:green;
 }
 
-#buttonbox,#id,#pwd{
+#buttonbox,#id,#pw,#name,#email,#birth,#phone{
     text-align: center;
+}
+
+#labeltext{
+    padding-left:30%;
 }
 
 #button{
     height: 100%;
-    margin-top:10%;
     background-color: green;
     color:white;
-    padding:3%;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding:1%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-top:5%;
     font-size:120%;
     font-family: "Jua", sans-serif;
 }
