@@ -1,3 +1,7 @@
+body{
+    margin:0;
+}
+
 .content{
     background-image :url("../image/loginbackground.png");
     background-size: contain;
@@ -15,7 +19,7 @@
     padding:2%;
 }
 
-#textgroup{
+#textgroup1{
     text-align: center;
 }
 
@@ -34,16 +38,31 @@
     text-align: center;
     color:green;
     font-size:250%;
+    margin-bottom: 10%;
 }
 
 #text4{
+    margin-top:2%;
+    margin-bottom: 2%;
+}
 
+#idTextBox{
+    width:80%;
+    height:5%;
+}
+
+#pwdTextBox{
+    width:80%;
+    height:5%;
 }
 
 #text5{
-
+    margin-top:3%;
+    text-align: center;
 }
 
 #button{
-
+    margin:5%;
+    display :inline-block;
+    text-align: center;
 }
