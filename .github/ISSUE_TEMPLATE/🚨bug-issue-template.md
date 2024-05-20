@@ -1,7 +1,7 @@
 ---
 name: "\U0001F6A8bug issue template"
 about: 버그 발생 시 활용
-title: "[Feature/Bug] Title"
+title: "[Hanuldure/Bug] Title"
 labels: "\U0001F6A8bug"
 assignees: hyojunahn111
 
