@@ -42,21 +42,28 @@ body{
     margin-bottom: 10%;
 }
 
-#idtext,#pwdtext{
+#idtext,#pwdtext,#nametext{
     margin-left: 10%;
     margin-top:2%;
     margin-bottom: 2%;
 }
 
+#nameTextBox{
+    width:80%;
+    height:50px;
+    margin-bottom:3%;
+
+}
+
 #idTextBox{
     width:80%;
     height:50px;
-    margin-bottom:5%;
 }
 
 #pwdTextBox{
     width:80%;
     height:50px;
+    margin-bottom:3%;
 }
 
 #textgroup2{
@@ -74,13 +81,13 @@ body{
     color:green;
 }
 
-#buttonbox,#id,#pwd{
+#buttonbox,#id,#pwd,#name{
     text-align: center;
 }
 
 #button{
     height: 100%;
-    margin-top:10%;
+    margin-top:7%;
     background-color: green;
     color:white;
     padding:3%;
