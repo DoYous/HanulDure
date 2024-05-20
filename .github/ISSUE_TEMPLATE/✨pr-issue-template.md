@@ -1,9 +1,9 @@
 ---
 name: "✨PR issue template"
 about: PR시 활용
-title: "[Hanuldure/name] -> [Hanuldure/name] PR"
+title: "[feature/name] -> [develop/name] PR"
 labels: "✨PR"
-assignees: hyojunahn111
+assignees: ''
 
 ---
 
