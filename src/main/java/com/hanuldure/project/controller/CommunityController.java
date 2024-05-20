@@ -10,9 +10,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class CommunityController {
 
     @GetMapping("community")
-    public ModelAndView partyList(ModelAndView model) {
+    public ModelAndView partyList(ModelAndView mv) {
 
-        model.setViewName("/community/main");
-        return model;
+        mv.setViewName("/community/main");
+        return mv;
+    }
+
+    @GetMapping("community/partyApply")
+    public ModelAndView partyApply(ModelAndView mv) {
+
+        mv.setViewName("/community/partyApply");
+        return mv;
     }
 }
