@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HanulDure</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/party/party_list.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.onload = () => {
+            document.getElementById('logo-wrap').onclick = () => {
+                location.href = "main";
+            };
+
+            document.getElementById('logout-button').onclick = () => {
+                location.href = "logout";
+            }
+
+            document.getElementById('link-partyList').onclick = () => {
+                location.href = "community/partyList"
+            }
+
+            document.getElementById('link-boardList').onclick = () => {
+                location.href = "community/boardList"
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo-wrap">
+                <img class="logo-img" src="/party/logo.svg">&nbsp;<div class="logo-text gugi-regular">한울두레</div>
+            </div>
+            <div id="logout-button" class="jua-regular">로그아웃</div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-header">
+            <div class="carousel-wrap">
+                <div id="carouselRank" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="carousel-item-wraps">
+                                <div class="carousel-item-wrap">
+                                    <div class="item-rank-first">이달의 체험 🥇</div>
+                                    <div class="item-title">체험 제목</div>
+                                    <div class="item-content">체험 내용 요약</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                        </div>
+
+                        <div class="carousel-item">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRank" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRank" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="searchParty">
+                <span style="color: white; font-size: 30px">농촌체험</span>
+                <form id="search-party-form" action="/hanuldure/searchParty">
+                    <input id="search-party-input" name="keyword" type="text" placeholder="찾고 있는 체험이 있나요?">
+                </form>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <!-- 체험 목록 -->
+            <div class="content-caption">
+                <div class="caption-title">
+                    체험목록
+                </div>
+                <div id="link-partyList" class="caption-link hover-ul">
+                    더보기
+                </div>
+            </div>
+            <!--<div class="content-party-list" th:with="list=${param.partyList}">
+            </div>-->
+            <div class="content-party-list">
+                <div class="party-card">
+                    <div class="party-image"></div>
+                    <div class="party-content">
+                        <div class="party-title">체험 이름</div>
+                        <div class="card-address">OO도 OO시 OO길 OO</div>
+                        <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
+                        <div class="card-fee">0000원</div>
+                    </div>
+                </div>
+                <div class="party-card">
+                    <div class="party-image"></div>
+                    <div class="party-content">
+                        <div class="party-title">체험 이름</div>
+                        <div class="card-address">OO도 OO시 OO길 OO</div>
+                        <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
+                        <div class="card-fee">0000원</div>
+                    </div>
+                </div>
+                <div class="party-card">
+                    <div class="party-image"></div>
+                    <div class="party-content">
+                        <div class="party-title">체험 이름</div>
+                        <div class="card-address">OO도 OO시 OO길 OO</div>
+                        <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
+                        <div class="card-fee">0000원</div>
+                    </div>
+                </div>
+                <div class="party-card">
+                    <div class="party-image"></div>
+                    <div class="party-content">
+                        <div class="party-title">체험 이름</div>
+                        <div class="party-address">OO도 OO시 OO길 OO</div>
+                        <div class="party-capacity">00명 ~ 00명 (00명 신청중)</div>
+                        <div class="party-fee">0000원</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="content-separation">
+
+            <div class="content-caption">
+                <div class="caption-title">
+                    농뮤니티
+                </div>
+                <div id="link-boardList" class="caption-link hover-ul">
+                    더보기
+                </div>
+            </div>
+            <div class="content-board-list">
+                <div class="board-card-free">
+                    <div class="board-title hover-ul">
+                        하동으로 귀농하려하는데 팁 같은걸 받을 수 있을까요? [00]
+                    </div>
+                    <div class="board-writeDate">
+                        0000-00-00
+                    </div>
+                </div>
+                <div class="board-card-recruit">
+                    <div class="board-title hover-ul">
+                        인천 농어촌체험 여행가려하는데 같이 갈분 있을까요? [00]
+                    </div>
+                    <div class="board-writeDate">
+                        0000-00-00
+                    </div>
+                </div>
+                <div class="board-card-free">
+                    <div class="board-title hover-ul">
+                        하동으로 귀농하려하는데 팁 같은걸 받을 수 있을까요? [00]
+                    </div>
+                    <div class="board-writeDate">
+                        0000-00-00
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        Footer
+    </footer>
+</body>
+</html>
