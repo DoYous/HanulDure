@@ -20,3 +20,18 @@ function cancelAndRedirect() {
     // 사용자를 지정된 페이지로 리다이렉트
     window.location.href = 'http://localhost:8080/hanuldure/experiencepage';
 }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+
+    const boardType = document.getElementById('boardType').value;
+    const freeButton = document.getElementById('freewrite');
+    const recruitButton = document.getElementById('recruitment');
+
+    if (boardType === 'F') {
+        freeButton.classList.remove('buttonNormal');
+        freeButton.classList.add('buttonActive');
+    } else if (boardType === 'R') {
+        recruitButton.classList.remove('buttonNormal');
+        recruitButton.classList.add('buttonActive');
+    }
+});
