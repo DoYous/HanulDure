@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("hanuldure")
 public class MainController {
 
-    @GetMapping("main")
+    @GetMapping(path = {"/", "main"})
     public ModelAndView main(ModelAndView model) {
 
         model.setViewName("/main/main");
