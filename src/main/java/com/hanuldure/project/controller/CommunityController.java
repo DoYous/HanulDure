@@ -22,17 +22,17 @@ public class CommunityController {
 
     @PostMapping("add")
     public ModelAndView add(HttpServletRequest request, ModelAndView model) {
-
         CommunityTO community = new CommunityTO();
         community.setBoard_title(request.getParameter("board_title"));
-        community.setBoard_write_date(new Date());
         community.setBoard_type(request.getParameter("board_type"));
         community.setBoard_content(request.getParameter("board_content"));
+        community.setBoard_write_date(new Date());
 
         System.out.println(community);
-
         communitydaoimpl.insertCommunity(community);
 
+        // 리다이렉트 URL 설정
+        model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoard_seq());
         return model;
     }
 
@@ -53,19 +53,35 @@ public class CommunityController {
     }
 
     //글 수정
-    @GetMapping("community/edit")
-    public ModelAndView communityedit(ModelAndView model) {
+    @GetMapping("community/edit/{board_seq}")
+    public ModelAndView communityedit(@PathVariable("board_seq") int board_seq, ModelAndView model) {
+
+        CommunityTO community = communityService.getCommunityBySeq(board_seq);
+        model.addObject("community", community);
+        System.out.println(community);
+
         model.setViewName("/community/communityedit");
+        LocalDate today = LocalDate.now();
+
+
+
+        model.addObject("today", today.toString());
         return model;
     }
 
     //상세페이지
-    @GetMapping("community/detail")
-    public ModelAndView communitydetail(ModelAndView model) {
+    @GetMapping("community/detail/{board_seq}")
+    public ModelAndView communityDetail(@PathVariable("board_seq") int board_seq, ModelAndView model) {
+
+        CommunityTO community = communityService.getCommunityBySeq(board_seq);
+        model.addObject("community", community);
+        System.out.println(community);
 
         model.setViewName("/community/communitydetail");
         return model;
     }
+
+
 
     //메인버튼 클릭 시
     @GetMapping("community/mainbt")

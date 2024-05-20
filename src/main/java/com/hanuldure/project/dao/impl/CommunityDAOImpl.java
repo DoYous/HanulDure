@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository("communityDAO")
 public class CommunityDAOImpl implements CommunityDAO {
 
     @Autowired
@@ -16,6 +16,11 @@ public class CommunityDAOImpl implements CommunityDAO {
     @Override
     public int insertCommunity(CommunityTO communityTO) {
         return mapper.insertCommunity(communityTO);
+    }
+
+    @Override
+    public CommunityTO selectCommunityBySeq(int board_seq) {
+        return mapper.selectCommunityBySeq(board_seq);
     }
 
 }
