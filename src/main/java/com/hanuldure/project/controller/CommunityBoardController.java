@@ -15,7 +15,7 @@ import java.util.Date;
 
 @Controller
 @RequestMapping("hanuldure")
-public class CommunityController {
+public class CommunityBoardController {
 
     @Autowired
     private CommunityDAOImpl communitydaoimpl;
@@ -39,7 +39,7 @@ public class CommunityController {
     private final CommunityService communityService;
 
     @Autowired
-    public CommunityController(CommunityService communityService) {
+    public CommunityBoardController(CommunityService communityService) {
         this.communityService = communityService;
     }
 
