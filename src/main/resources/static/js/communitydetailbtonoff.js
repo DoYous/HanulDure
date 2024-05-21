@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
-// function modifyComment(button) {
-//     var boardSeq = button.getAttribute('data-boardseq');
-//     location.href = '/hanuldure/community/' + boardSeq;
-// }
+function modifyComment(button) {
+    var boardSeq = button.getAttribute('data-boardseq');
+    location.href = '/hanuldure/community/edit/' + boardSeq;
+}

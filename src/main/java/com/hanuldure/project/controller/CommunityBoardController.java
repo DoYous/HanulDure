@@ -1,7 +1,7 @@
 package com.hanuldure.project.controller;
 
 import com.hanuldure.project.dao.CommunityDAO;
-import com.hanuldure.project.dao.impl.CommunityDAOImpl;
+//import com.hanuldure.project.dao.impl.CommunityDAOImpl;
 import com.hanuldure.project.dto.CommunityTO;
 import com.hanuldure.project.service.CommunityService;
 import jakarta.servlet.http.HttpServlet;
@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -18,7 +20,7 @@ import java.util.Date;
 public class CommunityBoardController {
 
     @Autowired
-    private CommunityDAOImpl communitydaoimpl;
+    private CommunityDAO communitydao;
 
     @PostMapping("add")
     public ModelAndView add(HttpServletRequest request, ModelAndView model) {
@@ -29,7 +31,7 @@ public class CommunityBoardController {
         community.setBoard_write_date(new Date());
 
         System.out.println(community);
-        communitydaoimpl.insertCommunity(community);
+        communitydao.insertCommunity(community);
 
         // 리다이렉트 URL 설정
         model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoard_seq());
@@ -69,6 +71,24 @@ public class CommunityBoardController {
         return model;
     }
 
+    @PostMapping("community/update")
+    public ModelAndView updateCommunity(HttpServletRequest request, ModelAndView model) {
+        int board_seq = Integer.parseInt(request.getParameter("board_seq"));
+        CommunityTO community = new CommunityTO();
+        community.setBoard_seq(board_seq);
+        community.setBoard_title(request.getParameter("board_title"));
+        community.setBoard_type(request.getParameter("board_type"));
+        community.setBoard_content(request.getParameter("board_content"));
+        community.setBoard_write_date(new Date());
+
+        System.out.println(community);
+
+        communityService.updateCommunity(community);
+
+        model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoard_seq());
+        return model;
+    }
+
     //상세페이지
     @GetMapping("community/detail/{board_seq}")
     public ModelAndView communityDetail(@PathVariable("board_seq") int board_seq, ModelAndView model) {
@@ -81,7 +101,12 @@ public class CommunityBoardController {
         return model;
     }
 
-
+    @PostMapping("/community/delete")
+    public String deleteCommunity(@RequestParam("board_seq") int boardSeq) {
+        int result = communityService.deleteCommunity(boardSeq);
+        
+        return "redirect:/community";
+    }
 
     //메인버튼 클릭 시
     @GetMapping("community/mainbt")
