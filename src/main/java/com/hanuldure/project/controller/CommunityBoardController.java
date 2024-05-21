@@ -1,7 +1,7 @@
 package com.hanuldure.project.controller;
 
 import com.hanuldure.project.dao.CommunityDAO;
-import com.hanuldure.project.dao.impl.CommunityDAOImpl;
+//import com.hanuldure.project.dao.impl.CommunityDAOImpl;
 import com.hanuldure.project.dto.CommunityTO;
 import com.hanuldure.project.service.CommunityService;
 import jakarta.servlet.http.HttpServlet;
@@ -18,7 +18,7 @@ import java.util.Date;
 public class CommunityBoardController {
 
     @Autowired
-    private CommunityDAOImpl communitydaoimpl;
+    private CommunityDAO communitydao;
 
     @PostMapping("add")
     public ModelAndView add(HttpServletRequest request, ModelAndView model) {
@@ -29,7 +29,7 @@ public class CommunityBoardController {
         community.setBoard_write_date(new Date());
 
         System.out.println(community);
-        communitydaoimpl.insertCommunity(community);
+        communitydao.insertCommunity(community);
 
         // 리다이렉트 URL 설정
         model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoard_seq());

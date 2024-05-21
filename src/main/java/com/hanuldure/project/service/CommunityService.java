@@ -1,7 +1,7 @@
 package com.hanuldure.project.service;
 
 import com.hanuldure.project.dao.CommunityDAO;
-import com.hanuldure.project.dao.impl.CommunityDAOImpl;
+//import com.hanuldure.project.dao.impl.CommunityDAOImpl;
 import com.hanuldure.project.dto.CommunityTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
