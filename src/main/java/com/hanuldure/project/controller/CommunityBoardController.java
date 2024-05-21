@@ -69,6 +69,24 @@ public class CommunityBoardController {
         return model;
     }
 
+    @PostMapping("community/update")
+    public ModelAndView updateCommunity(HttpServletRequest request, ModelAndView model) {
+        int board_seq = Integer.parseInt(request.getParameter("board_seq"));
+        CommunityTO community = new CommunityTO();
+        community.setBoard_seq(board_seq);
+        community.setBoard_title(request.getParameter("board_title"));
+        community.setBoard_type(request.getParameter("board_type"));
+        community.setBoard_content(request.getParameter("board_content"));
+        community.setBoard_write_date(new Date());
+
+        System.out.println(community);
+
+        communityService.updateCommunity(community);
+
+        model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoard_seq());
+        return model;
+    }
+
     //상세페이지
     @GetMapping("community/detail/{board_seq}")
     public ModelAndView communityDetail(@PathVariable("board_seq") int board_seq, ModelAndView model) {
