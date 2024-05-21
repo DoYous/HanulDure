@@ -13,19 +13,11 @@
     <script type="text/javascript">
         window.onload = () => {
             document.getElementById('logo-wrap').onclick = () => {
-                location.href = "/main";
+                location.href = "/hanuldure/firstpage";
             };
 
             document.getElementById('logout-button').onclick = () => {
-                location.href = "/logout";
-            }
-
-            document.getElementById('link-partyList').onclick = () => {
-                location.href = "/community/partyList"
-            }
-
-            document.getElementById('link-boardList').onclick = () => {
-                location.href = "/community/boardList"
+                location.href = "/hanuldure/logout";
             }
         };
     </script>
@@ -84,7 +76,7 @@
             </div>
         </div>
         <div class="content-board-list">
-            <div class="board-card-free">
+            <div class="board-card-free" onclick="location.href='/hanuldure/community/detail/lastSeq'">
                 <div class="board-title hover-ul">
                     하동으로 귀농하려하는데 팁 같은걸 받을 수 있을까요? [00]
                 </div>
@@ -92,7 +84,7 @@
                     0000-00-00
                 </div>
             </div>
-            <div class="board-card-recruit">
+            <div class="board-card-recruit" onclick="location.href='/hanuldure/community/detail/lastSeq-1'">
                 <div class="board-title hover-ul">
                     인천 농어촌체험 여행가려하는데 같이 갈분 있을까요? [00]
                 </div>
@@ -100,7 +92,7 @@
                     0000-00-00
                 </div>
             </div>
-            <div class="board-card-free">
+            <div class="board-card-free" onclick="location.href='/hanuldure/community/detail/lastSeq-2'">
                 <div class="board-title hover-ul">
                     하동으로 귀농하려하는데 팁 같은걸 받을 수 있을까요? [00]
                 </div>

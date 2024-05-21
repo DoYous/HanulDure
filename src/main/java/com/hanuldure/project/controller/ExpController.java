@@ -13,7 +13,7 @@ import java.util.Date;
 @RequestMapping("hanuldure")
 public class ExpController {
 
-    @GetMapping("expDetail")
+    @GetMapping("expDetail/{expSeq}")
     public ModelAndView expDetail(ModelAndView model) {
         // Date 객체 생성
         Calendar calendar = Calendar.getInstance();
