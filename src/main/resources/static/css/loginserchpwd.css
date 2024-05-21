@@ -52,18 +52,21 @@ body{
     width:80%;
     height:50px;
     margin-bottom:3%;
+    border-radius:20px;
 
 }
 
 #idTextBox{
     width:80%;
     height:50px;
+    border-radius:20px;
 }
 
 #pwdTextBox{
     width:80%;
     height:50px;
     margin-bottom:3%;
+    border-radius:20px;
 }
 
 #textgroup2{
@@ -95,4 +98,5 @@ body{
     padding-right: 20%;
     font-size:120%;
     font-family: "Jua", sans-serif;
+    border-radius:20px;
 }
