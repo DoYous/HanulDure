@@ -12,6 +12,6 @@ public interface CommunityMapper {
     @Options(useGeneratedKeys = true, keyProperty = "board_seq")
     int insertCommunity(CommunityTO communityTO);
 
-    @Select("SELECT board_title, board_content, board_write_date, board_type FROM board WHERE board_seq = #{boardSeq}")
+    @Select("SELECT board_seq, board_title, board_content, board_write_date, board_type FROM board WHERE board_seq = #{boardSeq}")
     CommunityTO selectCommunityBySeq(int board_seq);
 }
