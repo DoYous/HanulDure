@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>체험 상세페이지</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/expDetail.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Abril+Fatface&family=Gowun+Dodum&family=Jua&family=Noto+Serif+KR&family=Sedan:ital@0;1&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="bodywidth">
+    <div class="detail1">
+        <div class="img1">
+            <img th:src="@{${exp.expImg}}" alt="체험 이미지" class="img1"/>
+        </div>
+        <div class="detailDiv">
+            <div class="flexCon">
+            <div class="detailText">
+                <h2 th:text="${exp.expAddr}"></h2>
+                <h1 th:text="${exp.expTitle}"></h1>
+            </div>
+            <div class="profile">프로필</div>
+            </div>
+            <hr/>
+            <div class="flexClass">
+                <div class="flexdiv">
+                    <h3>모집기간</h3>
+                    <h3>일시</h3>
+                    <h3>체험 인원</h3>
+                    <h3>소요시간</h3>
+                    <h3>체험 비용</h3>
+
+                </div>
+                <div class="flexdiv2">
+                    <h3 th:text="${#dates.format(exp.expGetStart, 'yyyy-MM-dd')} + ' ~ ' + ${#dates.format(exp.expGetEnd, 'yyyy-MM-dd')}">
+                        모집기간</h3>
+                    <h3 th:text="${#dates.format(exp.expStart, 'yyyy-MM-dd')} + ' ~ ' + ${#dates.format(exp.expEnd, 'yyyy-MM-dd')}">
+                        일시</h3>
+                    <h3 th:text="'최소 '+${exp.expMin} + '명 / 최대 ' + ${exp.expMax} + '명'">체험인원</h3>
+                    <h3 th:text="${exp.expTime} + '분'"></h3>
+                    <h3 th:text="${exp.expPrice} + '원'">체험비용</h3>
+                </div>
+            </div>
+            <hr/>
+            <button class="reservBtn">예약 가능</button>
+        </div>
+    </div>
+    <div class="detail2">
+        <h3 th:text="${exp.expTitle}" class="subText">체험 제목</h3>
+        <div class="img2">
+            <img th:src="@{${exp.expImg}}" alt="체험 이미지" class="img2"/>
+        </div>
+        <div class="font23">
+
+        <h4 th:text="${exp.expContent}" >체험 내용</h4>
+        <h3>전화번호 010 - 0000 - 0000</h3>
+        <button class="deleteBtn" >삭제</button>
+        </div>
+    </div>
+    <div class="detail3">
+        <div class="reviewText">
+            <h1 class="review">Review</h1>
+            <h5>최초 후기 작성시에 100pt가 적립됩니다</h5>
+        </div>
+        <hr/>
+        <div class="flex">
+            <div class="reviewText2">
+                <div class="text">
+                    <h3 th:text="${exp.userName}">작성자 닉네임</h3>
+                </div>
+                <p th:text="${exp.revContent}">후기내용</p>
+            </div>
+        </div>
+        <hr/>
+        <div class="flex">
+            <div class="write">
+                <input class="writeText" type="text">
+                <button class="writeBtn">작성</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

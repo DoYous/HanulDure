@@ -1,0 +1,65 @@
+*{ font-family: "Jua", sans-serif;
+    font-weight: 500;
+    font-style: normal;}
+.bodywidth{    display: flex;
+    flex-direction: column;
+    align-items: center;}
+.bodywidth2{    display: flex;
+    flex-direction: column;
+    align-items: center;}
+.expform{width: 70%;}
+.expformdetail{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 40px;}
+.expDetail{    display: flex;
+    flex-direction: column;
+    width: 70%;}
+.flex{ display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 700px;}
+input{
+    width: 200px;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 20px;}
+.addressBtn{    background: #a0dca9;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;}
+.submitBtn{
+    width: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background: #a0dca9;
+    font-size: 18px;
+    cursor: pointer;
+}
+textarea{    height: 300px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 20px;
+    resize: none;
+}
+.submitDiv{width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+.formdiv1{       display: flex;
+    flex-direction: column;
+    min-width: 80px;}
+.formdiv1 h3{    line-height: 1.2;}
+.formdiv2{display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+.none{border:none;}
