@@ -94,12 +94,21 @@ public class CommunityBoardController {
     public ModelAndView communityDetail(@PathVariable("board_seq") int board_seq, ModelAndView model) {
 
         CommunityTO community = communityService.getCommunityBySeq(board_seq);
-        model.addObject("community", community);
-        System.out.println(community);
+        if (community == null) {
+            model.setViewName("redirect:/hanuldure/errorPage");
+            return model;
+        }
 
+        model.addObject("community", community);
         model.setViewName("/community/communitydetail");
         return model;
     }
+
+    @GetMapping("errorPage")
+    public String errorPage() {
+        return "error/errorpage";
+    }
+
 
     @PostMapping("/community/delete")
     public String deleteCommunity(@RequestParam("board_seq") int boardSeq) {
@@ -125,4 +134,5 @@ public class CommunityBoardController {
         communityService.addCommunity(communityTO);
         return "redirect:/community/detail";
     }
+
 }
