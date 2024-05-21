@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -99,7 +101,12 @@ public class CommunityBoardController {
         return model;
     }
 
-
+    @PostMapping("/community/delete")
+    public String deleteCommunity(@RequestParam("board_seq") int boardSeq) {
+        int result = communityService.deleteCommunity(boardSeq);
+        
+        return "redirect:/community";
+    }
 
     //메인버튼 클릭 시
     @GetMapping("community/mainbt")

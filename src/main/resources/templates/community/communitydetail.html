@@ -48,7 +48,10 @@
         <div id="detailbt">
             <button id="modifybt" th:attr="data-boardseq=${community.board_seq}" onclick="modifyComment(this)">수정</button>
 <!--            <button id="modifybt">수정</button>-->
-            <button id="remotebt">삭제</button>
+            <form action="/hanuldure/community/delete" method="post">
+                <input type="hidden" name="board_seq" th:value="${community.board_seq}">
+                <button id="remotebt">삭제</button>
+            </form>
         </div>
     </section>
 

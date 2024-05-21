@@ -23,4 +23,8 @@ public class CommunityDAO {
     public int updateCommunity(CommunityTO communityTO) {
         return mapper.updateCommunity(communityTO);
     }
+
+    public int deleteCommunityBySeq(int board_seq) {
+        return mapper.deleteCommunityBySeq(board_seq);
+    }
 }
