@@ -25,6 +25,7 @@ body{
     font-size:150%;
     background-color: green;
     color:white;
+    border-radius:30px;
 }
 
 .mainheader>#centerText1{
@@ -57,12 +58,13 @@ body{
     color:orange;
 }
 
-#mainbutton{
-    float:right;
-    font-size:150%;
+#mainbutton {
+    float: right;
+    font-size: 150%;
     background-color: green;
-    color:white;
+    color: white;
     font-family: "Jua", sans-serif;
+    border-radius: 30px;
 }
 
 #ranking{
@@ -76,6 +78,7 @@ body{
     height: 400px;
     width: 350px;
     margin-left: 5%;
+    border-radius:20px;
 }
 
 #name1,#name2,#name3{
@@ -104,12 +107,13 @@ body{
     font-size:80%;
 }
 
-#detailbutton{
+#detailbutton1, #detailbutton2, #detailbutton3 {
     margin-top: 20px;
-    font-size:150%;
+    font-size: 150%;
     background-color: green;
-    color:white;
+    color: white;
     padding-left: 20%;
     padding-right: 20%;
     font-family: "Jua", sans-serif;
+    border-radius: 20px;
 }
