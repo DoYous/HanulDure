@@ -14,4 +14,7 @@ public interface CommunityMapper {
 
     @Update("UPDATE board SET board_title = #{board_title}, board_content = #{board_content}, board_write_date = now(), board_type = #{board_type} WHERE board_seq = #{board_seq}")
     int updateCommunity(CommunityTO communityTO);
+
+    @Delete("DELETE FROM board WHERE board_seq = #{boardSeq}")
+    int deleteCommunityBySeq(int boardSeq);
 }

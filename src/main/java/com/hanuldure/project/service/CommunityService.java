@@ -28,4 +28,8 @@ public class CommunityService {
         return communityDAO.updateCommunity(communityTO);
     }
 
+    public int deleteCommunity(int board_seq) {
+        return communityDAO.deleteCommunityBySeq(board_seq);
+    }
+
 }
