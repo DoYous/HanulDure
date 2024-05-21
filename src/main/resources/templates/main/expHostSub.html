@@ -10,58 +10,60 @@
           rel="stylesheet">
 </head>
 <body>
-<div class="bodywidth">
-    <div class="expform">
-        <h1>체험 주최 신청 양식</h1>
-        <hr/>
-        <div class="expformdetail">
-            <div class="formdiv1">
-                <h3>제목</h3>
-                <h3>일시</h3>
-                <h3>소요시간</h3>
-                <h3>모집기간</h3>
-                <h3>모집인원</h3>
-                <h3>주소</h3>
-                <h3>상세주소</h3>
-                <h3>이미지 첨부</h3>
-                <h3>체험비용</h3>
+    <form action="community/expApply" method="get">
+    <div class="bodywidth">
+        <div class="expform">
+            <h1>체험 주최 신청 양식</h1>
+            <hr/>
+            <div class="expformdetail">
+                <div class="formdiv1">
+                    <h3>제목</h3>
+                    <h3>일시</h3>
+                    <h3>소요시간</h3>
+                    <h3>모집기간</h3>
+                    <h3>모집인원</h3>
+                    <h3>주소</h3>
+                    <h3>상세주소</h3>
+                    <h3>이미지 첨부</h3>
+                    <h3>체험비용</h3>
+                </div>
+                <div class="formdiv2">
+                    <input type="text" name="expTitle">
+                    <input type="datetime-local" name="expStart">
+                    <input type="number" name="expDuration">
+                    <div class="flex">
+                        <input type="date" name="expGetStart">
+                        <input type="date" name="expGetEnd">
+                    </div>
+                    <div class="flex">
+                        <h3 style="margin-left: 20px;">최대</h3>
+                        <input type="number" name="expMax">
+                        <h3>최소</h3>
+                        <input type="number" name="expMin">
+                    </div>
+                    <div class="flex">
+                        <input type="text" name="expAddr">
+                        <button type="button" class="addressBtn">주소 검색</button>
+                    </div>
+                    <input type="text" name="expAddrDetail">
+                    <input type="file">
+                    <input type="number" name="expPrice">
+                </div>
             </div>
-            <div class="formdiv2">
-                <input type="text">
-                    <input type="datetime-local">
-                    <input type="time">
-                <div class="flex">
-                    <input type="date">
-                    <input type="date">
-                </div>
-                <div class="flex">
-                    <h3 style="margin-left: 20px;">최대</h3>
-                    <input type="number">
-                    <h3>최소</h3>
-                    <input type="number">
-                </div>
-                <div class="flex">
-                    <input type="text">
-                    <button type="button" class="addressBtn">주소 검색</button>
-                </div>
-                <input type="text">
-                <input type="file">
-                <input type="number">
-            </div>
+            <hr/>
         </div>
-        <hr/>
-    </div>
 
-</div>
-<div class="bodywidth2">
+    </div>
+    <div class="bodywidth2">
 
-    <div class="expDetail">
-        <h1>체험 세부 내용</h1>
-        <textarea></textarea>
+        <div class="expDetail">
+            <h1>체험 세부 내용</h1>
+            <textarea name="expContent"></textarea>
+        </div>
+        <div class="submitDiv">
+            <button type="submit" class="submitBtn">신청하기</button>
+        </div>
     </div>
-    <div class="submitDiv">
-        <button type="submit" class="submitBtn">신청하기</button>
-    </div>
-</div>
+    </form>
 </body>
 </html>
