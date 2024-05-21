@@ -25,28 +25,31 @@
 </header>
 <hr>
 
-<section id="cmwrite">
-    <h2>농뮤니티 글 수정</h2>
-    <hr>
-    <div id="cmtitlediv">
-        <input id="cmtitle" name="board_title" type="text" placeholder=" 농뮤니티 제목을 입력하세요. " th:value="${community.board_title}">
-    </div>
-    <hr>
-    <section id="cmtype">
-        <article id="writername"><p>작성자 닉네임</p></article>
-        <article id="adddate"><p th:name="board_write_date" th:text="'수정일 : ' + ${community.board_write_date}"></p></article>
-        <article id="freewritebt"><button id="freewrite" class="buttonNormal" onclick="toggleButton('freewrite', 'recruitment', event)">자유글</button></article>
-        <article id="recruitmentbt"><button id="recruitment" class="buttonNormal" onclick="toggleButton('recruitment', 'freewrite', event)">모집글</button></article>
-        <input type="hidden" id="boardType" name="board_type" th:value="${community.board_type}">
+<form action="/hanuldure/community/update" method="post">
+    <section id="cmwrite">
+        <h2>농뮤니티 글 수정</h2>
+        <hr>
+        <div id="cmtitlediv">
+            <input id="cmtitle" name="board_title" type="text" placeholder=" 농뮤니티 제목을 입력하세요. " th:value="${community.board_title}">
+        </div>
+        <hr>
+        <section id="cmtype">
+            <article id="writername"><p>작성자 닉네임</p></article>
+            <article id="adddate"><p th:name="board_write_date" th:text="'수정일 : ' + ${community.board_write_date}"></p></article>
+            <article id="freewritebt"><button id="freewrite" class="buttonNormal" onclick="toggleButton('freewrite', 'recruitment', event)">자유글</button></article>
+            <article id="recruitmentbt"><button id="recruitment" class="buttonNormal" onclick="toggleButton('recruitment', 'freewrite', event)">모집글</button></article>
+            <input type="hidden" id="boardType" name="board_type" th:value="${community.board_type}">
+        </section>
+        <div id="writeinfodiv">
+            <textarea id="writeinfo" name="board_content" th:text="${community.board_content}" placeholder="적을 내용을 입력해주세요."></textarea>
+        </div>
+        <section id="cmbt">
+            <article><button id="cmcanclebt">취소</button></article>
+            <article><button id="cmaddbt" type="submit">수정하기</button></article>
+        </section>
     </section>
-    <div id="writeinfodiv">
-        <textarea id="writeinfo" th:text="${community.board_content}" placeholder="적을 내용을 입력해주세요."></textarea>
-    </div>
-    <section id="cmbt">
-        <article><button id="cmcanclebt">취소</button></article>
-        <article><button id="cmaddbt" type="submit">수정하기</button></article>
-    </section>
-</section>
+    <input type="hidden" name="board_seq" th:value="${community.board_seq}">
+</form>
 
 
 
