@@ -1,0 +1,94 @@
+body{
+    margin:0;
+    font-family: "Jua", sans-serif;
+}
+
+.content{
+    background-image :url("../image/loginbackground.png");
+    background-size: contain;
+    height: 100vmin;
+
+}
+
+#content{
+    display:inline-block;
+    width:40% ;
+    height: 85%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: 30%;
+    margin-top: 5%;
+    padding:1px;
+}
+
+#textgroup1{
+    text-align: center;
+}
+
+#text1{
+
+    font-size: 200%;
+}
+
+#text2{
+    text-align: center;
+    color: #779341;
+    font-size: 200%;
+}
+
+#text3{
+    text-align: center;
+    color:green;
+    font-size:250%;
+    margin-bottom: 1px;
+}
+
+#idtext,#pwtext,#nametext,#emailtext,#birthtext,#phonetext, #select{
+    margin-left: 10%;
+    margin-top:0;
+    margin-bottom: 0;
+}
+
+
+#idTextBox, #pwTextBox, #emailTextBox,#nameTextBox,#birthTextBox,#phoneTextBox{
+    width:80%;
+    height:30px;
+    border-radius:20px;
+}
+
+
+
+#textgroup2{
+    text-align: center;
+}
+
+#searchid,#searchpwd,#createmember, #labeltext1{
+    margin-top:3%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 8%;
+}
+
+#createmember{
+    color:green;
+}
+
+#buttonbox,#id,#pw,#name,#email,#birth,#phone{
+    text-align: center;
+}
+
+#labeltext{
+    padding-left:30%;
+}
+
+#button{
+    height: 100%;
+    background-color: green;
+    color:white;
+    padding:1%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-top:5%;
+    font-size:120%;
+    font-family: "Jua", sans-serif;
+    border-radius:20px;
+}

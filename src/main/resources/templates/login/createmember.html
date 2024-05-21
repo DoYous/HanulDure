@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/logincreatemember.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="content">
+    <div id="content">
+
+        <form action="/hanuldure/creatememberOk" method="post">
+            <div id="textgroup1">
+                <label id ="text1">안녕하세요! </label>
+                <label id= "text2">한울두레</label>
+            </div>
+            <div id="text3">회원가입</div>
+
+            <div id="idtext">아이디</div>
+            <p id="id">
+                <input name="userId" id="idTextBox" type="textbox" placeholder="아이디를 입력해주세요"/>
+            </p>
+
+            <div id="pwtext">비밀번호</div>
+            <p id="pw">
+                <input name="userPw" id="pwTextBox" type="textbox" placeholder="비밀번호를 입력해주세요"/>
+            </p>
+
+            <div id="emailtext">이메일</div>
+            <p id="email">
+                <input name="userEmail" id="emailTextBox" type="textbox" placeholder="이메일을 입력해주세요"/>
+            </p>
+
+            <div id="nametext">이름</div>
+            <p id="name">
+                <input name="userName" id="nameTextBox" type="textbox" placeholder="이름을 입력해주세요"/>
+            </p>
+
+            <div id="birthtext">생년월일</div>
+            <p id="birth">
+                <input name="userBirth" id="birthTextBox" type="textbox" placeholder="생년월일을 입력해주세요"/>
+            </p>
+
+            <div id="phonetext">휴대전화</div>
+            <p id="phone">
+                <input name="userPhone" id="phoneTextBox" type="textbox" placeholder="010-0000-0000"/>
+            </p>
+
+                <label id="labeltext1">
+                    <input type="radio" name="option" value="1" checked>일반 이용자
+                </label>
+                <label>
+                    <input type="radio" name="option" value="2" >농업인
+                </label>
+
+                <label id="labeltext">지역</label>
+
+                <select name="userRegion" >
+                    <option value="none">서울</option>
+                </select>
+
+            <div id =buttonbox>
+                <button id ="button" type="submit" onclick="location.href='/hanuldure/login'">회원가입 하기</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
