@@ -1,15 +1,22 @@
 package com.hanuldure.project.controller;
 
+import ch.qos.logback.core.model.Model;
+import com.hanuldure.project.model.dto.MemberDTO;
 import com.hanuldure.project.model.dto.firstpageDTO;
+import com.hanuldure.project.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("hanuldure")
 public class FirstPageAndLoginPageController {
+
+    @Autowired
+    private MemberService memberService;
+
     @GetMapping("firstpage")
     public ModelAndView firstpage(ModelAndView model){
 
@@ -24,6 +31,18 @@ public class FirstPageAndLoginPageController {
     public ModelAndView login(ModelAndView model){
         model.setViewName("/login/login");
         return model;
+    }
+
+    @PostMapping("login")
+    public String loginOk(MemberDTO memberDTO){
+        Integer result=memberService.login(memberDTO);
+        System.out.println(result);
+        if(result==null){
+            return "login/login";
+        }else{
+            return "login/createmember";
+        }
+
     }
 
     @GetMapping("searchid")
@@ -44,9 +63,25 @@ public class FirstPageAndLoginPageController {
         return model;
     }
 
-    @PostMapping("creatememberOk")
-    public ModelAndView creatememberOk(){
-        return null;
+    @PostMapping("createmember")
+    public String creatememberOk(MemberDTO newMember){
+//        MemberDTO newMember=new MemberDTO();
+//        newMember.setUserId(request.getParameter("userId"));
+//        newMember.setUserPassword(request.getParameter("userPassword"));
+//        newMember.setUserName(request.getParameter("userName"));
+//        newMember.setUserBirth(request.getParameter("userBirth"));
+//        newMember.setUserPhone(request.getParameter("userPhone"));
+//        newMember.setUserType(request.getParameter("userType"));
+//        newMember.setUserPhone(request.getParameter("userPhone"));
+
+        System.out.println(newMember);
+        int result=memberService.signup(newMember);
+        if(result==1){
+            System.out.println(1);
+        }else{
+            System.out.println(0);
+        }
+        return "/login/login.html";
     }
 
 }
