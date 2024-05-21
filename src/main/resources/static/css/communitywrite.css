@@ -1,0 +1,198 @@
+header div {
+    display: flex;
+    align-items: center;
+    margin: auto 20px;
+}
+
+#hanuldureimg {
+    justify-content: left;
+}
+
+#hanulduretext {
+    margin-left: 20px;
+    justify-content: left;
+}
+
+#mainbt {
+    margin-left: auto;
+
+    color: white;
+
+    flex-direction: row;
+    justify-content: center;
+    padding: 13.0469px 25.0902px;
+    gap: 10.04px;
+
+    width: 84px;
+    height: 39px;
+
+    background: #008000;
+    border-radius: 30px;
+    border: none;
+
+    font-family: "Jua", sans-serif;
+}
+
+#mainbt:hover {
+    background: #006400;
+}
+
+#cmwrite {
+    margin: 7%;
+}
+
+/*뇽뮤니티 제목 입력*/
+#cmtitlediv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3% auto;
+}
+
+#cmtitle {
+    font-size: 30px;
+    width: 50%;
+    text-align: center;
+    font-family: "Jua", sans-serif;
+}
+/**/
+
+
+/*작성자 닉네임, 등록일, 자유글, 모집글 css*/
+#cmtype {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#writername {
+
+}
+
+#adddate {
+    margin-left: 3%;
+}
+
+#freewritebt {
+    margin-left: 3%;
+}
+
+#recruitmentbt {
+    margin-left: 5px;
+}
+
+/**/
+
+/*글 적는 곳*/
+#writeinfodiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#writeinfo {
+    width: 100%;
+    height: 500px;
+    background: #F0FFF2;
+
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    transform: rotate(-0.09deg);
+
+    font-size: 20px;
+    font-family: "Jua", sans-serif;
+
+    padding: 5px;
+}
+/**/
+
+
+/*취소, 작성 버튼*/
+#cmbt {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 1% auto;
+}
+
+#cmcanclebt {
+    font-family: "Jua", sans-serif;
+    border-radius: 30px;
+    width: 110px;
+    height: 40px;
+
+    border: none;
+
+    font-size: 20px;
+}
+
+#cmaddbt {
+    margin-left: 10px;
+
+    background: #A0DCA9;
+    stroke: none;
+
+    font-family: "Jua", sans-serif;
+
+    border-radius: 30px;
+
+    width: 110px;
+    height: 40px;
+
+    border: none;
+
+    font-size: 20px;
+}
+
+/*토글시 버튼색 조정*/
+.buttonNormal {
+    background: #ffffff;
+}
+
+.buttonActive {
+    background: #A0DCA9;
+    border: none;
+}
+
+/*폰트*/
+.gugi-regular {
+    font-family: "Gugi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #008000;
+    text-shadow:
+            1px 2px 0 #D1D1D1,
+            -1px -2px 0 #D1D1D1,
+            -1px 2px 0 #D1D1D1,
+            1px -2px 0 #D1D1D1,
+            1px 0 0 #D1D1D1,
+            -1px 0 0 #D1D1D1,
+            0 1px 0 #D1D1D1,
+            0 -1px 0 #D1D1D1;
+}
+
+body{
+    font-family: "Jua", sans-serif;
+}
+
+#freewrite {
+    border-radius: 20px;
+    width: 80px;
+    font-family: "Jua", sans-serif;
+    border-color: gray;
+    border-width: 1px;
+}
+
+#recruitment {
+    border-radius: 20px;
+    width: 80px;
+    font-family: "Jua", sans-serif;
+    border-color: gray;
+    border-width: 1px;
+}
+
+.titlehr {
+    border: 0;
+    height: 2px;
+    background: #000000;
+}
