@@ -24,4 +24,8 @@ public class CommunityService {
         return communityDAO.selectCommunityBySeq(board_seq);
     }
 
+    public int updateCommunity(CommunityTO communityTO) {
+        return communityDAO.updateCommunity(communityTO);
+    }
+
 }

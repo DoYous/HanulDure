@@ -19,4 +19,8 @@ public class CommunityDAO {
     public CommunityTO selectCommunityBySeq(int board_seq) {
         return mapper.selectCommunityBySeq(board_seq);
     }
+
+    public int updateCommunity(CommunityTO communityTO) {
+        return mapper.updateCommunity(communityTO);
+    }
 }
