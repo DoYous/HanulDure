@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/loginsearchid.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="content">
+    <div id="content">
+
+        <div id="textgroup1">
+            <label id ="text1">안녕하세요! </label>
+            <label id= "text2">한울두레</label>
+        </div>
+        <div id="text3">아이디 찾기</div>
+
+        <div id="nametext">이름</div>
+        <p id="name">
+            <input id="nameTextBox" type="textbox" placeholder="이름을 입력해주세요"/>
+        </p>
+
+        <div id="phonetext">휴대전화</div>
+        <p id="phone">
+            <input id="phoneTextBox" type="textbox" placeholder="010-0000-0000"/>
+        </p>
+
+        <div id="textgroup2">
+            <label id="searchid" onclick="location.href='/hanuldure/searchpwd'">비밀번호 찾기</label>
+            <label id="searchpwd"> </label>
+            <label id="createmember"onclick="location.href='/hanuldure/createmember'">회원가입 하기</label>
+        </div>
+
+        <div id =buttonbox>
+            <button id ="button" onclick="location.href='/hanuldure/login'">아이디 찾기</button>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

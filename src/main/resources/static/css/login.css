@@ -1,0 +1,94 @@
+body{
+    margin:0;
+    font-family: "Jua", sans-serif;
+}
+
+.content{
+    background-image :url("../image/loginbackground.png");
+    background-size: contain;
+    height: 100vmin;
+
+}
+
+#content{
+    display:inline-block;
+    width:40% ;
+    height: 75%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: 30%;
+    margin-top: 5%;
+    padding:2%;
+}
+
+#textgroup1{
+    text-align: center;
+}
+
+#text1{
+
+    font-size: 200%;
+}
+
+#text2{
+    text-align: center;
+    color: #779341;
+    font-size: 200%;
+}
+
+#text3{
+    text-align: center;
+    color:green;
+    font-size:250%;
+    margin-bottom: 10%;
+}
+
+#idtext,#pwdtext{
+    margin-left: 10%;
+    margin-top:2%;
+    margin-bottom: 2%;
+}
+
+#idTextBox{
+    width:80%;
+    height:50px;
+    margin-bottom:5%;
+    border-radius:20px;
+}
+
+#pwdTextBox{
+    width:80%;
+    height:50px;
+    border-radius:20px;
+}
+
+#textgroup2{
+    text-align: center;
+}
+
+#searchid,#searchpwd,#createmember{
+    margin-top:3%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 8%;
+}
+
+#createmember{
+    color:green;
+}
+
+#buttonbox,#id,#pwd{
+    text-align: center;
+}
+
+#button{
+    height: 100%;
+    margin-top:10%;
+    background-color: green;
+    color:white;
+    padding:3%;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size:120%;
+    font-family: "Jua", sans-serif;
+    border-radius:20px;
+}
