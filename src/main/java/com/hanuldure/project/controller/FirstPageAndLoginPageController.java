@@ -16,31 +16,31 @@ public class FirstPageAndLoginPageController {
         model.addObject("ranking1",new firstpageDTO("모내기","경기도",10000,3,4,"/image/eximage.png"));
         model.addObject("ranking2",new firstpageDTO("벼베기","충청도",10000,5,7,"/image/eximage.png"));
         model.addObject("ranking3",new firstpageDTO("씨심기","전라도",10000,3,8,"/image/eximage.png"));
-        model.setViewName("/main/firstpage");
+        model.setViewName("/login/firstpage");
         return model;
     }
 
     @GetMapping("login")
     public ModelAndView login(ModelAndView model){
-        model.setViewName("/main/login");
+        model.setViewName("/login/login");
         return model;
     }
 
     @GetMapping("searchid")
     public ModelAndView searchid(ModelAndView model) {
-        model.setViewName("/main/searchid");
+        model.setViewName("/login/searchid");
         return model;
     }
 
     @GetMapping("searchpwd")
     public ModelAndView searchpwd(ModelAndView model) {
-        model.setViewName("/main/searchpwd");
+        model.setViewName("/login/searchpwd");
         return model;
     }
 
     @GetMapping("createmember")
     public ModelAndView createmember(ModelAndView model) {
-        model.setViewName("/main/createmember");
+        model.setViewName("/login/createmember");
         return model;
     }
 
