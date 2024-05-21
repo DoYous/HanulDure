@@ -21,7 +21,7 @@
     <label id="label1">체험모집</label>
     <br>
     <label id="label2">인기체험 TOP3</label>
-    <button id="mainbutton" onclick="location.href='/community'">전체 글 보기</button>
+    <button id="mainbutton" onclick="location.href='/hanuldure/community'">전체 글 보기</button>
 
     <div id="ranking">
         <div id="rankingbox1">
@@ -32,7 +32,7 @@
             <div id="price1" th:text="${ranking1.price}+'원'"></div>
             <div id="count1" th:text="'최소인원: '+${ranking1.min}+'명'"></div>
             <div id="count11" th:text="'최대인원: '+${ranking1.max}+'명'"></div>
-            <button id="detailbutton1">상세보기</button>
+            <button id="detailbutton1" onclick="location.href='/hanuldure/expDetail/1stRankPageSeq'">상세보기</button>
         </div>
 
         <div id="rankingbox2">
@@ -43,7 +43,7 @@
             <div id="price2" th:text="${ranking2.price}+'원'"></div>
             <div id="count2" th:text="'최소인원: '+${ranking2.min}+'명'"></div>
             <div id="count22" th:text="'최대인원: '+${ranking2.max}+'명'"></div>
-            <button id="detailbutton2">상세보기</button>
+            <button id="detailbutton2" onclick="location.href='/hanuldure/expDetail/2ndRankPageSeq'">상세보기</button>
         </div>
 
         <div id="rankingbox3">
@@ -54,7 +54,7 @@
             <div id="price3" th:text="${ranking3.price}+'원'"></div>
             <div id="count3" th:text="'최소인원: '+${ranking3.min}+'명'"></div>
             <div id="count33" th:text="'최대인원: '+${ranking3.max}+'명'"></div>
-            <button id="detailbutton3">상세보기</button>
+            <button id="detailbutton3" onclick="location.href='/hanuldure/expDetail/3rdRankPageSeq'">상세보기</button>
         </div>
     </div>
 </div>

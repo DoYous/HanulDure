@@ -13,19 +13,11 @@
     <script type="text/javascript">
         window.onload = () => {
             document.getElementById('logo-wrap').onclick = () => {
-                location.href = "/main";
+                location.href = "/hanuldure/firstpage";
             };
 
             document.getElementById('logout-button').onclick = () => {
-                location.href = "/logout";
-            }
-
-            document.getElementById('link-partyList').onclick = () => {
-                location.href = "/community/partyList"
-            }
-
-            document.getElementById('link-boardList').onclick = () => {
-                location.href = "/community/boardList"
+                location.href = "/hanuldure/logout";
             }
         };
     </script>
@@ -84,7 +76,7 @@
         <!--<div class="content-party-list" th:with="list=${param.partyList}">
         </div>-->
         <div class="content-party-list">
-            <div class="party-card">
+            <div class="party-card" onclick="location.href='/hanuldure/expDetail/lastSeq'">
                 <div class="party-image"></div>
                 <div class="party-content">
                     <div class="party-title">체험 이름</div>
@@ -93,7 +85,7 @@
                     <div class="card-fee">0000원</div>
                 </div>
             </div>
-            <div class="party-card">
+            <div class="party-card" onclick="location.href='/hanuldure/expDetail/lastSeq-1'">
                 <div class="party-image"></div>
                 <div class="party-content">
                     <div class="party-title">체험 이름</div>
@@ -102,7 +94,7 @@
                     <div class="card-fee">0000원</div>
                 </div>
             </div>
-            <div class="party-card">
+            <div class="party-card" onclick="location.href='/hanuldure/expDetail/lastSeq-2'">
                 <div class="party-image"></div>
                 <div class="party-content">
                     <div class="party-title">체험 이름</div>
@@ -111,7 +103,7 @@
                     <div class="card-fee">0000원</div>
                 </div>
             </div>
-            <div class="party-card">
+            <div class="party-card" onclick="location.href='/hanuldure/expDetail/lastSeq-3'">
                 <div class="party-image"></div>
                 <div class="party-content">
                     <div class="party-title">체험 이름</div>
