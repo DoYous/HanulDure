@@ -38,9 +38,9 @@ public class FirstPageAndLoginPageController {
         Integer result=memberService.login(memberDTO);
         System.out.println(result);
         if(result==null){
-            return "login/login";
+            return "redirect:/hanuldure/login";
         }else{
-            return "login/createmember";
+            return "redirect:/hanuldure/firstpage";
         }
 
     }
