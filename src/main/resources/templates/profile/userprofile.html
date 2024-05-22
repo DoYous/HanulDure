@@ -25,25 +25,25 @@
             <img src="/img/user_image.png" alt="유저 사진">
         </div>
         <div class="details">
-            <p class="user-name"><span th:text="${user.userName}"></span></p>
-            <p class="user-phone"><strong>전화번호:</strong> <span th:text="${user.userPhone}" style="color: gray";></span></p>
-            <p class="user-region"><strong>지역:</strong> <span th:text="${user.userRegion}" style="color: gray";></span></p>
-            <p class="user-intro"><strong>소개글:</strong> <span th:text="${user.userIntro}" style="color: gray";></span><span>  </span><span>  </span><a href="#" class="edit-btn">소개글 수정</a></p>
+            <p class="user-name"><span th:text="${userprofile.userName}"></span></p>
+            <p class="user-phone"><strong>전화번호:</strong> <span th:text="${userprofile.userPhone}" style="color: gray";></span></p>
+            <p class="user-region"><strong>지역:</strong> <span th:text="${userprofile.userRegion}" style="color: gray";></span></p>
+            <p class="user-intro"><strong>소개글:</strong> <span th:text="${userprofile.userIntro}" style="color: gray";></span><span>  </span><span>  </span><a href="#" class="edit-btn">소개글 수정</a></p>
         </div>
     </div>
     <hr>
-    <div class="events" th:each="exp : ${exps}">
+    <div class="events" th:if="${expInfo != null}">
 
-            <div class="event">
+            <div th:each="exp : ${expInfo}" class="event">
                 <div class="exp-img">
-                    <img src="/img/exp.png" alt="행사 사진">
+                    <img src="/img/exp1.png" alt="행사 사진">
                 </div>
                 <div class="green-box">
                     <p><span class="exp-title" th:text="${exp.expTitle}"></span> <span>     </span> <span class="exp-status" th:text="${exp.expStatus}"></span></p>
                     <p class="exp-content"><span th:text="${exp.expContent}"></span></p>
 
-                        <p class="exp-status2"><span th:text="${exp.expStatus2}"></span></p>
-                        <p class="exp-participants">모집 <span th:text="${exp.currentParticipants}"></span>명</p>
+                        <p class="exp-status2"><span th:text="${exp.expStatus}"></span></p>
+                        <p class="exp-participants">모집 <span th:text="${exp.expApplyCount}"></span>명</p>
 
                 </div>
 
