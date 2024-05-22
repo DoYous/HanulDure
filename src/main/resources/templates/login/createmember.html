@@ -12,7 +12,7 @@
 <div class="content">
     <div id="content">
 
-        <form action="/hanuldure/creatememberOk" method="post">
+        <form action="/hanuldure/createmember" method="post">
             <div id="textgroup1">
                 <label id ="text1">안녕하세요! </label>
                 <label id= "text2">한울두레</label>
@@ -26,7 +26,7 @@
 
             <div id="pwtext">비밀번호</div>
             <p id="pw">
-                <input name="userPw" id="pwTextBox" type="textbox" placeholder="비밀번호를 입력해주세요"/>
+                <input name="userPassword" id="pwTextBox" type="textbox" placeholder="비밀번호를 입력해주세요"/>
             </p>
 
             <div id="emailtext">이메일</div>
@@ -41,7 +41,7 @@
 
             <div id="birthtext">생년월일</div>
             <p id="birth">
-                <input name="userBirth" id="birthTextBox" type="textbox" placeholder="생년월일을 입력해주세요"/>
+                <input name="userBirth" id="birthTextBox" type="date" placeholder="생년월일을 입력해주세요"/>
             </p>
 
             <div id="phonetext">휴대전화</div>
@@ -50,10 +50,10 @@
             </p>
 
                 <label id="labeltext1">
-                    <input type="radio" name="option" value="1" checked>일반 이용자
+                    <input type="radio" name="userType" value="1" checked>일반 이용자
                 </label>
                 <label>
-                    <input type="radio" name="option" value="2" >농업인
+                    <input type="radio" name="userType" value="2" >농업인
                 </label>
 
                 <label id="labeltext">지역</label>
@@ -63,7 +63,7 @@
                 </select>
 
             <div id =buttonbox>
-                <button id ="button" type="submit" onclick="location.href='/hanuldure/login'">회원가입 하기</button>
+                <button id ="button" type="submit">회원가입 하기</button>
             </div>
         </form>
 
