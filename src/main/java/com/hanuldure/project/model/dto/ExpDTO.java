@@ -225,4 +225,14 @@ public class ExpDTO implements java.io.Serializable {
                 ", expTime=" + expTime +
                 '}';
     }
+
+    private String expStatus;
+
+    public String getExpStatus() {
+        return expStatus;
+    }
+
+    public void setExpStatus(String expStatus) {
+        this.expStatus = expStatus;
+    }
 }
