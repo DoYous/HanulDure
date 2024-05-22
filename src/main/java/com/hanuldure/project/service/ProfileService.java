@@ -16,7 +16,7 @@ public class ProfileService {
         this.profileDAO = profileDAO;
     }
 
-    public MemberDTO getUserDetailsBySeq(int userSeq) {
-        return profileDAO.selectUserDetails(userSeq);
+    public MemberDTO getUserDetailsBySeq(int user_seq) {
+        return profileDAO.selectUserDetails(user_seq);
     }
 }

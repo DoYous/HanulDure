@@ -26,8 +26,8 @@ public class FarmerProfileController {
     }
 
     @GetMapping("farmerprofile/{userSeq}")
-    public ModelAndView farmerProfile(@PathVariable("userSeq") int userSeq, ModelAndView model) {
-        MemberDTO farmerprofile = profileService.getUserDetailsBySeq(userSeq);
+    public ModelAndView farmerProfile(@PathVariable("userSeq") int user_seq, ModelAndView model) {
+        MemberDTO farmerprofile = profileService.getUserDetailsBySeq(user_seq);
 //        MemberDTO farmerprofile = new MemberDTO();
 //        farmerprofile.setUserSeq(1);
         model.addObject("farmerprofile", farmerprofile);
