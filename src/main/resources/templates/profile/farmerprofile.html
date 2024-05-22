@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>농업인 프로필</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
@@ -25,10 +26,10 @@
             <img src="/img/user_image.png" alt="농업인 사진">
         </div>
         <div class="details">
-            <p class="user-name"><span th:text="${farmerprofile.user_id}"></span></p>
-            <p class="user-phone"><strong>전화번호:</strong> <span th:text="${farmerprofile.user_phone}" style="color: gray";></span></p>
-            <p class="user-region"><strong>지역:</strong> <span th:text="${farmerprofile.user_region}" style="color: gray";></span></p>
-            <p class="user-intro"><strong>소개글:</strong> <span th:text="${farmerprofile.user_intro}" style="color: gray";></span><span>  </span><span>  </span><a href="#" class="edit-btn">소개글 수정</a></p>
+            <p class="user-name"><span ></span></p> <!--th:text="${farmerprofile.user_id}"-->
+            <p class="user-phone"><strong>전화번호:</strong> <span  style="color: gray";></span></p><!--th:text="${farmerprofile.user_phone}"-->
+            <p class="user-region"><strong>지역:</strong> <span  style="color: gray";></span></p><!--th:text="${farmerprofile.user_region}"-->
+            <p class="user-intro"><strong>소개글:</strong>  <span style="color: gray";></span><span>  </span><span>  </span><a href="#" class="edit-btn">소개글 수정</a></p><!--<span th:text="${farmerprofile.user_intro}"-->
 
         </div>
     </div>
