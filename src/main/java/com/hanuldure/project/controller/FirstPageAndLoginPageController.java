@@ -1,6 +1,6 @@
 package com.hanuldure.project.controller;
 
-import ch.qos.logback.core.model.Model;
+
 import com.hanuldure.project.model.dto.MemberDTO;
 import com.hanuldure.project.model.dto.firstpageDTO;
 import com.hanuldure.project.model.session.SessionKey;
@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -59,13 +60,12 @@ public class FirstPageAndLoginPageController {
     }
 
     @PostMapping("searchid")
-    public String searchidOk(MemberDTO memberDTO){
+    public String searchidOk(MemberDTO memberDTO, RedirectAttributes rttr){
         String result=memberService.searchId(memberDTO);
-        if(result==null){
+
+            rttr.addFlashAttribute("result",result);
+            System.out.println(result);
             return "redirect:/hanuldure/searchid";
-        }else{
-            return "redirect:/hanuldure/login";
-        }
     }
 
     @GetMapping("searchpwd")
@@ -75,13 +75,12 @@ public class FirstPageAndLoginPageController {
     }
 
     @PostMapping("searchpwd")
-    public String searchpwdOk(MemberDTO memberDTO){
+    public String searchpwdOk(MemberDTO memberDTO, RedirectAttributes rttr){
         String result=memberService.searchPwd(memberDTO);
-        if(result==null){
+
+            rttr.addFlashAttribute("result",result);
+            System.out.println(result);
             return "redirect:/hanuldure/searchpwd";
-        }else{
-            return "redirect:/hanuldure/login";
-        }
     }
 
 
