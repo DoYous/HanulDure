@@ -11,18 +11,18 @@ import java.util.Date;
 @ToString
 public class MemberDTO {
 
-    private int user_seq;
-    private String user_id;
-    private String user_password;
-    private String user_email;
-    private String user_name;
-    private String user_birth;
-    private String user_phone;
-    private String user_reason;
-    private String user_region;
-    private char user_gender;
-    private String user_intro;
-    private int user_point;
-    private int user_type;
+    private int userSeq;
+    private String userId;
+    private String userPassword;
+    private String userEmail;
+    private String userName;
+    private String userBirth;
+    private String userPhone;
+    private String userReason;
+    private String userRegion;
+    private char userGender;
+    private String userIntro;
+    private int userPoint;
+    private int userType;
 
 }
