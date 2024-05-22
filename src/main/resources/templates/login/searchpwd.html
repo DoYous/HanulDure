@@ -7,6 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        const result=`[[${result}]]`;
+        if(result.length!==0){
+            alert(result);
+            location.href="/hanuldure/login";
+        }
+    </script>
 </head>
 <body>
 <form action="searchpwd" method="post">
@@ -41,7 +48,7 @@
             </div>
 
             <div id =buttonbox>
-                <button id ="button" type="submit" onclick="location.href='/hanuldure/login'">비밀번호 찾기</button>
+                <button id ="button" type="submit">비밀번호 찾기</button>
             </div>
 
         </div>
