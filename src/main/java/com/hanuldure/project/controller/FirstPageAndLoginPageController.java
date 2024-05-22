@@ -2,16 +2,14 @@ package com.hanuldure.project.controller;
 
 
 import com.hanuldure.project.model.dto.MemberDTO;
-import com.hanuldure.project.model.dto.firstpageDTO;
+import com.hanuldure.project.model.dto.FirstPageDTO;
 import com.hanuldure.project.model.session.SessionKey;
 import com.hanuldure.project.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -26,9 +24,9 @@ public class FirstPageAndLoginPageController {
     @GetMapping("firstpage")
     public ModelAndView firstpage(ModelAndView model){
 
-        model.addObject("ranking1",new firstpageDTO("모내기","경기도",10000,3,4,"/image/eximage.png"));
-        model.addObject("ranking2",new firstpageDTO("벼베기","충청도",10000,5,7,"/image/eximage.png"));
-        model.addObject("ranking3",new firstpageDTO("씨심기","전라도",10000,3,8,"/image/eximage.png"));
+        model.addObject("ranking1",new FirstPageDTO("모내기","경기도",10000,3,4,"/image/eximage.png"));
+        model.addObject("ranking2",new FirstPageDTO("벼베기","충청도",10000,5,7,"/image/eximage.png"));
+        model.addObject("ranking3",new FirstPageDTO("씨심기","전라도",10000,3,8,"/image/eximage.png"));
         model.setViewName("/login/firstpage");
         return model;
     }

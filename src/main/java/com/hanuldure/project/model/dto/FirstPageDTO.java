@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class firstpageDTO {
+public class FirstPageDTO {
 
     private String expName;
     private String expAddr;
