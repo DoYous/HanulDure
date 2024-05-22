@@ -1,6 +1,7 @@
 package com.hanuldure.project.dao;
 
 import com.hanuldure.project.dto.CommunityTO;
+import com.hanuldure.project.dto.ExpApplyDTO;
 import com.hanuldure.project.dto.MemberDTO;
 import com.hanuldure.project.mapper.ProfileMapper;
 import com.hanuldure.project.model.dto.ExpDTO;
@@ -25,6 +26,10 @@ public class ProfileDAO {
 
     public List<ExpDTO> selectExpAllDetails(int userSeq) {
         return mapper.selectExpAllDetails(userSeq);
+    }
+
+    public Integer selectExpApplications(int expSeq) {
+        return mapper.selectExpApplications(expSeq);
     }
 
 }
