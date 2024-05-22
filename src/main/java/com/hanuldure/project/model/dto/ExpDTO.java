@@ -1,7 +1,10 @@
 package com.hanuldure.project.model.dto;
 
+import lombok.ToString;
+
 import java.util.Date;
 
+@ToString
 public class ExpDTO implements java.io.Serializable {
     private int expSeq; //체험번호
     private int userSeq; //농업인 번호
@@ -201,31 +204,6 @@ public class ExpDTO implements java.io.Serializable {
         this.expTime = expTime;
     }
 
-    @Override
-    public String toString() {
-        return "ExpDTO{" +
-                "expSeq=" + expSeq +
-                ", userSeq=" + userSeq +
-                ", expTitle='" + expTitle + '\'' +
-                ", expContent='" + expContent + '\'' +
-                ", expStart=" + expStart +
-                ", expEnd=" + expEnd +
-                ", expGetStart=" + expGetStart +
-                ", expGetEnd=" + expGetEnd +
-                ", expMin=" + expMin +
-                ", expMax=" + expMax +
-                ", expAddr='" + expAddr + '\'' +
-                ", expAddrDetail='" + expAddrDetail + '\'' +
-                ", expImg='" + expImg + '\'' +
-                ", expPrice=" + expPrice +
-                ", revSeq=" + revSeq +
-                ", revContent='" + revContent + '\'' +
-                ", revWriteDate='" + revWriteDate + '\'' +
-                ", userName='" + userName + '\'' +
-                ", expTime=" + expTime +
-                '}';
-    }
-
     private String expStatus;
 
     public String getExpStatus() {
@@ -234,5 +212,15 @@ public class ExpDTO implements java.io.Serializable {
 
     public void setExpStatus(String expStatus) {
         this.expStatus = expStatus;
+    }
+
+    private int expApplyCount;
+
+    public int getExpApplyCount() {
+        return expApplyCount;
+    }
+
+    public void setExpApplyCount(int expApplyCount) {
+        this.expApplyCount = expApplyCount;
     }
 }

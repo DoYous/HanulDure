@@ -1,5 +1,6 @@
 package com.hanuldure.project.controller;
 
+import com.hanuldure.project.dto.ExpApplyDTO;
 import com.hanuldure.project.dto.MemberDTO;
 import com.hanuldure.project.model.Farmer;
 import com.hanuldure.project.model.dto.ExpDTO;
@@ -31,7 +32,7 @@ public class FarmerProfileController {
     }
 
     @GetMapping("farmerprofile/{userSeq}")
-    public ModelAndView farmerProfile(@PathVariable("userSeq") int userSeq, ModelAndView model) {
+    public ModelAndView farmerProfile(@PathVariable("userSeq") int userSeq, /*int expSeq,*/ ModelAndView model) {
         MemberDTO farmerprofile = profileService.getUserDetailsBySeq(userSeq);
         model.addObject("farmerprofile", farmerprofile);
 
@@ -49,13 +50,24 @@ public class FarmerProfileController {
                 } else {
                     exp.setExpStatus("진행중");
                 }
+                int expApplyCount = profileService.selectExpApplications(exp.getExpSeq());
+                exp.setExpApplyCount(expApplyCount);
+                System.out.println(expApplyCount);
             }
             model.addObject("expInfo", expInfo);
         }
 
+
+//        if (!expInfo.isEmpty()) {
+//            Integer expApplyCount = profileService.selectExpApplications(expInfo.get(0).getExpSeq());
+//            model.addObject("expApplyCount", expApplyCount);
+//            System.out.println(expApplyCount);
+//        }
+
         /*확인문*/
         System.out.println(farmerprofile);
         System.out.println(expInfo);
+
 
         model.setViewName("profile/farmerprofile");
         return model;

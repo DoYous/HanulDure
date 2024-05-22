@@ -46,7 +46,7 @@
 
                 <p class="exp-status2"><span th:text="${exp.expStatus}" th:classappend="${exp.expStatus == '종료됨'} ? 'grey-text' : ''">진행중</span></p>
 
-                <p class="exp-participants">모집 <span >0</span>명</p>
+                <p class="exp-participants">모집 <span th:text="${exp.expApplyCount}"></span>명</p>
             </div>
         </div>
     </div>

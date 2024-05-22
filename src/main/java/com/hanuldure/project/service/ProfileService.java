@@ -2,6 +2,7 @@ package com.hanuldure.project.service;
 
 import com.hanuldure.project.dao.ProfileDAO;
 import com.hanuldure.project.dto.CommunityTO;
+import com.hanuldure.project.dto.ExpApplyDTO;
 import com.hanuldure.project.dto.MemberDTO;
 import com.hanuldure.project.model.dto.ExpDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,9 @@ public class ProfileService {
 
     public List<ExpDTO> selectAllExpByUserSeq(int userSeq) {
         return profileDAO.selectExpAllDetails(userSeq);
+    }
+
+    public Integer selectExpApplications(int expSeq) {
+        return profileDAO.selectExpApplications(expSeq);
     }
 }
