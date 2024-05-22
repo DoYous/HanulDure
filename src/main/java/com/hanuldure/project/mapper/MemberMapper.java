@@ -11,4 +11,10 @@ public interface MemberMapper {
 
     @Select("SELECT user_seq FROM USER WHERE user_id=#{userId} AND user_password=#{userPassword}")
     Integer selectMember(MemberDTO newMember);
+
+    @Select("SELECT user_id FROM USER WHERE user_name=#{userName} AND user_phone =#{userPhone}")
+    String searchId(MemberDTO newMember);
+
+    @Select("SELECT user_password FROM USER WHERE user_name=#{userName} AND user_phone =#{userPhone} AND user_id=#{userId}")
+    String searchPwd(MemberDTO newMember);
 }
