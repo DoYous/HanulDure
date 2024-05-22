@@ -157,6 +157,10 @@ p {
     background-color: transparent;
 }
 
+.grey-text {
+    color: grey;
+}
+
 .exp-content {
     font-size: 20px;
     color: grey;
