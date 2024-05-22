@@ -12,7 +12,7 @@ public class ProfileDAO {
     @Autowired
     private ProfileMapper mapper;
 
-    public MemberDTO selectUserDetails(int user_seq) {
-        return mapper.selectUserDetails(user_seq);
+    public MemberDTO selectUserDetails(int userSeq) {
+        return mapper.selectUserDetails(userSeq);
     }
 }

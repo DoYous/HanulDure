@@ -26,16 +26,16 @@
             <img src="/img/user_image.png" alt="농업인 사진">
         </div>
         <div class="details">
-            <p class="user-name"><span ></span></p> <!--th:text="${farmerprofile.user_id}"-->
-            <p class="user-phone"><strong>전화번호:</strong> <span  style="color: gray";></span></p><!--th:text="${farmerprofile.user_phone}"-->
-            <p class="user-region"><strong>지역:</strong> <span  style="color: gray";></span></p><!--th:text="${farmerprofile.user_region}"-->
-            <p class="user-intro"><strong>소개글:</strong>  <span style="color: gray";></span><span>  </span><span>  </span><a href="#" class="edit-btn">소개글 수정</a></p><!--<span th:text="${farmerprofile.user_intro}"-->
+            <p class="user-name"><span th:text="${farmerprofile.userSeq}"></span></p>
+            <p class="user-phone"><strong>전화번호:</strong> <span th:text="${farmerprofile.userPhone}" style="color: gray";></span></p>
+            <p class="user-region"><strong>지역:</strong> <span th:text="${farmerprofile.userRegion}" style="color: gray";></span></p>
+            <p class="user-intro"><strong>소개글:</strong>  <span th:text="${farmerprofile.userIntro}" style="color: gray";></span><span ></span><span> </span><a href="#" class="edit-btn">소개글 수정</a></p>
 
         </div>
     </div>
     <hr>
     <div class="events" >
-        <!--th:each="exp : ${exps}"-->
+
 
         <div class="event">
             <div class="exp-img">
@@ -43,13 +43,13 @@
             </div>
             <div class="green-box">
                 <p><span class="exp-title" ></span> <span>     </span> <span class="exp-status" ></span></p>
-                <!--        th:text="${exp.expTitle}"      th:text="${exp.expStatus}"  -->
+
                 <p class="exp-content"><span ></span></p>
-                <!--th:text="${exp.expContent}"  -->
+
                 <p class="exp-status2"><span ></span></p>
-                <!--th:text="${exp.expStatus2}"-->
+
                 <p class="exp-participants">모집 <span ></span>명</p>
-                <!--th:text="${exp.currentParticipants}"-->
+
 
             </div>
 
