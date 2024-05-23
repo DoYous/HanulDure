@@ -1,12 +1,20 @@
 package com.hanuldure.project.service;
 
+import com.hanuldure.project.mapper.ExpMapper;
+import com.hanuldure.project.model.dto.ExpDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.hanuldure.project.model.Exp;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ExpService {
+
+    @Autowired
+    private ExpMapper mapper;
 
     public List<Exp> getExpsByFarmerId(String farmerId) {
         List<Exp> exps = new ArrayList<>();
@@ -52,5 +60,17 @@ public class ExpService {
         exps.add(exp2);
 
         return exps;
+    }
+
+    /* 체험 주최 신청 */
+    public int registerExp(ExpDTO newExp) {
+        return mapper.insertExp(newExp);
+    }
+
+    /* 체험 목록 조회 */
+
+    /* 체험 상세 조회 */
+    public ExpDTO getExpBySeq(int expSeq) {
+        return mapper.selectExpBySeq(expSeq);
     }
 }
