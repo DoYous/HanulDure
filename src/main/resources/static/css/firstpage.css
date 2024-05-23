@@ -8,15 +8,33 @@ body{
 }
 
 .mainheader{
-    padding:2%;
-    background-image: url("../image/mainbackground.png");
-    background-size: cover;
-    color:white;
+    position: relative;
+    color: white;
     height: 80vmin;
 }
 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px;
+}
+
+.mainheader .background-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/mainbackground.png");
+    background-size: cover;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
 #logo{
-    display: inline;
+    font-family: "Gugi", sans-serif;
+    display: flex;
     font-size: 220%;
 }
 
@@ -24,10 +42,17 @@ body{
     border: none;
     float:right;
     font-size:130%;
-    background-color: green;
+    background-color: #008000;
     color:white;
     border-radius:30px;
     font-family: "Jua", sans-serif;
+    width: 150px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+#loginbutton1:hover,#loginbutton2:hover,#loginbutton3:hover,#loginbutton4:hover{
+    background: #629b6c;
 }
 
 .mainheader>#centerText1{
@@ -50,24 +75,41 @@ body{
     padding-left:2%;
 }
 
+.mainrankingheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #label1{
     font-size:130%;
     color: green;
+    margin: 10px;
+    margin-left: 20px;
 }
 
 #label2{
     font-size:120%;
     color:orange;
+    margin: 5px;
+    margin-left: 20px;
 }
 
 #mainbutton {
     border: none;
-    float: right;
-    font-size: 140%;
-    background-color: green;
-    color: white;
+    float:right;
+    font-size:130%;
+    background-color: #008000;
+    color:white;
+    border-radius:30px;
     font-family: "Jua", sans-serif;
-    border-radius: 30px;
+    width: 150px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+#mainbutton:hover{
+    background: #629b6c;
 }
 
 #ranking{
@@ -85,7 +127,11 @@ body{
 }
 
 #name1,#name2,#name3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size:115%;
+    margin-top: 1px;
 
 }
 
@@ -120,4 +166,8 @@ body{
     padding-right: 20%;
     font-family: "Jua", sans-serif;
     border-radius: 20px;
+}
+
+.hrmargin{
+    margin-top: 0px;
 }
