@@ -2,9 +2,13 @@ package com.hanuldure.project.service;
 
 import com.hanuldure.project.dao.CommunityDAO;
 //import com.hanuldure.project.dao.impl.CommunityDAOImpl;
+import com.hanuldure.project.dao.MemberDAO;
 import com.hanuldure.project.dto.CommunityTO;
+import com.hanuldure.project.dto.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CommunityService {
@@ -31,5 +35,10 @@ public class CommunityService {
     public int deleteCommunity(int boardSeq) {
         return communityDAO.deleteCommunityBySeq(boardSeq);
     }
+
+    public List<CommunityTO> getCommunityByBoardSeq(int userSeq) {
+        return communityDAO.selectBoardSeqbyUser(userSeq);
+    }
+
 
 }

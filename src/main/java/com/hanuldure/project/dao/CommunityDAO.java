@@ -1,10 +1,13 @@
 package com.hanuldure.project.dao;
 
 import com.hanuldure.project.dto.CommunityTO;
+import com.hanuldure.project.dto.MemberDTO;
 import com.hanuldure.project.mapper.CommunityMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository("communityDAO")
 public class CommunityDAO {
@@ -27,4 +30,9 @@ public class CommunityDAO {
     public int deleteCommunityBySeq(int board_seq) {
         return mapper.deleteCommunityBySeq(board_seq);
     }
+
+    public List<CommunityTO> selectBoardSeqbyUser(int userSeq){
+        return mapper.selectBoardSeqbyUser(userSeq);
+    }
+
 }

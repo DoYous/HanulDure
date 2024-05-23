@@ -20,4 +20,8 @@ public class MemberDAO {
 
     public String searchId(MemberDTO memberDTO){ return mapper.searchId(memberDTO);}
     public String searchPwd(MemberDTO memberDTO){ return mapper.searchPwd(memberDTO);}
+
+    public com.hanuldure.project.dto.MemberDTO selectWhatName(int userinseq){
+        return mapper.selectWhatName(userinseq);
+    }
 }
