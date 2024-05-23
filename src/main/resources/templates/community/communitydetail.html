@@ -28,7 +28,7 @@
         </div>
         <hr>
         <section id="cmtype">
-            <article id="writername"><p>작성자 닉네임</p></article>
+            <article id="writername" th:text="${whatisname.userName}"><p>작성자 닉네임</p></article>
             <article id="adddate"><p th:text="${community.getBoardWriteDate}">작성일</p></article>
             <article id="freewritebt"><button id="freeButton" class="buttonNormal">자유글</button></article>
             <article id="recruitmentbt"><button id="recruitButton" class="buttonNormal">모집글</button></article>
@@ -39,9 +39,8 @@
                 <p th:text="${community.getBoardContent}"></p>
             </div>
         </div>
-        <div id="detailbt">
+        <div th:if="${BoardIn}" id="detailbt">
             <button id="modifybt" th:attr="data-boardseq=${community.getBoardSeq}" onclick="modifyComment(this)">수정</button>
-<!--            <button id="modifybt">수정</button>-->
             <form action="/hanuldure/community/delete" method="post">
                 <input type="hidden" name="boardSeq" th:value="${community.getBoardSeq}">
                 <button id="remotebt">삭제</button>
