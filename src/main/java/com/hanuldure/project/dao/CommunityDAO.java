@@ -19,6 +19,10 @@ public class CommunityDAO {
         return mapper.insertCommunity(communityTO);
     }
 
+    public List<CommunityTO> selectBoardList() {
+        return mapper.selectBoardList();
+    }
+
     public CommunityTO selectCommunityBySeq(int board_seq) {
         return mapper.selectCommunityBySeq(board_seq);
     }
