@@ -1,5 +1,6 @@
 package com.hanuldure.project.service;
 
+import com.hanuldure.project.dao.ExpDAO;
 import com.hanuldure.project.mapper.ExpMapper;
 import com.hanuldure.project.model.dto.ExpDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,17 @@ import java.util.List;
 @Service
 public class ExpService {
 
+    private final ExpDAO expDAO;
+
+    @Autowired
+    public ExpService(ExpDAO expDAO) {
+        this.expDAO = expDAO;
+    }
+
     @Autowired
     private ExpMapper mapper;
+
+
 
     public List<Exp> getExpsByFarmerId(String farmerId) {
         List<Exp> exps = new ArrayList<>();
@@ -75,5 +85,9 @@ public class ExpService {
     /* 체험 상세 조회 */
     public ExpDTO getExpBySeq(int expSeq) {
         return mapper.selectExpBySeq(expSeq);
+    }
+
+    public ExpDTO getselectExpGetEnd(int newExp) {
+        return expDAO.selectExpGetEnd(newExp);
     }
 }

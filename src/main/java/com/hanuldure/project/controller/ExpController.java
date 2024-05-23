@@ -20,8 +20,13 @@ import java.util.Date;
 @RequestMapping("hanuldure")
 public class ExpController {
 
+
     @Autowired
     private ExpService expService;
+
+    @Autowired ExpController(ExpService expService) {
+        this.expService = expService;
+    }
 
     @GetMapping("community/expView/{expSeq}")
     public String expView(Model model, @PathVariable int expSeq) {
@@ -43,13 +48,24 @@ public class ExpController {
     public String expRequestOk(RedirectAttributes rttr, ExpDTO newExp) {
 
         int result = expService.registerExp(newExp);
+        System.out.println(result);
+
+        ExpDTO whenEnd = expService.getselectExpGetEnd(newExp.getExpSeq());
+        System.out.println(whenEnd);
+        System.out.println(whenEnd.getExpEnd());//니가 왜 null인데 ^ㅣ발..
+
+        Date today = new Date();
+        boolean whenEndType = !whenEnd.getExpEnd().before(today);
+
+
 
         /*
-        * result == 1 (INSERT 성공) : 금방 신청한 체험의 상세페이지로 리디렉트
-        * result != 1 (INSERT 실패) :
-        * */
+         * result == 1 (INSERT 성공) : 금방 신청한 체험의 상세페이지로 리디렉트
+         * result != 1 (INSERT 실패) :
+         * */
         if(result == 1) {
             rttr.addFlashAttribute("ExpDTO", newExp);
+            rttr.addFlashAttribute("whenEndType", whenEndType);
             return "redirect:/hanuldure/community/expView/" + newExp.getExpSeq();
         }else {
             return "redirect:/hanuldure/community/expRequest";

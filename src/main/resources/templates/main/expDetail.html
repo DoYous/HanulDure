@@ -48,7 +48,8 @@
                 </div>
             </div>
             <hr/>
-            <button class="reservBtn">예약 가능</button>
+            <button class="reservBtn" th:classappend="${whenEndType} ? '' : 'noreservBtn'" th:disabled="${!whenEndType}" th:text="${whenEndType} ? '예약 가능' : '예약 불가'">예약 가능</button>
+            <!--classappend 조건부 추가할 때 사용함-->
         </div>
     </div>
     <div class="detail2">

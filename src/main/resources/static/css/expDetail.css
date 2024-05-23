@@ -47,6 +47,17 @@
     padding: 13px 10px;
     border: none;
     border-radius: 20px;
+    background: #2be442;
+    color: white;
+    /* font-weight: 400; */
+    font-size: 25px;
+    margin-top: 20px;
+    cursor: pointer;}
+.noreservBtn{    width: 100%;
+    /* display: flex; */
+    padding: 13px 10px;
+    border: none;
+    border-radius: 20px;
     background: #a0dca9;
     color: white;
     /* font-weight: 400; */
