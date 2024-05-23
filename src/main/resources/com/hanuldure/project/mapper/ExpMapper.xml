@@ -34,6 +34,19 @@
     <!-- 체험 목록 조회-->
     <select id="selectExpList" resultType="ExpDTO">
         SELECT
+            exp_seq
+            , exp_title
+            , exp_addr
+            , exp_addr_detail
+            , exp_min
+            , exp_max
+            , exp_apply_count
+            , exp_price
+        FROM
+            exp
+        ORDER BY
+            exp_seq
+        DESC
     </select>
 
     <!-- 체험 상세 조회 -->
