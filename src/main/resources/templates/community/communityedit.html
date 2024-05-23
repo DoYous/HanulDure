@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CommunityWrite</title>
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/communitywrite.css}"/>
     <script type="text/javascript" th:src="@{/js/communitywritebtclick.js}"></script>
     <!--  폰트  -->
@@ -16,14 +17,8 @@
 
 </head>
 <body>
-<header>
-    <div>
-        <img id="hanuldureimg" src="/image/img.png">
-        <h1 id="hanulduretext" class="gugi-regular">한울두레</h1>
-        <button id="mainbt" onclick="location.href='/hanuldure/community'">Main</button>
-    </div>
+<header th:replace="~{/common/header :: headerFragment}">
 </header>
-<hr>
 
 <form action="/hanuldure/community/update" method="post">
     <section id="cmwrite">

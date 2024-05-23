@@ -68,6 +68,9 @@ public class ExpService {
     }
 
     /* 체험 목록 조회 */
+    public List<ExpDTO> getExpList(boolean isMain) {
+        return mapper.selectExpList(isMain);
+    }
 
     /* 체험 상세 조회 */
     public ExpDTO getExpBySeq(int expSeq) {

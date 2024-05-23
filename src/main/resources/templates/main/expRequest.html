@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>체험 주최 신청 양식</title>
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/expHostSub.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Abril+Fatface&family=Gowun+Dodum&family=Jua&family=Noto+Serif+KR&family=Sedan:ital@0;1&display=swap"
           rel="stylesheet">
     <script>
@@ -47,6 +49,8 @@
     </script>
 </head>
 <body>
+    <header th:replace="~{/common/header :: headerFragment}">
+    </header>
     <form method="post">
         <input type="hidden" name="userSeq" value="2"><!-- 2번 유저가 작성하도록 고정 -->
         <div class="bodywidth">
