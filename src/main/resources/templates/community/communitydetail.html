@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>communitydetail</title>
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/communitydetail.css}"/>
     <script type="text/javascript" th:src="@{/js/communitydetailbtonoff.js}"></script>
     <!--  폰트  -->
@@ -16,15 +17,8 @@
 
 </head>
 <body>
-    <header>
-        <div>
-            <img id="hanuldureimg" src="/image/img.png">
-            <h1 id="hanulduretext" class="gugi-regular">한울두레</h1>
-            <button id="mainbt" onclick="location.href='/hanuldure/community'">Main</button>
-
-        </div>
+    <header th:replace="~{/common/header :: headerFragment}">
     </header>
-    <hr>
 
     <section id="cmdetail">
         <h2>농뮤니티</h2>
@@ -38,7 +32,7 @@
             <article id="adddate"><p th:text="${community.getBoardWriteDate}">작성일</p></article>
             <article id="freewritebt"><button id="freeButton" class="buttonNormal">자유글</button></article>
             <article id="recruitmentbt"><button id="recruitButton" class="buttonNormal">모집글</button></article>
-            <input type="hidden" id="boardType" name="board_type" th:value="${community.getBoardType}">
+            <input type="hidden" id="boardType" name="boardType" th:value="${community.getBoardType}">
         </section>
         <div id="writeinfodiv">
             <div id="writeinfodiv2">
@@ -49,7 +43,7 @@
             <button id="modifybt" th:attr="data-boardseq=${community.getBoardSeq}" onclick="modifyComment(this)">수정</button>
 <!--            <button id="modifybt">수정</button>-->
             <form action="/hanuldure/community/delete" method="post">
-                <input type="hidden" name="board_seq" th:value="${community.getBoardSeq}">
+                <input type="hidden" name="boardSeq" th:value="${community.getBoardSeq}">
                 <button id="remotebt">삭제</button>
             </form>
         </div>
