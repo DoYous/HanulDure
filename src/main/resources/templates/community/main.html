@@ -8,18 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/party/community_main.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript">
         window.onload = () => {
-            document.getElementById('logo-wrap').onclick = () => {
-                location.href = "/hanuldure/firstpage";
-            };
-
-            document.getElementById('logout-button').onclick = () => {
-                location.href = "/hanuldure/logout";
-            }
-
             document.getElementById('link-partyList').onclick = () => {
                 location.href = "/hanuldure/community/partyList"
             }
@@ -31,13 +24,7 @@
     </script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div id="logo-wrap">
-                <img class="logo-img" src="/party/logo.svg">&nbsp;<div class="logo-text gugi-regular">한울두레</div>
-            </div>
-            <div id="logout-button" class="jua-regular">로그아웃</div>
-        </nav>
+    <header th:replace="~{/common/header :: headerFragment}">
     </header>
     <main>
         <div class="main-header">
@@ -89,41 +76,14 @@
             </div>
             <!--<div class="content-party-list" th:with="list=${param.partyList}">
             </div>-->
-            <div class="content-party-list">
-                <div class="party-card" onclick="location.href='/hanuldure/community/expView/1'">
+            <div class="content-party-list" th:with="max=${#lists.size(expList) - 1}">
+                <div class="party-card" th:each="num : ${#numbers.sequence(0, max gt 5 ? 5 : max)}" th:with="exp=${expList.get(num)}" th:onclick="|location.href='/hanuldure/community/expView/${ exp.expSeq }'|">
                     <div class="party-image"></div>
                     <div class="party-content">
-                        <div class="party-title">체험 이름</div>
-                        <div class="card-address">OO도 OO시 OO길 OO</div>
-                        <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
-                        <div class="card-fee">0000원</div>
-                    </div>
-                </div>
-                <div class="party-card" onclick="location.href='/hanuldure/community/expView/1'">
-                    <div class="party-image"></div>
-                    <div class="party-content">
-                        <div class="party-title">체험 이름</div>
-                        <div class="card-address">OO도 OO시 OO길 OO</div>
-                        <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
-                        <div class="card-fee">0000원</div>
-                    </div>
-                </div>
-                <div class="party-card" onclick="location.href='/hanuldure/community/expView/1'">
-                    <div class="party-image"></div>
-                    <div class="party-content">
-                        <div class="party-title">체험 이름</div>
-                        <div class="card-address">OO도 OO시 OO길 OO</div>
-                        <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
-                        <div class="card-fee">0000원</div>
-                    </div>
-                </div>
-                <div class="party-card" onclick="location.href='/hanuldure/community/expView/1'">
-                    <div class="party-image"></div>
-                    <div class="party-content">
-                        <div class="party-title">체험 이름</div>
-                        <div class="party-address">OO도 OO시 OO길 OO</div>
-                        <div class="party-capacity">00명 ~ 00명 (00명 신청중)</div>
-                        <div class="party-fee">0000원</div>
+                        <div class="party-title" th:text="${ exp.expTitle }">체험 이름</div>
+                        <div class="card-address" th:text="|${ exp.expAddr } ${ !#strings.isEmpty(exp.expAddrDetail) ? exp.expAddrDetail : '' }|">OO도 OO시 OO길 OO</div>
+                        <div class="card-capacity" th:text="|${ exp.expMin }명 ~ ${ exp.expMax }명 (${ exp.expApplyCount } 신청중)|">00명 ~ 00명 (00명 신청중)</div>
+                        <div class="card-fee" th:text="|${ exp.expPrice }원|">0000원</div>
                     </div>
                 </div>
             </div>
@@ -138,29 +98,16 @@
                     더보기
                 </div>
             </div>
-            <div class="content-board-list">
-                <div class="board-card-free" onclick="location.href='/hanuldure/community/detail/1'">
-                    <div class="board-title hover-ul">
-                        하동으로 귀농하려하는데 팁 같은걸 받을 수 있을까요? [00]
+            <div class="content-board-list" th:with="max=${boardList.size() - 1}">
+                <div th:each="num : ${#numbers.sequence(0, max > 3 ? 3 : max)}"
+                     th:with="board=${boardList.get(num)}"
+                     th:class="|board-card-${#strings.equals(board.boardType, 'F') ? 'free' : 'recruit'}|"
+                     th:onclick="|location.href='/hanuldure/community/detail/${board.boardSeq}'|">
+                    <div class="board-title hover-ul" th:text="${board.boardTitle}">
+                        게시글 제목
                     </div>
-                    <div class="board-writeDate">
-                        0000-00-00
-                    </div>
-                </div>
-                <div class="board-card-recruit" onclick="location.href='/hanuldure/community/detail/1'">
-                    <div class="board-title hover-ul">
-                        인천 농어촌체험 여행가려하는데 같이 갈분 있을까요? [00]
-                    </div>
-                    <div class="board-writeDate">
-                        0000-00-00
-                    </div>
-                </div>
-                <div class="board-card-free" onclick="location.href='/hanuldure/community/detail/1'">
-                    <div class="board-title hover-ul">
-                        하동으로 귀농하려하는데 팁 같은걸 받을 수 있을까요? [00]
-                    </div>
-                    <div class="board-writeDate">
-                        0000-00-00
+                    <div class="board-writeDate" th:text="${#dates.format(board.boardWriteDate, 'yyyy-MM-dd hh:mm:ss')}">
+                        작성 일자
                     </div>
                 </div>
             </div>

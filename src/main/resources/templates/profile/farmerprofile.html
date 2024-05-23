@@ -25,20 +25,25 @@
                 <p class="user-region"><strong>지역:</strong> <span th:text="${farmerprofile.userRegion}" style="color: gray";></span></p>
                 <p class="user-intro"><strong>소개글:</strong>  <span th:text="${farmerprofile.userIntro}" style="color: gray";></span><span ></span><span> </span></p>
 
-            </div>
         </div>
-        <hr>
-        <div class="events" th:if="${expInfo != null}" >
-            <div th:each="exp : ${expInfo}" class="event">
-                <div class="exp-img">
-                    <img src="/img/exp1.png" alt="행사 사진">
-                </div>
-                <div class="green-box">
-                    <p><span class="exp-title" th:text="${exp.expTitle}"></span> <!--</span> <span class="exp-status" >글글글글글글</span></p>-->
+    </div>
+    <hr>
+    <div class="events" th:if="${expInfo != null}" >
+        <div th:each="exp : ${expInfo}" class="event">
+            <div class="exp-img">
+                <img src="/img/exp1.png" alt="행사 사진">
+            </div>
+            <div class="green-box">
+                <p><span class="exp-title" th:text="${exp.expTitle}"></span><span>     </span><span class="exp-status" th:if="${exp.expStatus == 1}"><span>승인완료</span></span></p>
 
                     <p class="exp-content" th:text="${exp.expContent}"><span >글글글글글글</span></p>
 
-                    <p class="exp-status2"><span th:text="${exp.expStatus}" th:classappend="${exp.expStatus == '종료됨'} ? 'grey-text' : ''">진행중</span></p>
+                <p class="exp-status2" th:if="${exp.expStatus == 5}">
+                    <span class="grey-text">종료됨</span>
+                </p>
+                <p class="exp-status2" th:if="${exp.expStatus == 1}">
+                    <span>진행중</span>
+                </p>
 
                     <p class="exp-participants">모집 <span th:text="${exp.expApplyCount}"></span>명</p>
                 </div>

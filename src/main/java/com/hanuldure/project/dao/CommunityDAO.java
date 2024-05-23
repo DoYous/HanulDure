@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository("communityDAO")
 public class CommunityDAO {
 
@@ -14,6 +16,10 @@ public class CommunityDAO {
 
     public int insertCommunity(CommunityTO communityTO) {
         return mapper.insertCommunity(communityTO);
+    }
+
+    public List<CommunityTO> selectBoardList() {
+        return mapper.selectBoardList();
     }
 
     public CommunityTO selectCommunityBySeq(int board_seq) {
