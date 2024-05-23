@@ -79,7 +79,7 @@
 <p align="center"><img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/502b5ced-f1d5-4705-a640-57338c7837db" height=540 width=1000></p>
 
 - 기획하기 : NOTION, DISCORD, FIGMA
-- 코드 작성 : Visual Studio Code
+- 코드 작성 : InteliJ
 - 회의를 통해서 모든 단계 진행
 - 회의 과정에서 나온 내용들을 노션 기록 & 수정 사항 확인
 
@@ -97,6 +97,7 @@
 <div align=left><a href="https://www.figma.com/file/trnuQMSJImWGjZdfgPO8Xp/KeyBoard?type=design&node-id=0-1&mode=design&t=RjBiLxVPDb2ovY1K-0"><img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/></a><img src="https://img.shields.io/badge/VSCode-2C2C32.svg?style=for-the-badge&logo=visual-studio-code&logoColor=22ABF3" /><img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/><img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/><img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/><br><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"/><a href="https://www.notion.so/c67e959442fe4653918413831d81cf76?v=6b249613c0ee42d9943c6f2a879ac5a9"><img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"/></a><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/></div>
 
 <br>
+
 
 
 
@@ -129,11 +130,11 @@
 
 ##### **프로필 페이지**:
 
+<br><br><br><br>
 
+## 📌개념설계 ERD
 
-
-
-
+![image](https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/f5eb1ab2-f969-407a-a5cf-eb7893e4cef7)
 
 <br><br><br><br>
 
@@ -153,7 +154,7 @@
 
 ### 3️⃣배민서
 
-작성하시오!
+이번 스프링 프로젝트를 진행하면서 리액트때와는 달리 스프링으로도 이렇게 페이지를 구성하고 꾸밀 수 있다는 것을 알게되어 무척 뜻깊었습니다. 처음에 어노테이션을 쓰는 것이 미숙했지만 적용하면서 공부하다보니 어떻게 쓰는 것인지 알게되었고 좋은 아이디어를 구성한 만큼 조금 더 깊은 프로젝트 개발을 하고싶었는데 그러지 못해서 조금 아쉬운 마음이 있었던 것 같습니다. 다음번엔 완성도있는 프로젝트를 진행할 수 있도록 노력해야할 것 같습니다! 모두 수고하셨어요~!
 
 <br>
 
@@ -164,7 +165,7 @@
 <br>
 ### 5️⃣이수빈
 
-작성하시오!
+스프링은 처음이라서 많이 당황스러웠습니다. 해당 페이지를 만들기 위해서 많은 내용을 찾아봤지만 짧은 시간 안에 다 이해하기가 어려웠던 거 같습니다. 최대한 노력해서 뭔가 만들었는데, 완성도가 떨어지는 것 같아서 많이 아쉬웠습니다. 하지만 많이 아쉽긴 해도 전보다는 스프링에 대해서 조금 더 알게 된 거 같아서 다행입니다. 다른 팀원 분들이 스프링을 잘 하셔서 프로젝트를 무사히 마칠 수 있었던 것 같습니다. 감사합니다:)
 
 <br>
 
