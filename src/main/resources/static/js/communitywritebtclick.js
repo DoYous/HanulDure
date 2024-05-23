@@ -35,3 +35,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
         recruitButton.classList.add('buttonActive');
     }
 });
+
+function stopForm() {
+    var boardType = document.getElementById('boardType').value;
+    if (boardType === "") {
+        alert("무슨 글 종류인지 선택해주세요.");
+        return false;
+    }
+    return true;
+}

@@ -20,16 +20,16 @@ public class CommunityService {
         return communityDAO.insertCommunity(communityTO);
     }
 
-    public CommunityTO getCommunityBySeq(int board_seq) {
-        return communityDAO.selectCommunityBySeq(board_seq);
+    public CommunityTO getCommunityBySeq(int boardSeq) {
+        return communityDAO.selectCommunityBySeq(boardSeq);
     }
 
     public int updateCommunity(CommunityTO communityTO) {
         return communityDAO.updateCommunity(communityTO);
     }
 
-    public int deleteCommunity(int board_seq) {
-        return communityDAO.deleteCommunityBySeq(board_seq);
+    public int deleteCommunity(int boardSeq) {
+        return communityDAO.deleteCommunityBySeq(boardSeq);
     }
 
 }

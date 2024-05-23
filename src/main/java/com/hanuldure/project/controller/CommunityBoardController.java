@@ -4,13 +4,11 @@ import com.hanuldure.project.dao.CommunityDAO;
 //import com.hanuldure.project.dao.impl.CommunityDAOImpl;
 import com.hanuldure.project.dto.CommunityTO;
 import com.hanuldure.project.service.CommunityService;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -25,16 +23,16 @@ public class CommunityBoardController {
     @PostMapping("add")
     public ModelAndView add(HttpServletRequest request, ModelAndView model) {
         CommunityTO community = new CommunityTO();
-        community.setBoard_title(request.getParameter("board_title"));
-        community.setBoard_type(request.getParameter("board_type"));
-        community.setBoard_content(request.getParameter("board_content"));
-        community.setBoard_write_date(new Date());
+        community.setBoardTitle(request.getParameter("boardTitle"));
+        community.setBoardType(request.getParameter("boardType"));
+        community.setBoardContent(request.getParameter("boardContent"));
+        community.setBoardWriteDate(new Date());
 
         System.out.println(community);
         communitydao.insertCommunity(community);
 
         // 리다이렉트 URL 설정
-        model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoard_seq());
+        model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoardSeq());
         return model;
     }
 
@@ -55,10 +53,10 @@ public class CommunityBoardController {
     }
 
     //글 수정
-    @GetMapping("community/edit/{board_seq}")
-    public ModelAndView communityedit(@PathVariable("board_seq") int board_seq, ModelAndView model) {
+    @GetMapping("community/edit/{boardSeq}")
+    public ModelAndView communityedit(@PathVariable("boardSeq") int boardSeq, ModelAndView model) {
 
-        CommunityTO community = communityService.getCommunityBySeq(board_seq);
+        CommunityTO community = communityService.getCommunityBySeq(boardSeq);
         model.addObject("community", community);
         System.out.println(community);
 
@@ -73,36 +71,45 @@ public class CommunityBoardController {
 
     @PostMapping("community/update")
     public ModelAndView updateCommunity(HttpServletRequest request, ModelAndView model) {
-        int board_seq = Integer.parseInt(request.getParameter("board_seq"));
+        int boardSeq = Integer.parseInt(request.getParameter("boardSeq"));
         CommunityTO community = new CommunityTO();
-        community.setBoard_seq(board_seq);
-        community.setBoard_title(request.getParameter("board_title"));
-        community.setBoard_type(request.getParameter("board_type"));
-        community.setBoard_content(request.getParameter("board_content"));
-        community.setBoard_write_date(new Date());
+        community.setBoardSeq(boardSeq);
+        community.setBoardTitle(request.getParameter("boardTitle"));
+        community.setBoardType(request.getParameter("boardType"));
+        community.setBoardContent(request.getParameter("boardContent"));
+        community.setBoardWriteDate(new Date());
 
         System.out.println(community);
 
         communityService.updateCommunity(community);
 
-        model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoard_seq());
+        model.setViewName("redirect:/hanuldure/community/detail/" + community.getBoardSeq());
         return model;
     }
 
     //상세페이지
-    @GetMapping("community/detail/{board_seq}")
-    public ModelAndView communityDetail(@PathVariable("board_seq") int board_seq, ModelAndView model) {
+    @GetMapping("community/detail/{boardSeq}")
+    public ModelAndView communityDetail(@PathVariable("boardSeq") int boardSeq, ModelAndView model) {
 
-        CommunityTO community = communityService.getCommunityBySeq(board_seq);
+        CommunityTO community = communityService.getCommunityBySeq(boardSeq);
+        if (community == null) {
+            model.setViewName("redirect:/hanuldure/errorPage");
+            return model;
+        }
+
         model.addObject("community", community);
-        System.out.println(community);
-
         model.setViewName("/community/communitydetail");
         return model;
     }
 
+    @GetMapping("errorPage")
+    public String errorPage() {
+        return "error/errorpage";
+    }
+
+
     @PostMapping("/community/delete")
-    public String deleteCommunity(@RequestParam("board_seq") int boardSeq) {
+    public String deleteCommunity(@RequestParam("boardSeq") int boardSeq) {
         int result = communityService.deleteCommunity(boardSeq);
         
         return "redirect:/community";
@@ -125,4 +132,5 @@ public class CommunityBoardController {
         communityService.addCommunity(communityTO);
         return "redirect:/community/detail";
     }
+
 }

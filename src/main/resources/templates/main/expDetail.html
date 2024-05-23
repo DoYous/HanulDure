@@ -12,16 +12,16 @@
 <body>
 <div class="bodywidth">
     <div class="detail1">
-        <div class="img1">
-            <img th:src="@{${exp.expImg}}" alt="체험 이미지" class="img1"/>
+        <div>
+            <img src="/img/exp.PNG" alt="체험 이미지" class="img1"/>
         </div>
         <div class="detailDiv">
             <div class="flexCon">
-            <div class="detailText">
-                <h2 th:text="${exp.expAddr}"></h2>
-                <h1 th:text="${exp.expTitle}"></h1>
-            </div>
-            <div class="profile">프로필</div>
+                <div class="detailText">
+                    <h2 th:text="${exp.expAddr}"></h2>
+                    <h1 th:text="${exp.expTitle}"></h1>
+                </div>
+                <div class="profile">프로필</div>
             </div>
             <hr/>
             <div class="flexClass">
@@ -49,14 +49,16 @@
     </div>
     <div class="detail2">
         <h3 th:text="${exp.expTitle}" class="subText">체험 제목</h3>
-        <div class="img2">
-            <img th:src="@{${exp.expImg}}" alt="체험 이미지" class="img2"/>
+        <div>
+            <img src="/img/exp.PNG" alt="체험 이미지" class="img2"/>
         </div>
         <div class="font23">
 
-        <h4 th:text="${exp.expContent}" >체험 내용</h4>
-        <h3>전화번호 010 - 0000 - 0000</h3>
-        <button class="deleteBtn" >삭제</button>
+            <h4 th:text="${exp.expContent}" >체험 내용</h4>
+            <h3>전화번호 010 - 0000 - 0000</h3>
+        </div>
+        <div class="delete">
+            <button class="deleteBtn" >삭제</button>
         </div>
     </div>
     <div class="detail3">
