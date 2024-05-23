@@ -4,14 +4,18 @@ package com.hanuldure.project.controller;
 import com.hanuldure.project.model.dto.MemberDTO;
 import com.hanuldure.project.model.dto.FirstPageDTO;
 import com.hanuldure.project.model.session.SessionKey;
+import com.hanuldure.project.service.FirstPageService;
 import com.hanuldure.project.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("hanuldure")
@@ -20,14 +24,23 @@ public class FirstPageAndLoginPageController {
     @Autowired
     private MemberService memberService;
     public static Integer loginSession;
+    @Autowired
+    private FirstPageService firstPageService;
 
     @GetMapping("firstpage")
-    public ModelAndView firstpage(ModelAndView model){
+    public ModelAndView firstpage(ModelAndView model) {
+        FirstPageDTO Ranking1 = firstPageService.searchRankExp(1);
+        FirstPageDTO Ranking2 = firstPageService.searchRankExp(2);
+        FirstPageDTO Ranking3 = firstPageService.searchRankExp(3);
 
-        model.addObject("ranking1",new FirstPageDTO("모내기","경기도",10000,3,4,"/image/eximage.png"));
-        model.addObject("ranking2",new FirstPageDTO("벼베기","충청도",10000,5,7,"/image/eximage.png"));
-        model.addObject("ranking3",new FirstPageDTO("씨심기","전라도",10000,3,8,"/image/eximage.png"));
-        model.setViewName("/login/firstpage");
+        model.addObject("Ranking1", Ranking1);
+        model.addObject("Ranking2", Ranking2);
+        model.addObject("Ranking3", Ranking3);
+        System.out.println(Ranking1);
+        System.out.println(Ranking2);
+        System.out.println(Ranking3);
+
+        model.setViewName("login/firstpage");
         return model;
     }
 
@@ -38,7 +51,7 @@ public class FirstPageAndLoginPageController {
     }
 
     @PostMapping("login")
-    public String loginOk(MemberDTO memberDTO, HttpServletRequest request){
+    public String loginOk(MemberDTO memberDTO, HttpServletRequest request, RedirectAttributes rttr){
         Integer result=memberService.login(memberDTO);
         if(result==null){
             return "redirect:/hanuldure/login";
@@ -47,6 +60,8 @@ public class FirstPageAndLoginPageController {
             session.setAttribute(SessionKey.sessionUserSeq,result);
             loginSession=(Integer)session.getAttribute(SessionKey.sessionUserSeq);
             System.out.println(loginSession);
+            rttr.addFlashAttribute("loginSession",loginSession);
+
             return "redirect:/hanuldure/firstpage";
         }
     }
