@@ -8,11 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <script type="text/javascript">
-        const result=`[[${result}]]`;
-        if(result.length!==0){
-            alert(result);
-            location.href="/hanuldure/login";
-        }
+
+            const result=`[[${result}]]`;
+            console.log(result);
+            if(result.length!==0) {
+                alert(result);
+                location.href = "/hanuldure/login";
+            }
+            else{
+                console.log("!!!");
+            }
     </script>
 </head>
 <body>
@@ -43,7 +48,7 @@
             </div>
 
             <div id =buttonbox>
-                <button id ="button" type="submit">아이디 찾기</button>
+                <button id ="button" onclick="toggle()" type="submit">아이디 찾기</button>
             </div>
 
         </div>
