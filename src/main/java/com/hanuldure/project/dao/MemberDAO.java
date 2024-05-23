@@ -17,4 +17,7 @@ public class MemberDAO {
     public Integer selectMember(MemberDTO memberDTO){
         return mapper.selectMember(memberDTO);
     }
+
+    public String searchId(MemberDTO memberDTO){ return mapper.searchId(memberDTO);}
+    public String searchPwd(MemberDTO memberDTO){ return mapper.searchPwd(memberDTO);}
 }

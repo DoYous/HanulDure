@@ -22,4 +22,8 @@ public class MemberService {
     public Integer login(MemberDTO memberDTO){
         return memberDAO.selectMember(memberDTO);
     }
+
+    public String searchId(MemberDTO memberDTO){return memberDAO.searchId(memberDTO);}
+
+    public String searchPwd(MemberDTO memberDTO){return memberDAO.searchPwd(memberDTO);}
 }
