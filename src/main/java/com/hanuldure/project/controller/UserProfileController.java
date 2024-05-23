@@ -29,11 +29,11 @@ public class UserProfileController {
     public UserProfileController(ProfileService profileService) {
         this.profileService = profileService;
     }
-
     @GetMapping("/userprofile/{userSeq}")
     public ModelAndView userProfile(@PathVariable("userSeq") int userSeq, /*int expSeq,*/ ModelAndView model) {
         MemberDTO userprofile = profileService.getUserDetailsBySeq(userSeq);
         model.addObject("userprofile", userprofile);
+
 
         List<ExpDTO> expInfo = profileService.selectAllExpByUserSeq(userSeq);
         if (expInfo != null) {      //null일 경우 정보 안보냄

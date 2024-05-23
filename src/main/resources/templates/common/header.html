@@ -6,7 +6,12 @@
             <div id="logo-wrap" class="gugi-regular" onclick="location.href='/hanuldure/firstpage'">
                 <img class="logo-img" src="/party/logo.svg">&nbsp;<div class="logo-text gugi-regular">한울두레</div>
             </div>
-            <div id="logout-button" class="jua-regular">로그아웃</div>
+            <div th:if="${session.userSeq==null}" onclick="location.href='/hanuldure/login'" class="headerBtn headerBtnMargin jua-regular">로그인</div>
+            <th:block th:if="${session.userSeq!=null}">
+                <div th:if="${session.userType==0}" th:onclick="|location.href='/hanuldure/userprofile/${session.userSeq}'|" class="headerBtn headerBtnMargin jua-regular">마이페이지</div>
+                <div th:if="${session.userType==1}" th:onclick="|location.href='/hanuldure/farmerprofile/${session.userSeq}'|" class="headerBtn headerBtnMargin jua-regular">마이페이지</div>
+                <div onclick="location.href='/hanuldure/logout'" class="headerBtn jua-regular">로그아웃</div>
+            </th:block>
         </nav>
     </header>
 </body>

@@ -35,10 +35,10 @@ body {
     font-weight: 400;
     font-style: normal;
 }
-
-/* header & 내비게이션 바*/
+/*
+!* header & 내비게이션 바*!
 header {
-    /*position: absolute;*/
+    !*position: absolute;*!
     width: 100%;
 
     display: flex;
@@ -80,6 +80,10 @@ header > nav {
     color: white;
 
     cursor: pointer;
+}*/
+
+header > nav {
+    width: 70%;
 }
 
 /* 메인 캐러셀*/
