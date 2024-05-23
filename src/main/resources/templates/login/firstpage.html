@@ -18,9 +18,9 @@
         <div id="logo">
             <img id="logoimg" src="/image/logo.png"/> 한울두레
         </div>
-            <button id="loginbutton1" onclick="location.href='/hanuldure/login'" th:if="${loginSession==null}">로그인</button>
-            <button id="loginbutton2" onclick="location.href='/hanuldure/login'" th:if="${loginSession!=null}">마이페이지</button>
-            <button id="loginbutton3" onclick="location.href='/hanuldure/login'" th:if="${loginSession!=null}">로그아웃</button>
+            <button id="loginbutton1" onclick="location.href='/hanuldure/login'" th:if="${session.userSeq==null}">로그인</button>
+            <button id="loginbutton2" th:onclick="|location.href='/hanuldure/userprofile/${session.userSeq}'|" th:if="${session.userSeq!=null}">마이페이지</button>
+            <button id="loginbutton3" onclick="location.href='/hanuldure/logout'" th:if="${session.userSeq!=null}">로그아웃</button>
             <p id="centerText1">'한울두레'</p>
         <p id="centerText2">진실하고 가득한 우리 농촌 터전</p>
     </div>
@@ -34,7 +34,7 @@
             <div id="rankingbox1">
                 <div id="name1" th:text="${Ranking1.expTitle}"></div>
                 <hr>
-                <img id="rankingimg1" th:src="${Ranking1.expImg}"/>
+                <img id="rankingimg1" th:src="@{'/img/' + ${Ranking1.expImg}}" />
                 <div id="locate1" th:text="${Ranking1.expAddr}"></div>
                 <div id="price1" th:text="${Ranking1.expPrice}+'원'"></div>
                 <div id="count1" th:text="'최소인원: '+${Ranking1.expMin}+'명'"></div>
@@ -45,7 +45,7 @@
             <div id="rankingbox2">
                 <div id="name2" th:text="${Ranking2.expTitle}"></div>
                 <hr>
-                <img id="rankingimg2" th:src="${Ranking2.expImg}"/>
+                <img id="rankingimg2" th:src="@{'/img/' + ${Ranking2.expImg}}"/>
                 <div id="locate2" th:text="${Ranking2.expAddr}"></div>
                 <div id="price2" th:text="${Ranking2.expPrice}+'원'"></div>
                 <div id="count2" th:text="'최소인원: '+${Ranking2.expMin}+'명'"></div>
@@ -56,7 +56,7 @@
             <div id="rankingbox3">
                 <div id="name3" th:text="${Ranking3.expTitle}"></div>
                 <hr>
-                <img id="rankingimg3" th:src="${Ranking3.expImg}"/>
+                <img id="rankingimg3" th:src="@{'/img/' + ${Ranking3.expImg}}"/>
                 <div id="locate3" th:text="${Ranking3.expAddr}"></div>
                 <div id="price3" th:text="${Ranking3.expPrice}+'원'"></div>
                 <div id="count3" th:text="'최소인원: '+${Ranking3.expMin}+'명'"></div>

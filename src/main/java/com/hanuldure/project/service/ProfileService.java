@@ -35,4 +35,8 @@ public class ProfileService {
     public Integer selectExpApplications(int expSeq) {
         return profileDAO.selectExpApplications(expSeq);
     }
+
+    public MemberDTO getMemberBySeq(int userSeq) {
+        return profileDAO.selectMemberByUserType(userSeq);
+    }
 }
