@@ -20,7 +20,7 @@ body{
     font-size: 220%;
 }
 
-#loginbutton{
+#loginbutton1,#loginbutton2,#loginbutton3{
     float:right;
     font-size:150%;
     background-color: green;

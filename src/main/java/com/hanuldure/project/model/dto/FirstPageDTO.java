@@ -9,7 +9,8 @@ import lombok.*;
 @ToString
 public class FirstPageDTO {
 
-    private String expName;
+    private int expSeq;
+    private String expTitle;
     private String expAddr;
     private int expPrice;
     private int expMin;
