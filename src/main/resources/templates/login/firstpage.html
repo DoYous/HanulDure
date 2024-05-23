@@ -7,32 +7,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
     <script>
-        // console.log(`[[${loginSession}]]`);
+        console.log(`[[${session.userSeq}]]`);
+        console.log(`[[${session.userType}]]`);
     </script>
 </head>
 <body>
     <div class="mainheader">
-        <div id="logo">
-            <img id="logoimg" src="/image/logo.png"/> 한울두레
+        <div class="background-image"></div>
+
+        <div class="header-content">
+            <div id="logo">
+                <img id="logoimg" src="/image/logo.png"/>한울두레
+            </div>
+            <div class="buttons">
+                <button id="loginbutton1" onclick="location.href='/hanuldure/login'" th:if="${session.userSeq==null}">로그인</button>
+                <button id="loginbutton2" th:onclick="|location.href='/hanuldure/farmerprofile/${session.userSeq}'|" th:if="${session.userType==1}">마이페이지</button>
+                <button id="loginbutton3" th:onclick="|location.href='/hanuldure/userprofile/${session.userSeq}'|" th:if="${session.userType==0}">마이페이지</button>
+                <button id="loginbutton4" onclick="location.href='/hanuldure/login'" th:if="${session.userSeq!=null}">로그아웃</button>
+            </div>
         </div>
-        <button id="loginbutton1" onclick="location.href='/hanuldure/login'" th:if="${session.userSeq==null}">로그인</button>
-        <button id="loginbutton2" th:onclick="|location.href='/hanuldure/farmerprofile/${session.userSeq}'|" th:if="${session.userType==1}">마이페이지</button>
-        <button id="loginbutton3" th:onclick="|location.href='/hanuldure/userprofile/${session.userSeq}'|" th:if="${session.userType==0}">마이페이지</button>
-        <button id="loginbutton4" onclick="location.href='/hanuldure/login'" th:if="${session.userSeq!=null}">로그아웃</button>
-            <p id="centerText1">'한울두레'</p>
+
+        <p id="centerText1">'한울두레'</p>
         <p id="centerText2">진실하고 가득한 우리 농촌 터전</p>
     </div>
     <div class="mainranking">
-        <label id="label1">체험모집</label>
-        <br>
-        <label id="label2">인기체험 TOP3</label>
-        <button id="mainbutton" onclick="location.href='/hanuldure/community'">전체 글 보기</button>
+        <div class="mainrankingheader">
+            <div>
+                <p id="label1">체험모집</p>
+                <p id="label2">인기체험 TOP3</p>
+            </div>
+            <div>
+                <button id="mainbutton" onclick="location.href='/hanuldure/community'">전체 글 보기</button>
+            </div>
+        </div>
 
         <div id="ranking">
             <div id="rankingbox1">
                 <div id="name1" th:text="${Ranking1.expTitle}"></div>
-                <hr>
+                <hr class="hrmargin">
                 <img id="rankingimg1" th:src="@{'/img/' + ${Ranking1.expImg}}" />
                 <div id="locate1" th:text="${Ranking1.expAddr}"></div>
                 <div id="price1" th:text="${Ranking1.expPrice}+'원'"></div>
@@ -43,7 +59,7 @@
 
             <div id="rankingbox2">
                 <div id="name2" th:text="${Ranking2.expTitle}"></div>
-                <hr>
+                <hr class="hrmargin">
                 <img id="rankingimg2" th:src="@{'/img/' + ${Ranking2.expImg}}"/>
                 <div id="locate2" th:text="${Ranking2.expAddr}"></div>
                 <div id="price2" th:text="${Ranking2.expPrice}+'원'"></div>
@@ -54,7 +70,7 @@
 
             <div id="rankingbox3">
                 <div id="name3" th:text="${Ranking3.expTitle}"></div>
-                <hr>
+                <hr class="hrmargin">
                 <img id="rankingimg3" th:src="@{'/img/' + ${Ranking3.expImg}}"/>
                 <div id="locate3" th:text="${Ranking3.expAddr}"></div>
                 <div id="price3" th:text="${Ranking3.expPrice}+'원'"></div>

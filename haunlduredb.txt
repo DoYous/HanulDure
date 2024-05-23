@@ -1,76 +1,128 @@
+drop database hanulduredb;
+
+create database hanulduredb;
+
+show databases;
+
+use hanulduredb;
+
 CREATE TABLE  user  (
-	 user_seq 	int	NOT NULL	PRIMARY KEY AUTO_INCREMENT,
-	 user_id 	varchar(20)	NOT NULL,
-	 user_password 	varchar(20)	NOT NULL,
-	 user_email 	varchar(30)	NOT NULL,
-	 user_name 	varchar(10)	NOT NULL,
-	 user_birth 	date	NOT NULL,
-	 user_phone 	varchar(20)	NOT NULL,
-	 user_reason 	varchar(255)	NULL,
-	 user_region 	varchar(255)	NOT NULL,
-	 user_gender 	char(1)	NOT NULL,
-	 user_intro 	varchar(255)	NULL,
-	 user_point 	int	NULL,
-	 user_type 	tinyint	NOT NULL
+    user_seq    int   NOT NULL   PRIMARY KEY AUTO_INCREMENT,
+    user_id    varchar(20)   NOT NULL,
+    user_password    varchar(20)   NOT NULL,
+    user_email    varchar(30)   NOT NULL,
+    user_name    varchar(10)   NOT NULL,
+    user_birth    date   NOT NULL,
+    user_phone    varchar(20)   NOT NULL,
+    user_reason    varchar(255)   NULL,
+    user_region    varchar(255)   NOT NULL,
+    user_gender    char(1)   NOT NULL,
+    user_intro    varchar(255)   NULL,
+    user_point    int   NULL,
+    user_type    tinyint   NOT NULL
 );
 
 CREATE TABLE  exp  (
-	 exp_seq 	int	NOT NULL	PRIMARY KEY AUTO_INCREMENT,
-	 user_seq 	int	NOT NULL	,
-	 exp_title 	varchar(255)	NOT NULL,
-	 exp_content 	varchar(10000)	NOT NULL,
-	 exp_start 	datetime	NOT NULL,
-	 exp_end 	datetime	NOT NULL	,
-	 exp_get_start 	datetime	NOT NULL,
-	 exp_get_end 	datetime	NOT NULL,
-	 exp_min 	int	NOT NULL,
-	 exp_max 	int	NOT NULL,
-	 exp_addr 	varchar(255)	NOT NULL,
-	 exp_addr_detail 	varchar(255)	NULL,
-	 exp_img 	varchar(255)	NULL,
-	 exp_price 	int	NOT NULL,
-	 exp_request_datetime 	datetime	NOT NULL,
-	 exp_status 	tinyint	NOT NULL	,
-     FOREIGN KEY (user_seq) REFERENCES user (user_seq)
+    exp_seq    int   NOT NULL   PRIMARY KEY AUTO_INCREMENT,
+    user_seq    int   NOT NULL   ,
+    exp_title    varchar(255)   NOT NULL,
+    exp_content    varchar(10000)   NOT NULL,
+    exp_start    datetime   NOT NULL,
+    exp_end    datetime   NOT NULL   ,
+    exp_get_start    datetime   NOT NULL,
+    exp_get_end    datetime   NOT NULL,
+    exp_min    int   NOT NULL,
+    exp_max    int   NOT NULL,
+    exp_addr    varchar(255)   NOT NULL,
+    exp_addr_detail    varchar(255)   NULL,
+    exp_img    varchar(255)   NULL,
+    exp_price    int   NOT NULL,
+    exp_request_datetime    datetime   NOT NULL,
+    exp_status    tinyint   NOT NULL   ,
+     FOREIGN KEY (user_seq) REFERENCES user (user_seq),
+     exp_apply_count int not null default(0),
+     exp_duration varchar(255) not null
 );
 
+
+
+
 CREATE TABLE  exp_review  (
-	 rev_seq 	int	NOT NULL	PRIMARY KEY AUTO_INCREMENT,
-	 user_seq 	int	NOT NULL	,
-	 exp_seq 	int	NOT NULL	,
-	 rev_content 	varchar(255)	NOT NULL,
-	 rev_write_date 	datetime	NOT NULL,
+    rev_seq    int   NOT NULL   PRIMARY KEY AUTO_INCREMENT,
+    user_seq    int   NOT NULL   ,
+    exp_seq    int   NOT NULL   ,
+    rev_content    varchar(255)   NOT NULL,
+    rev_write_date    datetime   NOT NULL,
      FOREIGN KEY (user_seq) REFERENCES user (user_seq),
      FOREIGN KEY (exp_seq) REFERENCES exp (exp_seq)
 );
 
 CREATE TABLE  board  (
-	 board_seq 	int	NOT NULL 	PRIMARY KEY AUTO_INCREMENT,
-	 user_seq 	int	NOT NULL	,
-	 board_title 	varchar(255)	NOT NULL,
-	 board_content 	varchar(10000)	NOT NULL,
-	 board_write_date 	datetime	NOT NULL,
-	 board_type 	char(1)	NOT NULL	,
+    board_seq    int   NOT NULL    PRIMARY KEY AUTO_INCREMENT,
+    user_seq    int   NOT NULL   ,
+    board_title    varchar(255)   NOT NULL,
+    board_content    varchar(10000)   NOT NULL,
+    board_write_date    datetime   NOT NULL,
+    board_type    char(1)   NOT NULL   ,
      FOREIGN KEY (user_seq) REFERENCES user (user_seq)
 );
 
 CREATE TABLE  exp_apply  (
-	 user_seq 	int	NOT NULL	,
-	 exp_seq 	int	NOT NULL	,
-	 apply_user_num 	int	NOT NULL	DEFAULT 1,
-	 user_phone 	varchar(20)	NOT NULL,
-	 apply_comment 	varchar(255)	NOT NULL,
+    user_seq    int   NOT NULL   ,
+    exp_seq    int   NOT NULL   ,
+    apply_user_num    int   NOT NULL   DEFAULT 1,
+    user_phone    varchar(20)   NOT NULL,
+    apply_comment    varchar(255)   NOT NULL,
      FOREIGN KEY (user_seq) REFERENCES user (user_seq),
      FOREIGN KEY (exp_seq) REFERENCES exp (exp_seq)
 );
 
 CREATE TABLE  manager  (
-	 manager_seq 	int	NOT NULL	PRIMARY KEY AUTO_INCREMENT,
-	 manager_id 	varchar(20)	NOT NULL,
-	 manager_password 	varchar(20)	NOT NULL
+    manager_seq    int   NOT NULL   PRIMARY KEY AUTO_INCREMENT,
+    manager_id    varchar(20)   NOT NULL,
+    manager_password    varchar(20)   NOT NULL
 );
 
-alter table exp add column exp_apply_count int not null default(0);
-alter table exp add column exp_duration varchar(255) not null;
+INSERT INTO user (
+    user_id, user_password, user_email, user_name, user_birth, user_phone, user_reason, user_region, user_gender, user_intro, user_point, user_type
+) VALUES
+    ('aaa', 'aaa', 'john.doe@example.com', '김만덕', '1985-01-15', '123-456-7890', 'Interested in tech', 'Seoul', 'M', '보리농사꾼 기만덕입니다.', null, 1),
+    ('bbb', 'bbb', 'jane.smith@example.com', '김숙자', '1990-02-25', '234-567-8901', 'Networking opportunities', 'Busan', 'F', '벼농사 짓는 김숙자입니다.', null, 1),
+    ('ccc', 'ccc', 'alice.wang@example.com', '김영자', '1995-03-05', '345-678-9012', 'Career growth', 'Incheon', 'F', '당근을 사랑하는 김영자입니다.', null, 1),
+    ('ddd', 'ddd', 'bob.lee@example.com', '안효준', '1980-04-20', '456-789-0123', 'Learning new skills', 'Daegu', 'M', '농업에 관심이 많습니다~', null, 0);
 
-select * from board;
+INSERT INTO exp (
+    exp_seq,user_seq, exp_title, exp_content, exp_start, exp_end, exp_get_start, exp_get_end, exp_min, exp_max, exp_addr, exp_addr_detail, exp_img, exp_price, exp_request_datetime, exp_status, exp_apply_count, exp_duration
+) VALUES
+    (1,1, '김매기 체험', ' 김매기 체험을 통해 농사를 경험하고 느끼자!', '2024-06-01', '2024-06-01', '2024-05-01', '2024-05-30', 4, 15, '경상북도', ' 포항시 남구 중흥로61번길', 'exp.png', 15000, '2024-04-01', 1, 12, '8'),
+    (2,2, '벼 수확하기 체험', '우리가 매일 먹는 쌀, 직접 수확해봅시다.', '2024-07-15', '2024-07-15', '2024-06-01', '2024-07-10', 10, 50, '충청남도', '예산군 예산읍 벚꽃로20번길', 'exp2.png', 13000, '2024-05-15', 1, 11, '6'),
+    (3,3, '당근 수확 체험', '토끼가 좋아하는 당근 당신의 아이도 좋아할 수 있다!', '2024-08-20', '2024-08-20', '2024-07-01', '2024-08-18', 2, 20, '경기도', '안양시 동안구 관평로 334', 'exp3.png', 12000, '2024-06-20', 1, 8, '8');
+
+INSERT INTO board (
+    board_seq,user_seq, board_title, board_content, board_write_date, board_type
+) VALUES
+	(1,1, '흉년이야', '올해 비가 너무 안옵니다.', '2024-05-24 12:00:00', 'F'),
+    (2,2, '흥부가 기가막혀', '흥부가 기가막혀 흥부가 기가막혀 아이고 성님', '2024-05-24 12:05:00', 'F'),
+    (3,3, '당근무침 레시피', '당근은 깨끗이 씻어서 껍질을 살살 긁어 주고 마늘,파 준비 하여 주세요. 나머지는 내일~', '2024-05-24 12:10:00', 'F'),
+    (4,4, '8월 4일 감따러 가실분~', '8월 4일 같이 감따러 가실분 구합니다. 연락주세요.', '2024-05-24 12:15:00', 'R');
+
+INSERT INTO exp_review (
+    rev_seq,user_seq, exp_seq, rev_content, rev_write_date
+) VALUES
+	(1, 4, 1, '힘들었지만 정말 재밌었습니다!', '2024-05-24'),
+	(2, 4, 2, '사장님이 친절하시고 좋네요!', '2024-05-24'),
+	(3, 4, 3, '당근을 많이 챙겨주셔서 감사했습니다!', '2024-05-24');
+
+INSERT INTO exp_apply (
+    user_seq, exp_seq, apply_user_num, user_phone, apply_comment
+) VALUES
+	(4, 1, 3, '010-1234-5678', '애들도 가는데 힘들지 않나요?'),
+	(4, 2, 2, '010-1234-5678', '따로 없습니다.'),
+	(4, 3, 1, '010-1234-5678', '당근 얼마나 큰가요?');
+
+
+select * from user;
+select * from exp;
+ select * from board;
+select * from exp_review;
+select * from exp_apply;
