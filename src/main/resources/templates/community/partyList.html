@@ -14,7 +14,12 @@
     <script type="text/javascript">
         window.onload = () => {
             document.getElementById('partyWriteLink').onclick = () => {
-                location.href = "/hanuldure/community/expRequest";
+                if(`[[${ session.userSeq }]]`.length !== 0){
+                    location.href = "/hanuldure/community/expRequest";
+                }else {
+                    alert('로그인이 필요합니다.');
+                    location.href = "/hanuldure/login";
+                }
             }
         };
     </script>
@@ -68,7 +73,7 @@
 
             <div class="content-party-list">
                 <div class="party-card" th:each="exp : ${ expList }" th:onclick="|location.href='/hanuldure/community/expView/${ exp.expSeq }'|">
-                    <div class="party-image"></div>
+                    <div class="party-image" th:style="|background-image: url('/img/exp${exp.expSeq}.png')|"></div>
                     <div class="party-content">
                         <div class="party-title" th:text="${ exp.expTitle }">체험 이름</div>
                         <div class="card-address" th:text="|${ exp.expAddr } ${ !#strings.isEmpty(exp.expAddrDetail) ? exp.expAddrDetail : '' }|">OO도 OO시 OO길 OO</div>

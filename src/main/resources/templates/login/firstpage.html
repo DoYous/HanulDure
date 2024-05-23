@@ -47,36 +47,36 @@
 
         <div id="ranking">
             <div id="rankingbox1">
-                <div id="name1" th:text="${Ranking1.expTitle}"></div>
+                <div id="name1" th:text="|TOP1 ${Ranking1.expTitle}|"></div>
                 <hr class="hrmargin">
                 <img id="rankingimg1" th:src="@{'/img/' + ${Ranking1.expImg}}" />
                 <div id="locate1" th:text="${Ranking1.expAddr}"></div>
                 <div id="price1" th:text="${Ranking1.expPrice}+'원'"></div>
                 <div id="count1" th:text="'최소인원: '+${Ranking1.expMin}+'명'"></div>
                 <div id="count11" th:text="'최대인원: '+${Ranking1.expMax}+'명'"></div>
-                <button id="detailbutton1">상세보기</button>
+                <button onclick="location.href='http://localhost:8080/hanuldure/community/expView/1'" id="detailbutton1">상세보기</button>
             </div>
 
             <div id="rankingbox2">
-                <div id="name2" th:text="${Ranking2.expTitle}"></div>
+                <div id="name2" th:text="|TOP2 ${Ranking2.expTitle}|"></div>
                 <hr class="hrmargin">
                 <img id="rankingimg2" th:src="@{'/img/' + ${Ranking2.expImg}}"/>
                 <div id="locate2" th:text="${Ranking2.expAddr}"></div>
                 <div id="price2" th:text="${Ranking2.expPrice}+'원'"></div>
                 <div id="count2" th:text="'최소인원: '+${Ranking2.expMin}+'명'"></div>
                 <div id="count22" th:text="'최대인원: '+${Ranking2.expMax}+'명'"></div>
-                <button id="detailbutton2">상세보기</button>
+                <button onclick="location.href='http://localhost:8080/hanuldure/community/expView/2'" id="detailbutton2">상세보기</button>
             </div>
 
             <div id="rankingbox3">
-                <div id="name3" th:text="${Ranking3.expTitle}"></div>
+                <div id="name3" th:text="|TOP3 ${Ranking3.expTitle}|"></div>
                 <hr class="hrmargin">
                 <img id="rankingimg3" th:src="@{'/img/' + ${Ranking3.expImg}}"/>
                 <div id="locate3" th:text="${Ranking3.expAddr}"></div>
                 <div id="price3" th:text="${Ranking3.expPrice}+'원'"></div>
                 <div id="count3" th:text="'최소인원: '+${Ranking3.expMin}+'명'"></div>
                 <div id="count33" th:text="'최대인원: '+${Ranking3.expMax}+'명'"></div>
-                <button id="detailbutton3">상세보기</button>
+                <button onclick="location.href='http://localhost:8080/hanuldure/community/expView/3'" id="detailbutton3">상세보기</button>
             </div>
 
         </div>

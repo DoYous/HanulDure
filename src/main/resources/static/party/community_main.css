@@ -196,7 +196,7 @@ main {
     cursor: pointer;
 }
 
-button[class="partyWriteLink"] {
+button.partyWriteLink, button.boardWriteLink {
     margin-left: auto;
 
     border: none;
@@ -226,7 +226,7 @@ button[class="partyWriteLink"] {
 }
 
 .party-image {
-    background-image: url("test.png");
+    /*background-image: url("test.png");*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -296,4 +296,19 @@ footer {
     border: 1px solid black;
 
     margin-top: auto;
+}
+
+.writeBTDiv{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 20px;
+}
+
+.writeBT {
+    border-radius: 30px;
+    border: none;
+    width: 80px;
+    color: #000000;
+
 }

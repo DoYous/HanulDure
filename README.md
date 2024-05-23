@@ -40,7 +40,7 @@
 
 | **김상익** | **도영익** | **배민서** | **안효준** | **이수빈** |
 | :------: |  :------: | :------: | :------: | :------: |
-|[<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/853f5f6c-10a6-435b-9c69-3546fac28751" width="180" height="150"> <br/> @GTU9](https://github.com/GTU9)|[<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/6944c8d3-1960-4e71-a8a8-6d6789e26469" width="180" height="150"> <br/> @do0ik](https://github.com/do0ik) |[<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/3d01c55f-5b2d-494e-98c1-2257860c3e06" width="180" height="150"/> <br/> @Baeminseo](https://github.com/Baeminseo) | [<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/be37e3ee-5fa1-4abc-a93b-43fc2d37e675" width="180" height="150"/> <br/> @hyojunahn111](https://github.com/hyojunahn111) | [<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/cb8d0ba5-ebcb-4cfe-94af-926a32a62141" width="180" height="150"><br/> @joy:)](https://github.com/sb-77) |
+|[<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/853f5f6c-10a6-435b-9c69-3546fac28751" width="150" height="150"> <br/> @GTU9](https://github.com/GTU9)|[<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/6944c8d3-1960-4e71-a8a8-6d6789e26469" width="150" height="150"> <br/> @do0ik](https://github.com/do0ik) |[<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/3d01c55f-5b2d-494e-98c1-2257860c3e06" width="150" height="150"/> <br/> @Baeminseo](https://github.com/Baeminseo) | [<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/be37e3ee-5fa1-4abc-a93b-43fc2d37e675" width="150" height="150"/> <br/> @hyojunahn111](https://github.com/hyojunahn111) | [<img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/cb8d0ba5-ebcb-4cfe-94af-926a32a62141" width="150" height="150"><br/> @joy:)](https://github.com/sb-77) |
 
 
 </div>
@@ -94,7 +94,7 @@
 
 <br>
 
-<p align="center"><img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/b5789f26-44e1-4488-82cb-7db7faaa1ced" height=600 width=1300></p>
+<p align="center"><img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/b5789f26-44e1-4488-82cb-7db7faaa1ced" height=500 width=1300></p>
 
 
 
@@ -106,7 +106,7 @@
 <br><br> 
 
 
-<p align="center"><img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/502b5ced-f1d5-4705-a640-57338c7837db" height=540 width=1000></p>
+<p align="center"><img src="https://github.com/WebAppTeamPJ/HanulDure/assets/105586878/502b5ced-f1d5-4705-a640-57338c7837db" height=640 width=1000></p>
 
 - 기획하기 : NOTION, DISCORD, FIGMA
 - 코드 작성 : IntelliJ IDEA
@@ -128,7 +128,7 @@
 <br>
   
 <div align=left><h4>협업 툴</h4></div>
-<div align=left><a href="https://www.figma.com/file/trnuQMSJImWGjZdfgPO8Xp/KeyBoard?type=design&node-id=0-1&mode=design&t=RjBiLxVPDb2ovY1K-0"><img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/></a><img src="https://img.shields.io/badge/IntelliJ%20IDEAE-000000?style=flat&logo=EclipseIDE&logoColor=white" /><img src="https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=java&logoColor=white"><img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white"><img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"><img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/><img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/><br><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"/><a href="https://www.notion.so/c67e959442fe4653918413831d81cf76?v=6b249613c0ee42d9943c6f2a879ac5a9"><img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"/></a><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/></div>
+<div align=left><a href="https://www.figma.com/file/trnuQMSJImWGjZdfgPO8Xp/KeyBoard?type=design&node-id=0-1&mode=design&t=RjBiLxVPDb2ovY1K-0"><img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/></a><img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=flat&logo=IntelliJIDEA&logoColor=white" /><img src="https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=java&logoColor=white"><img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white"><img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"><img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/><img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/><br><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"/><a href="https://www.notion.so/c67e959442fe4653918413831d81cf76?v=6b249613c0ee42d9943c6f2a879ac5a9"><img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"/></a><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/></div>
 
 <br>
 <br>
@@ -163,13 +163,14 @@
 
 ### 1️⃣김상익
 
-작성하시오!
+이번 프로젝트를 하면서 굉장히 힘들었습니다. 그래도 새로운 것을 배운다는 것이 재밌었습니다. 그런데 시간이 많이 모자라 생각한 것보다 결과가 만족스럽지는 않아 아쉬웠습니다.
 
 <br>
 
 ### 2️⃣도영익
 
-작성하시오!
+구현 단계에서 많은 시행 착오를 겪으면서 초기 기획 설계 단계에서의 데이터베이스 설계가 중요하다는 것을 여실히 깨달았습니다.
+게다가 프로젝트 막바지에 이르러 시간에 쫓기며 진행하느라 기획한 기능들을 모두 구현하지 못했고 구현한 부분도 완벽하지 않아 아쉬움이 많이 느껴지는 결과라고 생각합니다. 이를 발판 삼아 이 후 프로젝트부터는 기획 설계를 좀 더 꼼곰히 진행하고 주어진 시간 동안 꾸준히 진행할 수 있도록 할 것입니다.
 
 <br>
 
@@ -181,7 +182,7 @@
 
 ### 4️⃣안효준
 
-작성하시오!
+적은 실력에 짧은 기간동안 분수에 맞지 않게 기획을 하고 제작을 하려하니 잠도 못 자고 고통 받았던 것 같다. 제작하려던 것도 제대로 제작하지 못하였고 완성도도 많이 떨어졌다. 이번 프로젝트로 인해 기획도 엄청 중요하다고 생각들었다. 시간을 무기한으로 주는 것이 아니니 잘 파악하고 제작해야겠다는 다짐을 하게되었다. 아이디어 자체는 참 좋았던 것 같지만 완성도가 떨어지는 프로젝트가 만들어져서 아쉬움이 많이 남는 프로젝트였던 것 같다.
 
 <br>
 

@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/party/community_main.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.onload = () => {
+            document.getElementById('boardWriteLink').onclick = () => {
+                if(`[[${ session.userSeq }]]`.length !== 0){
+                    location.href = "/hanuldure/community/write";
+                }else {
+                    alert('로그인이 필요합니다.');
+                    location.href = "/hanuldure/login";
+                }
+            }
+        };
+    </script>
 </head>
 <body>
     <header th:replace="~{/common/header :: headerFragment}">
@@ -24,8 +36,8 @@
                             <div class="carousel-item-wraps">
                                 <div class="carousel-item-wrap">
                                     <div class="item-rank-first">이달의 체험 🥇</div>
-                                    <div class="item-title">체험 제목</div>
-                                    <div class="item-content">체험 내용 요약</div>
+                                    <div class="item-title">당근 수확 체험</div>
+                                    <div class="item-content">토끼가 좋아하는 당근 당신의 아이도 좋아할 수 있다!</div>
                                 </div>
                             </div>
                         </div>
@@ -56,12 +68,10 @@
         <div class="content-wrap">
             <!-- 게시판 -->
             <div class="content-caption">
-                <div class="caption-title">
-                </div>
+                <button class="boardWriteLink" id="boardWriteLink">게시글 작성</button>
             </div>
-            <div class="content-board-list" th:with="max=${boardList.size() - 1}">
-                <div th:each="num : ${#numbers.sequence(0, max > 3 ? 3 : max)}"
-                     th:with="board=${boardList.get(num)}"
+            <div class="content-board-list">
+                <div th:each="board : ${boardList}"
                      th:class="|board-card-${#strings.equals(board.boardType, 'F') ? 'free' : 'recruit'}|"
                      th:onclick="|location.href='/hanuldure/community/detail/${board.boardSeq}'|">
                     <div class="board-title hover-ul" th:text="${board.boardTitle}">
@@ -73,6 +83,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 </body>
 </html>

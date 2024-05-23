@@ -17,7 +17,7 @@
 <div class="bodywidth">
     <div class="detail1">
         <div>
-            <img src="/img/exp.PNG" alt="체험 이미지" class="img1"/>
+            <img th:src="|/img/exp${exp.expSeq}.PNG|" alt="체험 이미지" class="img1"/>
         </div>
         <div class="detailDiv">
             <div class="flexCon">
@@ -48,13 +48,13 @@
                 </div>
             </div>
             <hr/>
-            <button class="reservBtn">예약 가능</button>
+            <button class="reservBtn" th:onclick="|location.href='/hanuldure/'|">예약 가능</button>
         </div>
     </div>
     <div class="detail2">
         <h3 th:text="${exp.expTitle}" class="subText">체험 제목</h3>
         <div>
-            <img src="/img/exp.PNG" alt="체험 이미지" class="img2"/>
+            <img th:src="|/img/exp${exp.expSeq}.PNG|" alt="체험 이미지" class="img2"/>
         </div>
         <div class="font23">
 

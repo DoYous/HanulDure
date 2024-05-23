@@ -78,7 +78,7 @@
             </div>-->
             <div class="content-party-list" th:with="max=${#lists.size(expList) - 1}">
                 <div class="party-card" th:each="num : ${#numbers.sequence(0, max gt 5 ? 5 : max)}" th:with="exp=${expList.get(num)}" th:onclick="|location.href='/hanuldure/community/expView/${ exp.expSeq }'|">
-                    <div class="party-image"></div>
+                    <div class="party-image" th:style="|background-image: url('/img/exp${exp.expSeq}.png')|"></div>
                     <div class="party-content">
                         <div class="party-title" th:text="${ exp.expTitle }">체험 이름</div>
                         <div class="card-address" th:text="|${ exp.expAddr } ${ !#strings.isEmpty(exp.expAddrDetail) ? exp.expAddrDetail : '' }|">OO도 OO시 OO길 OO</div>
