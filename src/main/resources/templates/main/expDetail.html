@@ -39,7 +39,7 @@
                     <h3 th:text="${#dates.format(exp.expStart, 'yyyy-MM-dd')} + ' ~ ' + ${#dates.format(exp.expEnd, 'yyyy-MM-dd')}">
                         일시</h3>
                     <h3 th:text="'최소 '+${exp.expMin} + '명 / 최대 ' + ${exp.expMax} + '명'">체험인원</h3>
-                    <h3 th:text="${exp.expTime} + '분'"></h3>
+                    <h3 th:text="${exp.expDuration}"></h3>
                     <h3 th:text="${exp.expPrice} + '원'">체험비용</h3>
                 </div>
             </div>
@@ -68,12 +68,12 @@
         </div>
         <hr/>
         <div class="flex">
-            <div class="reviewText2">
+            <!--<div class="reviewText2">
                 <div class="text">
                     <h3 th:text="${exp.userName}">작성자 닉네임</h3>
                 </div>
                 <p th:text="${exp.revContent}">후기내용</p>
-            </div>
+            </div>-->
         </div>
         <hr/>
         <div class="flex">
