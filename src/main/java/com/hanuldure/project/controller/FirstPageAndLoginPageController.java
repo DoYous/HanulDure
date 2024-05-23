@@ -22,11 +22,6 @@ import java.util.List;
 @RequestMapping("hanuldure")
 public class FirstPageAndLoginPageController {
 
-    @Autowired
-    private MemberService memberService;
-    public static Integer loginSession;
-    @Autowired
-    private FirstPageService firstPageService;
     private final ProfileService profileService;
 
     @Autowired
@@ -34,6 +29,12 @@ public class FirstPageAndLoginPageController {
         this.profileService = profileService;
     }
 
+
+    @Autowired
+    private MemberService memberService;
+    public static Integer loginSession;
+    @Autowired
+    private FirstPageService firstPageService;
 
     @GetMapping("firstpage")
     public ModelAndView firstpage(ModelAndView model,HttpSession session) {
@@ -128,14 +129,6 @@ public class FirstPageAndLoginPageController {
 
     @PostMapping("createmember")
     public String creatememberOk(MemberDTO newMember){
-//        MemberDTO newMember=new MemberDTO();
-//        newMember.setUserId(request.getParameter("userId"));
-//        newMember.setUserPassword(request.getParameter("userPassword"));
-//        newMember.setUserName(request.getParameter("userName"));
-//        newMember.setUserBirth(request.getParameter("userBirth"));
-//        newMember.setUserPhone(request.getParameter("userPhone"));
-//        newMember.setUserType(request.getParameter("userType"));
-//        newMember.setUserPhone(request.getParameter("userPhone"));
 
         System.out.println(newMember);
         int result=memberService.signup(newMember);

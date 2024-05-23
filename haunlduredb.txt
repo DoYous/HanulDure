@@ -70,4 +70,7 @@ CREATE TABLE  manager  (
 	 manager_password 	varchar(20)	NOT NULL
 );
 
+alter table exp add column exp_apply_count int not null default(0);
+alter table exp add column exp_duration varchar(255) not null;
+
 select * from board;

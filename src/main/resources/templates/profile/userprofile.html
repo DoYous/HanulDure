@@ -27,16 +27,21 @@
         <hr>
         <div class="events" th:if="${expInfo != null}">
 
-                <div th:each="exp : ${expInfo}" class="event">
-                    <div class="exp-img">
-                        <img src="/img/exp1.png" alt="행사 사진">
-                    </div>
-                    <div class="green-box">
-                        <p><span class="exp-title" th:text="${exp.expTitle}"></span> <span>     </span> <span class="exp-status" th:text="${exp.expStatus}"></span></p>
-                        <p class="exp-content"><span th:text="${exp.expContent}"></span></p>
+            <div th:each="exp : ${expInfo}" class="event">
+                <div class="exp-img">
+                    <img src="/img/exp1.png" alt="행사 사진">
+                </div>
+                <div class="green-box">
+                    <p><span class="exp-title" th:text="${exp.expTitle}"></span>
+                    <p class="exp-content"><span th:text="${exp.expContent}"></span></p>
 
-                            <p class="exp-status2"><span th:text="${exp.expStatus}"></span></p>
-                            <p class="exp-participants">모집 <span th:text="${exp.expApplyCount}"></span>명</p>
+                    <p class="exp-status2" th:if="${exp.expStatus == 5}">
+                        <span class="grey-text">종료됨</span>
+                    </p>
+                    <p class="exp-status2" th:if="${exp.expStatus == 1}">
+                        <span>진행중</span>
+                    </p>
+                        <p class="exp-participants">모집 <span th:text="${exp.expApplyCount}"></span>명</p>
 
                     </div>
 
