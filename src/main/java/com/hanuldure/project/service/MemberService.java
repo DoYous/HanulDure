@@ -26,4 +26,8 @@ public class MemberService {
     public String searchId(MemberDTO memberDTO){return memberDAO.searchId(memberDTO);}
 
     public String searchPwd(MemberDTO memberDTO){return memberDAO.searchPwd(memberDTO);}
+
+    public com.hanuldure.project.dto.MemberDTO getWhatUserName(int userinseq){
+        return memberDAO.selectWhatName(userinseq);
+    }
 }

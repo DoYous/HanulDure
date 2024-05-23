@@ -17,4 +17,7 @@ public interface MemberMapper {
 
     @Select("SELECT user_password FROM USER WHERE user_name=#{userName} AND user_phone =#{userPhone} AND user_id=#{userId}")
     String searchPwd(MemberDTO newMember);
+
+    @Select("SELECT user_name FROM user WHERE user_seq = #{userinseq}")
+    com.hanuldure.project.dto.MemberDTO selectWhatName(int userinseq);
 }
