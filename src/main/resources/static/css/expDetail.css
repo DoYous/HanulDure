@@ -51,7 +51,8 @@
     color: white;
     /* font-weight: 400; */
     font-size: 25px;
-    margin-top: 20px;}
+    margin-top: 20px;
+    cursor: pointer;}
 .deleteBtn{width: 80px;
     padding: 10px;
     border: none;

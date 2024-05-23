@@ -1,9 +1,12 @@
 package com.hanuldure.project.controller;
 
+import com.hanuldure.project.dto.CommunityTO;
 import com.hanuldure.project.model.dto.ExpDTO;
+import com.hanuldure.project.service.CommunityService;
 import com.hanuldure.project.service.ExpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,20 +18,23 @@ import java.util.List;
 public class CommunityController {
 
     private ExpService expService;
+    private CommunityService communityService;
 
-    public CommunityController(ExpService expService) {
+    public CommunityController(ExpService expService, CommunityService communityService) {
         this.expService = expService;
+        this.communityService = communityService;
     }
 
     @GetMapping("community")
-    public ModelAndView communityMain(ModelAndView mv) {
+    public String communityMain(Model model) {
 
         List<ExpDTO> expList = expService.getExpList(true);
+        List<CommunityTO> boardList = communityService.getBoardList();
 
-        mv.addObject("expList", expList);
+        model.addAttribute("expList", expList);
+        model.addAttribute("boardList", boardList);
 
-        mv.setViewName("/community/main");
-        return mv;
+        return "/community/main";
     }
 
     @GetMapping("community/partyApply")
@@ -51,6 +57,9 @@ public class CommunityController {
     @GetMapping("community/boardList")
     public ModelAndView boardList(ModelAndView mv) {
 
+        List<CommunityTO> boardList = communityService.getBoardList();
+
+        mv.addObject("boardList", boardList);
         mv.setViewName("/community/boardList");
         return mv;
     }
