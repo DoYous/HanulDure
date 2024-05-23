@@ -19,6 +19,9 @@ public interface ProfileMapper {
     @Select("SELECT e.exp_end, e.exp_title, e.exp_content FROM exp e JOIN user u ON u.user_seq = e.user_seq WHERE u.user_seq = #{userSeq}")
     List<ExpDTO> selectExpAllDetails(int userSeq);
 
-    @Select("SELECT SUM(apply_user_num) FROM exp_apply WHERE exp_seq = 1") //#{expSeq}
+    @Select("SELECT SUM(exp_apply_count) FROM exp WHERE exp_seq = 1") //#{expSeq}
     Integer selectExpApplications(int expSeq);
+
+    @Select("SELECT user_type FROM user WHERE user_seq=#{userSeq}")
+    MemberDTO selectMemberusertype(int userSeq);
 }
