@@ -16,9 +16,10 @@
         <div id="logo">
             <img id="logoimg" src="/image/logo.png"/> 한울두레
         </div>
-            <button id="loginbutton1" onclick="location.href='/hanuldure/login'" th:if="${session.userSeq==null}">로그인</button>
-            <button id="loginbutton2" th:onclick="|location.href='/hanuldure/userprofile/${session.userSeq}'|" th:if="${session.userSeq!=null}">마이페이지</button>
-            <button id="loginbutton3" onclick="location.href='/hanuldure/logout'" th:if="${session.userSeq!=null}">로그아웃</button>
+        <button id="loginbutton1" onclick="location.href='/hanuldure/login'" th:if="${session.userSeq==null}">로그인</button>
+        <button id="loginbutton2" th:onclick="|location.href='/hanuldure/farmerprofile/${session.userSeq}'|" th:if="${session.userType==1}">마이페이지</button>
+        <button id="loginbutton3" th:onclick="|location.href='/hanuldure/userprofile/${session.userSeq}'|" th:if="${session.userType==0}">마이페이지</button>
+        <button id="loginbutton4" onclick="location.href='/hanuldure/login'" th:if="${session.userSeq!=null}">로그아웃</button>
             <p id="centerText1">'한울두레'</p>
         <p id="centerText2">진실하고 가득한 우리 농촌 터전</p>
     </div>
