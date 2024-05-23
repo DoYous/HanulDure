@@ -29,17 +29,15 @@ public class FirstPageAndLoginPageController {
         this.profileService = profileService;
     }
 
-
     @Autowired
     private MemberService memberService;
     public static Integer loginSession;
     @Autowired
     private FirstPageService firstPageService;
 
-    @GetMapping("firstpage")
+    @GetMapping({"/", "firstpage"})
     public ModelAndView firstpage(ModelAndView model,HttpSession session) {
         Integer userSeq = (Integer) session.getAttribute("userSeq");
-        System.out.println(userSeq);
 
 
         FirstPageDTO Ranking1 = firstPageService.searchRankExp(1);
@@ -49,9 +47,6 @@ public class FirstPageAndLoginPageController {
         model.addObject("Ranking1", Ranking1);
         model.addObject("Ranking2", Ranking2);
         model.addObject("Ranking3", Ranking3);
-        System.out.println(Ranking1);
-        System.out.println(Ranking2);
-        System.out.println(Ranking3);
 
         model.setViewName("login/firstpage");
         return model;
@@ -72,11 +67,9 @@ public class FirstPageAndLoginPageController {
             HttpSession session = request.getSession();
             session.setAttribute(SessionKey.sessionUserSeq, result);
             loginSession = (Integer) session.getAttribute(SessionKey.sessionUserSeq);
-            System.out.println(loginSession);
             com.hanuldure.project.dto.MemberDTO usertype = profileService.getMemberBySeq(loginSession);
 
             session.setAttribute("userType", usertype.getUserType());
-            System.out.println("유저타입 확인" + usertype);
 
             return "redirect:/hanuldure/firstpage";
         }
@@ -101,7 +94,6 @@ public class FirstPageAndLoginPageController {
         String result=memberService.searchId(memberDTO);
 
             rttr.addFlashAttribute("result",result);
-            System.out.println(result);
             return "redirect:/hanuldure/searchid";
     }
 
@@ -116,7 +108,6 @@ public class FirstPageAndLoginPageController {
         String result=memberService.searchPwd(memberDTO);
 
             rttr.addFlashAttribute("result",result);
-            System.out.println(result);
             return "redirect:/hanuldure/searchpwd";
     }
 
@@ -130,7 +121,6 @@ public class FirstPageAndLoginPageController {
     @PostMapping("createmember")
     public String creatememberOk(MemberDTO newMember){
 
-        System.out.println(newMember);
         int result=memberService.signup(newMember);
         if(result==1){
             System.out.println(1);

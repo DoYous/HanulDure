@@ -12,7 +12,11 @@ public interface CommunityMapper {
     @Options(useGeneratedKeys = true, keyProperty = "boardSeq")
     int insertCommunity(CommunityTO communityTO);
 
-    @Select("SELECT user_seq, board_seq, board_title, board_content, board_write_date, board_type FROM board WHERE board_seq = #{boardSeq}")
+    @Select("SELECT board_seq, board_title, board_content, board_write_date, board_type FROM board ORDER BY board_seq DESC")
+    List<CommunityTO> selectBoardList();
+
+    @Select("SELECT board_seq, board_title, board_content, board_write_date, board_type FROM board WHERE board_seq = #{boardSeq}")
+
     CommunityTO selectCommunityBySeq(int boardSeq);
 
     @Update("UPDATE board SET board_title = #{boardTitle}, board_content = #{boardContent}, board_write_date = now(), board_type = #{boardType} WHERE board_seq = #{boardSeq}")

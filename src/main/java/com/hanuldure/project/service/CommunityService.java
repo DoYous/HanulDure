@@ -5,6 +5,7 @@ import com.hanuldure.project.dao.CommunityDAO;
 import com.hanuldure.project.dao.MemberDAO;
 import com.hanuldure.project.dto.CommunityTO;
 import com.hanuldure.project.dto.MemberDTO;
+import com.hanuldure.project.mapper.CommunityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,10 @@ public class CommunityService {
 
     public int addCommunity(CommunityTO communityTO) {
         return communityDAO.insertCommunity(communityTO);
+    }
+
+    public List<CommunityTO> getBoardList() {
+        return communityDAO.selectBoardList();
     }
 
     public CommunityTO getCommunityBySeq(int boardSeq) {
