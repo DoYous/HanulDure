@@ -43,9 +43,9 @@ public class FarmerProfileController {
                 } else {
                     exp.setExpStatus(1);
                 }
-                int expApplyCount = profileService.selectExpApplications(exp.getExpSeq());
-                exp.setExpApplyCount(expApplyCount);
-                System.out.println(expApplyCount);
+//                int expApplyCount = profileService.selectExpApplications(exp.getExpSeq());
+//                exp.setExpApplyCount(expApplyCount);
+//                System.out.println(expApplyCount);
             }
             model.addObject("expInfo", expInfo);
         }

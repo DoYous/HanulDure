@@ -112,7 +112,7 @@ public class CommunityBoardController {
     public String deleteCommunity(@RequestParam("boardSeq") int boardSeq) {
         int result = communityService.deleteCommunity(boardSeq);
         
-        return "redirect:/community";
+        return "redirect:/hanuldure/community";
     }
 
     //메인버튼 클릭 시

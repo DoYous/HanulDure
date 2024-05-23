@@ -27,101 +27,70 @@
     </script>
 </head>
 <body>
-<header>
-    <nav>
-        <div id="logo-wrap">
-            <img class="logo-img" src="/party/logo.svg">&nbsp;<div class="logo-text gugi-regular">한울두레</div>
-        </div>
-        <div id="logout-button" class="jua-regular">로그아웃</div>
-    </nav>
-</header>
-<main>
-    <div class="main-header">
-        <div class="carousel-wrap">
-            <div id="carouselRank" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="carousel-item-wraps">
-                            <div class="carousel-item-wrap">
-                                <div class="item-rank-first">이달의 체험 🥇</div>
-                                <div class="item-title">체험 제목</div>
-                                <div class="item-content">체험 내용 요약</div>
+    <header>
+        <nav>
+            <div id="logo-wrap">
+                <img class="logo-img" src="/party/logo.svg">&nbsp;<div class="logo-text gugi-regular">한울두레</div>
+            </div>
+            <div id="logout-button" class="jua-regular">로그아웃</div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-header">
+            <div class="carousel-wrap">
+                <div id="carouselRank" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="carousel-item-wraps">
+                                <div class="carousel-item-wrap">
+                                    <div class="item-rank-first">이달의 체험 🥇</div>
+                                    <div class="item-title">체험 제목</div>
+                                    <div class="item-content">체험 내용 요약</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="carousel-item">
-                    </div>
+                        <div class="carousel-item">
+                        </div>
 
-                    <div class="carousel-item">
+                        <div class="carousel-item">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRank" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRank" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="search-wrap">
+                <span style="color: white; font-size: 30px">체험목록</span>
+                <form id="search-party-form" action="/hanuldure/searchParty">
+                    <input id="search-party-input" name="keyword" type="text" placeholder="찾고 있는 체험이 있나요?">
+                </form>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <!-- 체험 목록 -->
+            <div class="content-caption">
+                <button class="partyWriteLink" id="partyWriteLink">체험 주최</button>
+            </div>
+
+            <div class="content-party-list">
+                <div class="party-card" th:each="exp : ${ expList }" th:onclick="|location.href='/hanuldure/community/expView/${ exp.expSeq }'|">
+                    <div class="party-image"></div>
+                    <div class="party-content">
+                        <div class="party-title" th:text="${ exp.expTitle }">체험 이름</div>
+                        <div class="card-address" th:text="|${ exp.expAddr } ${ !#strings.isEmpty(exp.expAddrDetail) ? exp.expAddrDetail : '' }|">OO도 OO시 OO길 OO</div>
+                        <div class="card-capacity" th:text="|${ exp.expMin }명 ~ ${ exp.expMax }명 (${ exp.expApplyCount } 신청중)|">00명 ~ 00명 (00명 신청중)</div>
+                        <div class="card-fee" th:text="|${ exp.expPrice }원|">0000원</div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselRank" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselRank" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
-        <div class="search-wrap">
-            <span style="color: white; font-size: 30px">체험목록</span>
-            <form id="search-party-form" action="/hanuldure/searchParty">
-                <input id="search-party-input" name="keyword" type="text" placeholder="찾고 있는 체험이 있나요?">
-            </form>
-        </div>
-    </div>
-    <div class="content-wrap">
-        <!-- 체험 목록 -->
-        <div class="content-caption">
-            <button class="partyWriteLink" id="partyWriteLink">체험 주최</button>
-        </div>
-        <!--<div class="content-party-list" th:with="list=${param.partyList}">
-        </div>-->
-        <div class="content-party-list">
-            <div class="party-card" onclick="location.href='/hanuldure/expView/lastSeq'">
-                <div class="party-image"></div>
-                <div class="party-content">
-                    <div class="party-title">체험 이름</div>
-                    <div class="card-address">OO도 OO시 OO길 OO</div>
-                    <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
-                    <div class="card-fee">0000원</div>
-                </div>
-            </div>
-            <div class="party-card" onclick="location.href='/hanuldure/expView/lastSeq-1'">
-                <div class="party-image"></div>
-                <div class="party-content">
-                    <div class="party-title">체험 이름</div>
-                    <div class="card-address">OO도 OO시 OO길 OO</div>
-                    <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
-                    <div class="card-fee">0000원</div>
-                </div>
-            </div>
-            <div class="party-card" onclick="location.href='/hanuldure/expView/lastSeq-2'">
-                <div class="party-image"></div>
-                <div class="party-content">
-                    <div class="party-title">체험 이름</div>
-                    <div class="card-address">OO도 OO시 OO길 OO</div>
-                    <div class="card-capacity">00명 ~ 00명 (00명 신청중)</div>
-                    <div class="card-fee">0000원</div>
-                </div>
-            </div>
-            <div class="party-card" onclick="location.href='/hanuldure/expView/lastSeq-3'">
-                <div class="party-image"></div>
-                <div class="party-content">
-                    <div class="party-title">체험 이름</div>
-                    <div class="party-address">OO도 OO시 OO길 OO</div>
-                    <div class="party-capacity">00명 ~ 00명 (00명 신청중)</div>
-                    <div class="party-fee">0000원</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-<footer>
-    Footer
-</footer>
+    </main>
 </body>
 </html>
