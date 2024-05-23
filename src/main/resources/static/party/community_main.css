@@ -192,6 +192,16 @@ main {
     cursor: pointer;
 }
 
+button[class="partyWriteLink"] {
+    margin-left: auto;
+
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+
+    background-color: #a0dca9;
+}
+
 .content-party-list {
     display: flex;
     flex-wrap: wrap;
