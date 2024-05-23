@@ -2,9 +2,14 @@ package com.hanuldure.project.controller;
 
 import com.hanuldure.project.dao.CommunityDAO;
 //import com.hanuldure.project.dao.impl.CommunityDAOImpl;
+import com.hanuldure.project.dao.MemberDAO;
 import com.hanuldure.project.dto.CommunityTO;
+import com.hanuldure.project.dto.MemberDTO;
 import com.hanuldure.project.service.CommunityService;
+import com.hanuldure.project.service.MemberService;
+import com.hanuldure.project.service.ProfileService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("hanuldure")
@@ -19,6 +25,8 @@ public class CommunityBoardController {
 
     @Autowired
     private CommunityDAO communitydao;
+    @Autowired
+    private ProfileService profileService;
 
     @PostMapping("add")
     public ModelAndView add(HttpServletRequest request, ModelAndView model) {
@@ -37,11 +45,18 @@ public class CommunityBoardController {
     }
 
     private final CommunityService communityService;
+    private final MemberService memberService;
 
     @Autowired
-    public CommunityBoardController(CommunityService communityService) {
+    public CommunityBoardController(CommunityService communityService, MemberService memberService) {
         this.communityService = communityService;
+        this.memberService = memberService;
     }
+
+
+
+
+
 
     //글 작성
     @GetMapping("community/write")
@@ -89,13 +104,31 @@ public class CommunityBoardController {
 
     //상세페이지
     @GetMapping("community/detail/{boardSeq}")
-    public ModelAndView communityDetail(@PathVariable("boardSeq") int boardSeq, ModelAndView model) {
+    public ModelAndView communityDetail(@PathVariable("boardSeq") int boardSeq, ModelAndView model, HttpSession session) {
+        Integer userSeq = (Integer) session.getAttribute("userSeq");
+
+        MemberDTO memberDTO = profileService.getUserDetailsBySeq(userSeq);
+        session.setAttribute("username", memberDTO.getUserName());
+
+        List<CommunityTO> boardseqvalue = communityService.getCommunityByBoardSeq(userSeq);
+        System.out.println(boardseqvalue);
+
+        // 현재 boardSeq가 유저 게시물 목록에 포함되어 있는지 확인하는 구문
+        boolean BoardIn = boardseqvalue.stream().anyMatch(b -> b.getBoardSeq() == boardSeq);
+        model.addObject("isBoardSeqInList", BoardIn);
 
         CommunityTO community = communityService.getCommunityBySeq(boardSeq);
         if (community == null) {
             model.setViewName("redirect:/hanuldure/errorPage");
             return model;
         }
+
+        int userinseq = community.getUserSeq();
+        System.out.println(userinseq);
+
+        MemberDTO whatisname = memberService.getWhatUserName(userinseq);
+        System.out.println(whatisname);
+        model.addObject("whatisname", whatisname);
 
         model.addObject("community", community);
         model.setViewName("/community/communitydetail");
