@@ -1,14 +1,10 @@
 package com.hanuldure.project.controller;
 
 import com.hanuldure.project.dto.MemberDTO;
-import com.hanuldure.project.model.User;
 import com.hanuldure.project.model.dto.ExpDTO;
-import com.hanuldure.project.service.ExpService;
 import com.hanuldure.project.service.ProfileService;
-import com.hanuldure.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
