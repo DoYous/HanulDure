@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanuldure.project.mapper.ExpMapper">
+
+    <!-- 체험 주최 신청 -->
+    <insert id="insertExp" useGeneratedKeys="true" keyProperty="expSeq">
+        INSERT INTO
+            exp
+                (exp_seq, user_seq, exp_title, exp_content
+                , exp_start, exp_end
+                , exp_duration
+                , exp_get_start, exp_get_end
+                , exp_min, exp_max
+                , exp_addr, exp_addr_detail
+                , exp_img, exp_price
+                , exp_request_datetime, exp_status)
+            VALUES
+                (0, #{userSeq}, #{expTitle}, #{expContent}
+                , #{expStartStr}, #{expEndStr}
+                , CONCAT(
+                    IF(TIMESTAMPDIFF(minute, #{expStartStr}, #{expEndStr}) >= 60, CONCAT(TRUNCATE(TIMESTAMPDIFF(minute, #{expStartStr}, #{expEndStr}) / 60, 0), '시간'), ''),
+                    ' ',
+                    IF(TIMESTAMPDIFF(minute, #{expStartStr}, #{expEndStr}) % 60 > 0, CONCAT(TIMESTAMPDIFF(minute, #{expStartStr}, #{expEndStr}) % 60, '분'), '')
+                )
+                , #{expGetStartStr}, #{expGetEndStr}
+                , #{expMin}, #{expMax}
+                , #{expAddr}, #{expAddrDetail}
+                , #{expImg}, #{expPrice}
+                , now(), #{expStatus})
+    </insert>
+
+    <!-- 체험 목록 조회-->
+    <select id="selectExpList" resultType="ExpDTO">
+        SELECT
+    </select>
+
+    <!-- 체험 상세 조회 -->
+    <select id="selectExpBySeq" resultType="ExpDTO">
+        SELECT
+            exp_seq, user_seq, exp_title, exp_content
+            , exp_start, exp_end
+            , exp_duration
+            , exp_get_start, exp_get_end
+            , exp_min, exp_max, exp_apply_count
+            , exp_addr, exp_addr_detail
+            , exp_img, exp_price
+            , exp_request_datetime, exp_status
+        FROM
+            exp
+        WHERE
+            exp_seq = #{expSeq}
+    </select>
+
+</mapper>
