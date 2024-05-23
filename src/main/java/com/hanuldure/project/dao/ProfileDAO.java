@@ -32,4 +32,8 @@ public class ProfileDAO {
         return mapper.selectExpApplications(expSeq);
     }
 
+    public MemberDTO selectMemberByUserType(int userSeq) {
+        return mapper.selectMemberusertype(userSeq);
+    }
+
 }
