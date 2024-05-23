@@ -39,9 +39,9 @@ public class FarmerProfileController {
             Date now = new Date();
             for (ExpDTO exp : expInfo) {
                 if (exp.getExpEnd().before(now)) {
-                    exp.setExpStatus(5);
-                } else {
                     exp.setExpStatus(1);
+                } else {
+                    exp.setExpStatus(5);
                 }
 //                int expApplyCount = profileService.selectExpApplications(exp.getExpSeq());
 //                exp.setExpApplyCount(expApplyCount);
