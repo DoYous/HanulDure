@@ -6,6 +6,7 @@ import com.hanuldure.project.model.dto.FirstPageDTO;
 import com.hanuldure.project.model.session.SessionKey;
 import com.hanuldure.project.service.FirstPageService;
 import com.hanuldure.project.service.MemberService;
+import com.hanuldure.project.service.ProfileService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,20 @@ public class FirstPageAndLoginPageController {
     public static Integer loginSession;
     @Autowired
     private FirstPageService firstPageService;
+    private final ProfileService profileService;
+
+    @Autowired
+    public FirstPageAndLoginPageController(ProfileService profileService) {
+        this.profileService = profileService;
+    }
+
 
     @GetMapping("firstpage")
-    public ModelAndView firstpage(ModelAndView model) {
+    public ModelAndView firstpage(ModelAndView model,HttpSession session) {
+        Integer userSeq = (Integer) session.getAttribute("userSeq");
+        System.out.println(userSeq);
+
+
         FirstPageDTO Ranking1 = firstPageService.searchRankExp(1);
         FirstPageDTO Ranking2 = firstPageService.searchRankExp(2);
         FirstPageDTO Ranking3 = firstPageService.searchRankExp(3);
@@ -45,25 +57,36 @@ public class FirstPageAndLoginPageController {
     }
 
     @GetMapping("login")
-    public ModelAndView login(ModelAndView model, HttpServletRequest request){
+    public ModelAndView login(ModelAndView model){
         model.setViewName("/login/login");
         return model;
     }
 
     @PostMapping("login")
-    public String loginOk(MemberDTO memberDTO, HttpServletRequest request, RedirectAttributes rttr){
-        Integer result=memberService.login(memberDTO);
-        if(result==null){
+    public String loginOk(MemberDTO memberDTO, HttpServletRequest request, RedirectAttributes rttr) {
+        Integer result = memberService.login(memberDTO);
+        if (result == null) {
             return "redirect:/hanuldure/login";
-        }else{
-            HttpSession session=request.getSession();
-            session.setAttribute(SessionKey.sessionUserSeq,result);
-            loginSession=(Integer)session.getAttribute(SessionKey.sessionUserSeq);
+        } else {
+            HttpSession session = request.getSession();
+            session.setAttribute(SessionKey.sessionUserSeq, result);
+            loginSession = (Integer) session.getAttribute(SessionKey.sessionUserSeq);
             System.out.println(loginSession);
-            rttr.addFlashAttribute("loginSession",loginSession);
+            com.hanuldure.project.dto.MemberDTO usertype = profileService.getMemberBySeq(loginSession);
+
+            session.setAttribute("userType", usertype.getUserType());
+            System.out.println("유저타입 확인" + usertype);
 
             return "redirect:/hanuldure/firstpage";
         }
+    }
+
+    @GetMapping("logout")
+    public String logout(HttpServletRequest request){
+        HttpSession session=request.getSession();
+        session.invalidate();
+
+        return "redirect:/hanuldure/firstpage";
     }
 
     @GetMapping("searchid")
