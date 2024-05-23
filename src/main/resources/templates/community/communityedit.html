@@ -30,7 +30,7 @@
         <h2>농뮤니티 글 수정</h2>
         <hr>
         <div id="cmtitlediv">
-            <input id="cmtitle" name="board_title" type="text" placeholder=" 농뮤니티 제목을 입력하세요. " th:value="${community.getBoardTitle}">
+            <input id="cmtitle" name="boardTitle" type="text" placeholder=" 농뮤니티 제목을 입력하세요. " th:value="${community.getBoardTitle}">
         </div>
         <hr>
         <section id="cmtype">
@@ -38,17 +38,17 @@
             <article id="adddate"><p th:text="'수정일 : ' + ${community.getBoardWriteDate}"></p></article>
             <article id="freewritebt"><button id="freewrite" class="buttonNormal" onclick="toggleButton('freewrite', 'recruitment', event)">자유글</button></article>
             <article id="recruitmentbt"><button id="recruitment" class="buttonNormal" onclick="toggleButton('recruitment', 'freewrite', event)">모집글</button></article>
-            <input type="hidden" id="boardType" name="board_type" th:value="${community.getBoardType}">
+            <input type="hidden" id="boardType" name="boardType" th:value="${community.getBoardType}">
         </section>
         <div id="writeinfodiv">
-            <textarea id="writeinfo" name="board_content" th:text="${community.getBoardContent}" placeholder="적을 내용을 입력해주세요."></textarea>
+            <textarea id="writeinfo" name="boardContent" th:text="${community.getBoardContent}" placeholder="적을 내용을 입력해주세요."></textarea>
         </div>
         <section id="cmbt">
             <article><button id="cmcanclebt">취소</button></article>
             <article><button id="cmaddbt" type="submit">수정하기</button></article>
         </section>
     </section>
-    <input type="hidden" name="board_seq" th:value="${community.getBoardSeq}">
+    <input type="hidden" name="boardSeq" th:value="${community.getBoardSeq}">
 </form>
 
 </body>
