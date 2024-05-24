@@ -106,25 +106,48 @@ public class CommunityBoardController {
     @GetMapping("community/detail/{boardSeq}")
     public ModelAndView communityDetail(@PathVariable("boardSeq") int boardSeq, ModelAndView model, HttpSession session) {
         Integer userSeq = (Integer) session.getAttribute("userSeq");
+        System.out.println("현재 세션값은 = " + userSeq);
 
         MemberDTO memberDTO = profileService.getUserDetailsBySeq(userSeq);
+        System.out.println("세션값으로 가져오는 username = " + memberDTO.getUserName());
         session.setAttribute("username", memberDTO.getUserName());
 
         List<CommunityTO> boardseqvalue = communityService.getCommunityByBoardSeq(userSeq);
-        System.out.println(boardseqvalue);
+        System.out.println("세션 값으로 가져오는 보더값 = " + boardseqvalue);
 
         // 현재 boardSeq가 유저 게시물 목록에 포함되어 있는지 확인하는 구문
-        boolean BoardIn = boardseqvalue.stream().anyMatch(b -> b.getBoardSeq() == boardSeq);
-        model.addObject("isBoardSeqInList", BoardIn);
+//        boolean BoardIn = boardseqvalue.stream().anyMatch(b -> b.getBoardSeq() == boardSeq);
+        /*boolean BoardIn;
+        if(boardSeq == boardseqvalue.get(1).getBoardSeq()) {
+            BoardIn = true;
+            System.out.println("반환값 true 작동 확인");
+            model.addObject("BoardIn", BoardIn);
+        }else{
+            BoardIn = false;
+            System.out.println("반환값 fales 작동 확인" + BoardIn);
+            model.addObject("BoardIn", BoardIn);
+        }*/
+//        model.addObject("isBoardSeqInList", BoardIn);
+//        System.out.println("반환값 확인" + BoardIn);
 
         CommunityTO community = communityService.getCommunityBySeq(boardSeq);
+        System.out.println("지금 띄워주는 정보 값들 = " + community);
         if (community == null) {
             model.setViewName("redirect:/hanuldure/errorPage");
             return model;
         }
 
         int userinseq = community.getUserSeq();
-        System.out.println(userinseq);
+        System.out.println("여기 확인해주세요 ! " + userinseq);
+
+        boolean BoardIn;
+        if(userinseq == userSeq){
+            BoardIn = true;
+            System.out.println("반환값 true 작동 확인");
+            model.addObject("BoardIn", BoardIn);
+        }else{
+            BoardIn = false;
+        }
 
         MemberDTO whatisname = memberService.getWhatUserName(userinseq);
         System.out.println(whatisname);
