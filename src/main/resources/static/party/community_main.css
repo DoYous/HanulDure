@@ -297,3 +297,18 @@ footer {
 
     margin-top: auto;
 }
+
+.writeBTDiv{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 20px;
+}
+
+.writeBT {
+    border-radius: 30px;
+    border: none;
+    width: 80px;
+    color: #000000;
+
+}
